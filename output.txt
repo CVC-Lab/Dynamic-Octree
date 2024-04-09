@@ -1,0 +1,992 @@
+Starting DynamicOctree::buildOctree
+Number of Atoms:  125
+In DynamicOctree::initFreeNodeServer
+Inside DynamicOctree::allocateNodes(10)
+Allocated 10 nodes
+Allocated 10 new nodes
+Parent Nodes:
+Node ID: 0, Parent Node ID: 1
+Node ID: 1, Parent Node ID: 2
+Node ID: 2, Parent Node ID: 3
+Node ID: 3, Parent Node ID: 4
+Node ID: 4, Parent Node ID: 5
+Node ID: 5, Parent Node ID: 6
+Node ID: 6, Parent Node ID: 7
+Node ID: 7, Parent Node ID: 8
+Node ID: 8, Parent Node ID: 9
+In DynamicOctree::getNextFreeNode
+Next node is 0
+Root Node:  0
+In DynamicOctree::computeRootBoundingBox
+root dim = 99.15466065626275
+Numeber of atoms considered while expanding octree:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124]
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  0 124
+nAtoms:  125
+In DynamicOctree::computeLeafAttributes(node_id=0, indices[start_id]=0, indices[end_id]=124)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 1
+In DynamicOctree::computeNonRootBoundingBox(node_id=1, child_id=0)
+nonroot dim = 49.577330328131374
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  0 15
+nAtoms:  16
+In DynamicOctree::computeLeafAttributes(node_id=1, indices[start_id]=2, indices[end_id]=117)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 2
+In DynamicOctree::computeNonRootBoundingBox(node_id=2, child_id=0)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  0 1
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=2, indices[start_id]=2, indices[end_id]=75)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 3
+In DynamicOctree::computeNonRootBoundingBox(node_id=3, child_id=1)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  2 3
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=3, indices[start_id]=66, indices[end_id]=113)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 4
+In DynamicOctree::computeNonRootBoundingBox(node_id=4, child_id=2)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  4 4
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=4, indices[start_id]=76, indices[end_id]=76)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 5
+In DynamicOctree::computeNonRootBoundingBox(node_id=5, child_id=3)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  5 9
+nAtoms:  5
+In DynamicOctree::computeLeafAttributes(node_id=5, indices[start_id]=9, indices[end_id]=94)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 6
+In DynamicOctree::computeNonRootBoundingBox(node_id=6, child_id=4)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  10 10
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=6, indices[start_id]=79, indices[end_id]=79)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 7
+In DynamicOctree::computeNonRootBoundingBox(node_id=7, child_id=5)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  11 14
+nAtoms:  4
+In DynamicOctree::computeLeafAttributes(node_id=7, indices[start_id]=25, indices[end_id]=58)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 8
+In DynamicOctree::computeNonRootBoundingBox(node_id=8, child_id=7)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  15 15
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=8, indices[start_id]=117, indices[end_id]=117)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 9
+In DynamicOctree::computeNonRootBoundingBox(node_id=9, child_id=1)
+nonroot dim = 49.577330328131374
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  16 21
+nAtoms:  6
+In DynamicOctree::computeLeafAttributes(node_id=9, indices[start_id]=17, indices[end_id]=116)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Inside DynamicOctree::reallocateNodes(20)
+Allocated 20 nodes
+Next node is 11
+In DynamicOctree::computeNonRootBoundingBox(node_id=11, child_id=0)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  16 16
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=11, indices[start_id]=57, indices[end_id]=57)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 12
+In DynamicOctree::computeNonRootBoundingBox(node_id=12, child_id=1)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  17 18
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=12, indices[start_id]=23, indices[end_id]=65)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 13
+In DynamicOctree::computeNonRootBoundingBox(node_id=13, child_id=2)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  19 20
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=13, indices[start_id]=17, indices[end_id]=80)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 14
+In DynamicOctree::computeNonRootBoundingBox(node_id=14, child_id=5)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  21 21
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=14, indices[start_id]=116, indices[end_id]=116)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 15
+In DynamicOctree::computeNonRootBoundingBox(node_id=15, child_id=2)
+nonroot dim = 49.577330328131374
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  22 34
+nAtoms:  13
+In DynamicOctree::computeLeafAttributes(node_id=15, indices[start_id]=4, indices[end_id]=119)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 16
+In DynamicOctree::computeNonRootBoundingBox(node_id=16, child_id=0)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  22 23
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=16, indices[start_id]=4, indices[end_id]=38)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 17
+In DynamicOctree::computeNonRootBoundingBox(node_id=17, child_id=1)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  24 24
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=17, indices[start_id]=99, indices[end_id]=99)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 18
+In DynamicOctree::computeNonRootBoundingBox(node_id=18, child_id=2)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  25 26
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=18, indices[start_id]=46, indices[end_id]=109)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 19
+In DynamicOctree::computeNonRootBoundingBox(node_id=19, child_id=3)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  27 28
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=19, indices[start_id]=18, indices[end_id]=112)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Inside DynamicOctree::reallocateNodes(40)
+Allocated 40 nodes
+Next node is 21
+In DynamicOctree::computeNonRootBoundingBox(node_id=21, child_id=4)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  29 30
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=21, indices[start_id]=29, indices[end_id]=98)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 22
+In DynamicOctree::computeNonRootBoundingBox(node_id=22, child_id=5)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  31 32
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=22, indices[start_id]=78, indices[end_id]=119)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 23
+In DynamicOctree::computeNonRootBoundingBox(node_id=23, child_id=7)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  33 34
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=23, indices[start_id]=72, indices[end_id]=105)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 24
+In DynamicOctree::computeNonRootBoundingBox(node_id=24, child_id=3)
+nonroot dim = 49.577330328131374
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  35 53
+nAtoms:  19
+In DynamicOctree::computeLeafAttributes(node_id=24, indices[start_id]=3, indices[end_id]=121)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 25
+In DynamicOctree::computeNonRootBoundingBox(node_id=25, child_id=0)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  35 36
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=25, indices[start_id]=7, indices[end_id]=44)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 26
+In DynamicOctree::computeNonRootBoundingBox(node_id=26, child_id=1)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  37 37
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=26, indices[start_id]=100, indices[end_id]=100)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 27
+In DynamicOctree::computeNonRootBoundingBox(node_id=27, child_id=3)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  38 40
+nAtoms:  3
+In DynamicOctree::computeLeafAttributes(node_id=27, indices[start_id]=22, indices[end_id]=84)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 28
+In DynamicOctree::computeNonRootBoundingBox(node_id=28, child_id=4)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  41 44
+nAtoms:  4
+In DynamicOctree::computeLeafAttributes(node_id=28, indices[start_id]=88, indices[end_id]=101)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 29
+In DynamicOctree::computeNonRootBoundingBox(node_id=29, child_id=5)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  45 46
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=29, indices[start_id]=51, indices[end_id]=121)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 30
+In DynamicOctree::computeNonRootBoundingBox(node_id=30, child_id=6)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  47 50
+nAtoms:  4
+In DynamicOctree::computeLeafAttributes(node_id=30, indices[start_id]=3, indices[end_id]=43)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 31
+In DynamicOctree::computeNonRootBoundingBox(node_id=31, child_id=7)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  51 53
+nAtoms:  3
+In DynamicOctree::computeLeafAttributes(node_id=31, indices[start_id]=20, indices[end_id]=110)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 32
+In DynamicOctree::computeNonRootBoundingBox(node_id=32, child_id=4)
+nonroot dim = 49.577330328131374
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  54 67
+nAtoms:  14
+In DynamicOctree::computeLeafAttributes(node_id=32, indices[start_id]=12, indices[end_id]=122)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 33
+In DynamicOctree::computeNonRootBoundingBox(node_id=33, child_id=0)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  54 54
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=33, indices[start_id]=96, indices[end_id]=96)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 34
+In DynamicOctree::computeNonRootBoundingBox(node_id=34, child_id=1)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  55 55
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=34, indices[start_id]=107, indices[end_id]=107)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 35
+In DynamicOctree::computeNonRootBoundingBox(node_id=35, child_id=3)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  56 58
+nAtoms:  3
+In DynamicOctree::computeLeafAttributes(node_id=35, indices[start_id]=47, indices[end_id]=108)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 36
+In DynamicOctree::computeNonRootBoundingBox(node_id=36, child_id=4)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  59 60
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=36, indices[start_id]=31, indices[end_id]=122)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 37
+In DynamicOctree::computeNonRootBoundingBox(node_id=37, child_id=5)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  61 61
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=37, indices[start_id]=28, indices[end_id]=28)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 38
+In DynamicOctree::computeNonRootBoundingBox(node_id=38, child_id=6)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  62 65
+nAtoms:  4
+In DynamicOctree::computeLeafAttributes(node_id=38, indices[start_id]=12, indices[end_id]=97)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 39
+In DynamicOctree::computeNonRootBoundingBox(node_id=39, child_id=7)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  66 67
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=39, indices[start_id]=37, indices[end_id]=71)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Inside DynamicOctree::reallocateNodes(80)
+Allocated 80 nodes
+Next node is 41
+In DynamicOctree::computeNonRootBoundingBox(node_id=41, child_id=5)
+nonroot dim = 49.577330328131374
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  68 87
+nAtoms:  20
+In DynamicOctree::computeLeafAttributes(node_id=41, indices[start_id]=0, indices[end_id]=118)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 42
+In DynamicOctree::computeNonRootBoundingBox(node_id=42, child_id=0)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  68 68
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=42, indices[start_id]=69, indices[end_id]=69)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 43
+In DynamicOctree::computeNonRootBoundingBox(node_id=43, child_id=1)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  69 69
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=43, indices[start_id]=118, indices[end_id]=118)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 44
+In DynamicOctree::computeNonRootBoundingBox(node_id=44, child_id=2)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  70 74
+nAtoms:  5
+In DynamicOctree::computeLeafAttributes(node_id=44, indices[start_id]=1, indices[end_id]=115)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 45
+In DynamicOctree::computeNonRootBoundingBox(node_id=45, child_id=3)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  75 78
+nAtoms:  4
+In DynamicOctree::computeLeafAttributes(node_id=45, indices[start_id]=26, indices[end_id]=102)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 46
+In DynamicOctree::computeNonRootBoundingBox(node_id=46, child_id=4)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  79 80
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=46, indices[start_id]=0, indices[end_id]=5)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 47
+In DynamicOctree::computeNonRootBoundingBox(node_id=47, child_id=5)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  81 83
+nAtoms:  3
+In DynamicOctree::computeLeafAttributes(node_id=47, indices[start_id]=10, indices[end_id]=77)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 48
+In DynamicOctree::computeNonRootBoundingBox(node_id=48, child_id=6)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  84 85
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=48, indices[start_id]=90, indices[end_id]=111)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 49
+In DynamicOctree::computeNonRootBoundingBox(node_id=49, child_id=7)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  86 87
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=49, indices[start_id]=56, indices[end_id]=106)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 50
+In DynamicOctree::computeNonRootBoundingBox(node_id=50, child_id=6)
+nonroot dim = 49.577330328131374
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  88 101
+nAtoms:  14
+In DynamicOctree::computeLeafAttributes(node_id=50, indices[start_id]=11, indices[end_id]=123)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 51
+In DynamicOctree::computeNonRootBoundingBox(node_id=51, child_id=1)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  88 89
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=51, indices[start_id]=87, indices[end_id]=89)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 52
+In DynamicOctree::computeNonRootBoundingBox(node_id=52, child_id=2)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  90 91
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=52, indices[start_id]=14, indices[end_id]=16)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 53
+In DynamicOctree::computeNonRootBoundingBox(node_id=53, child_id=3)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  92 94
+nAtoms:  3
+In DynamicOctree::computeLeafAttributes(node_id=53, indices[start_id]=13, indices[end_id]=55)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 54
+In DynamicOctree::computeNonRootBoundingBox(node_id=54, child_id=4)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  95 96
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=54, indices[start_id]=120, indices[end_id]=123)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 55
+In DynamicOctree::computeNonRootBoundingBox(node_id=55, child_id=5)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  97 97
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=55, indices[start_id]=104, indices[end_id]=104)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 56
+In DynamicOctree::computeNonRootBoundingBox(node_id=56, child_id=6)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  98 100
+nAtoms:  3
+In DynamicOctree::computeLeafAttributes(node_id=56, indices[start_id]=11, indices[end_id]=42)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 57
+In DynamicOctree::computeNonRootBoundingBox(node_id=57, child_id=7)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  101 101
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=57, indices[start_id]=114, indices[end_id]=114)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 58
+In DynamicOctree::computeNonRootBoundingBox(node_id=58, child_id=7)
+nonroot dim = 49.577330328131374
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  102 124
+nAtoms:  23
+In DynamicOctree::computeLeafAttributes(node_id=58, indices[start_id]=15, indices[end_id]=124)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 59
+In DynamicOctree::computeNonRootBoundingBox(node_id=59, child_id=0)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  102 106
+nAtoms:  5
+In DynamicOctree::computeLeafAttributes(node_id=59, indices[start_id]=19, indices[end_id]=124)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 60
+In DynamicOctree::computeNonRootBoundingBox(node_id=60, child_id=1)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  107 109
+nAtoms:  3
+In DynamicOctree::computeLeafAttributes(node_id=60, indices[start_id]=40, indices[end_id]=61)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 61
+In DynamicOctree::computeNonRootBoundingBox(node_id=61, child_id=2)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  110 111
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=61, indices[start_id]=39, indices[end_id]=86)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 62
+In DynamicOctree::computeNonRootBoundingBox(node_id=62, child_id=3)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  112 116
+nAtoms:  5
+In DynamicOctree::computeLeafAttributes(node_id=62, indices[start_id]=21, indices[end_id]=95)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 63
+In DynamicOctree::computeNonRootBoundingBox(node_id=63, child_id=4)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  117 117
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=63, indices[start_id]=64, indices[end_id]=64)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 64
+In DynamicOctree::computeNonRootBoundingBox(node_id=64, child_id=5)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  118 121
+nAtoms:  4
+In DynamicOctree::computeLeafAttributes(node_id=64, indices[start_id]=15, indices[end_id]=85)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 65
+In DynamicOctree::computeNonRootBoundingBox(node_id=65, child_id=6)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  122 123
+nAtoms:  2
+In DynamicOctree::computeLeafAttributes(node_id=65, indices[start_id]=68, indices[end_id]=74)
+prepared list of atoms
+computed attributes
+In DynamicOctree::getNextFreeNode
+Next node is 66
+In DynamicOctree::computeNonRootBoundingBox(node_id=66, child_id=7)
+nonroot dim = 24.788665164065687
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  124 124
+nAtoms:  1
+In DynamicOctree::computeLeafAttributes(node_id=66, indices[start_id]=34, indices[end_id]=34)
+prepared list of atoms
+computed attributes
+Octree built
+Number of Nodes: 80
+In DynamicOctree::print
+
+
+Node ID: 0
+Parent Pointer: -1
+Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fdfd00a0d00>
+Non-Leaf Node
+Child Pointers: [1, 9, 15, 24, 32, 41, 50, 58]
+  Node ID: 1
+  Parent Pointer: 0
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fdfd00a0700>
+  Non-Leaf Node
+  Child Pointers: [2, 3, 4, 5, 6, 7, -1, 8]
+    Node ID: 2
+    Parent Pointer: 1
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9520>
+    Leaf Node
+    Atom Indices: [2, 75, -1, -1]
+    Node ID: 3
+    Parent Pointer: 1
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c95b0>
+    Leaf Node
+    Atom Indices: [66, 113, -1, -1]
+    Node ID: 4
+    Parent Pointer: 1
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9640>
+    Leaf Node
+    Atom Indices: [76, -1]
+    Node ID: 5
+    Parent Pointer: 1
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9430>
+    Leaf Node
+    Atom Indices: [9, 54, 60, 70, 94, -1, -1, -1, -1, -1]
+    Node ID: 6
+    Parent Pointer: 1
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c93a0>
+    Leaf Node
+    Atom Indices: [79, -1]
+    Node ID: 7
+    Parent Pointer: 1
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9310>
+    Leaf Node
+    Atom Indices: [25, 33, 45, 58, -1, -1, -1, -1]
+    Node ID: 8
+    Parent Pointer: 1
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9280>
+    Leaf Node
+    Atom Indices: [117, -1]
+  Node ID: 9
+  Parent Pointer: 0
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c91f0>
+  Non-Leaf Node
+  Child Pointers: [11, 12, 13, -1, -1, 14, -1, -1]
+    Node ID: 11
+    Parent Pointer: 9
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9070>
+    Leaf Node
+    Atom Indices: [57, -1]
+    Node ID: 12
+    Parent Pointer: 9
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c96a0>
+    Leaf Node
+    Atom Indices: [23, 65, -1, -1]
+    Node ID: 13
+    Parent Pointer: 9
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9730>
+    Leaf Node
+    Atom Indices: [17, 80, -1, -1]
+    Node ID: 14
+    Parent Pointer: 9
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c97c0>
+    Leaf Node
+    Atom Indices: [116, -1]
+  Node ID: 15
+  Parent Pointer: 0
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9850>
+  Non-Leaf Node
+  Child Pointers: [16, 17, 18, 19, 21, 22, -1, 23]
+    Node ID: 16
+    Parent Pointer: 15
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c98e0>
+    Leaf Node
+    Atom Indices: [4, 38, -1, -1]
+    Node ID: 17
+    Parent Pointer: 15
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9970>
+    Leaf Node
+    Atom Indices: [99, -1]
+    Node ID: 18
+    Parent Pointer: 15
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9a00>
+    Leaf Node
+    Atom Indices: [46, 109, -1, -1]
+    Node ID: 19
+    Parent Pointer: 15
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9a90>
+    Leaf Node
+    Atom Indices: [18, 112, -1, -1]
+    Node ID: 21
+    Parent Pointer: 15
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9bb0>
+    Leaf Node
+    Atom Indices: [29, 98, -1, -1]
+    Node ID: 22
+    Parent Pointer: 15
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9c40>
+    Leaf Node
+    Atom Indices: [78, 119, -1, -1]
+    Node ID: 23
+    Parent Pointer: 15
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9cd0>
+    Leaf Node
+    Atom Indices: [72, 105, -1, -1]
+  Node ID: 24
+  Parent Pointer: 0
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9d60>
+  Non-Leaf Node
+  Child Pointers: [25, 26, -1, 27, 28, 29, 30, 31]
+    Node ID: 25
+    Parent Pointer: 24
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9df0>
+    Leaf Node
+    Atom Indices: [7, 44, -1, -1]
+    Node ID: 26
+    Parent Pointer: 24
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9e80>
+    Leaf Node
+    Atom Indices: [100, -1]
+    Node ID: 27
+    Parent Pointer: 24
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9f10>
+    Leaf Node
+    Atom Indices: [22, 24, 84, -1, -1, -1]
+    Node ID: 28
+    Parent Pointer: 24
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001c9fa0>
+    Leaf Node
+    Atom Indices: [88, 92, 93, 101, -1, -1, -1, -1]
+    Node ID: 29
+    Parent Pointer: 24
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d3070>
+    Leaf Node
+    Atom Indices: [51, 121, -1, -1]
+    Node ID: 30
+    Parent Pointer: 24
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d3100>
+    Leaf Node
+    Atom Indices: [3, 6, 27, 43, -1, -1, -1, -1]
+    Node ID: 31
+    Parent Pointer: 24
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d3190>
+    Leaf Node
+    Atom Indices: [20, 63, 110, -1, -1, -1]
+  Node ID: 32
+  Parent Pointer: 0
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d3220>
+  Non-Leaf Node
+  Child Pointers: [33, 34, -1, 35, 36, 37, 38, 39]
+    Node ID: 33
+    Parent Pointer: 32
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d32b0>
+    Leaf Node
+    Atom Indices: [96, -1]
+    Node ID: 34
+    Parent Pointer: 32
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d3340>
+    Leaf Node
+    Atom Indices: [107, -1]
+    Node ID: 35
+    Parent Pointer: 32
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d33d0>
+    Leaf Node
+    Atom Indices: [47, 73, 108, -1, -1, -1]
+    Node ID: 36
+    Parent Pointer: 32
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d3460>
+    Leaf Node
+    Atom Indices: [31, 122, -1, -1]
+    Node ID: 37
+    Parent Pointer: 32
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d34f0>
+    Leaf Node
+    Atom Indices: [28, -1]
+    Node ID: 38
+    Parent Pointer: 32
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d3580>
+    Leaf Node
+    Atom Indices: [12, 48, 53, 97, -1, -1, -1, -1]
+    Node ID: 39
+    Parent Pointer: 32
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d3610>
+    Leaf Node
+    Atom Indices: [37, 71, -1, -1]
+  Node ID: 41
+  Parent Pointer: 0
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe0001d3790>
+  Non-Leaf Node
+  Child Pointers: [42, 43, 44, 45, 46, 47, 48, 49]
+    Node ID: 42
+    Parent Pointer: 41
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d070>
+    Leaf Node
+    Atom Indices: [69, -1]
+    Node ID: 43
+    Parent Pointer: 41
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d100>
+    Leaf Node
+    Atom Indices: [118, -1]
+    Node ID: 44
+    Parent Pointer: 41
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d190>
+    Leaf Node
+    Atom Indices: [1, 8, 83, 103, 115, -1, -1, -1, -1, -1]
+    Node ID: 45
+    Parent Pointer: 41
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d220>
+    Leaf Node
+    Atom Indices: [26, 32, 82, 102, -1, -1, -1, -1]
+    Node ID: 46
+    Parent Pointer: 41
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d2b0>
+    Leaf Node
+    Atom Indices: [0, 5, -1, -1]
+    Node ID: 47
+    Parent Pointer: 41
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d340>
+    Leaf Node
+    Atom Indices: [10, 59, 77, -1, -1, -1]
+    Node ID: 48
+    Parent Pointer: 41
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d3d0>
+    Leaf Node
+    Atom Indices: [90, 111, -1, -1]
+    Node ID: 49
+    Parent Pointer: 41
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d460>
+    Leaf Node
+    Atom Indices: [56, 106, -1, -1]
+  Node ID: 50
+  Parent Pointer: 0
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d4f0>
+  Non-Leaf Node
+  Child Pointers: [-1, 51, 52, 53, 54, 55, 56, 57]
+    Node ID: 51
+    Parent Pointer: 50
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d580>
+    Leaf Node
+    Atom Indices: [87, 89, -1, -1]
+    Node ID: 52
+    Parent Pointer: 50
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d610>
+    Leaf Node
+    Atom Indices: [14, 16, -1, -1]
+    Node ID: 53
+    Parent Pointer: 50
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d6a0>
+    Leaf Node
+    Atom Indices: [13, 36, 55, -1, -1, -1]
+    Node ID: 54
+    Parent Pointer: 50
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d730>
+    Leaf Node
+    Atom Indices: [120, 123, -1, -1]
+    Node ID: 55
+    Parent Pointer: 50
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d7c0>
+    Leaf Node
+    Atom Indices: [104, -1]
+    Node ID: 56
+    Parent Pointer: 50
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d850>
+    Leaf Node
+    Atom Indices: [11, 35, 42, -1, -1, -1]
+    Node ID: 57
+    Parent Pointer: 50
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d8e0>
+    Leaf Node
+    Atom Indices: [114, -1]
+  Node ID: 58
+  Parent Pointer: 0
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022d970>
+  Non-Leaf Node
+  Child Pointers: [59, 60, 61, 62, 63, 64, 65, 66]
+    Node ID: 59
+    Parent Pointer: 58
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022da00>
+    Leaf Node
+    Atom Indices: [19, 30, 81, 91, 124, -1, -1, -1, -1, -1]
+    Node ID: 60
+    Parent Pointer: 58
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022da90>
+    Leaf Node
+    Atom Indices: [40, 52, 61, -1, -1, -1]
+    Node ID: 61
+    Parent Pointer: 58
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022db20>
+    Leaf Node
+    Atom Indices: [39, 86, -1, -1]
+    Node ID: 62
+    Parent Pointer: 58
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022dbb0>
+    Leaf Node
+    Atom Indices: [21, 41, 50, 62, 95, -1, -1, -1, -1, -1]
+    Node ID: 63
+    Parent Pointer: 58
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022dc40>
+    Leaf Node
+    Atom Indices: [64, -1]
+    Node ID: 64
+    Parent Pointer: 58
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022dcd0>
+    Leaf Node
+    Atom Indices: [15, 49, 67, 85, -1, -1, -1, -1]
+    Node ID: 65
+    Parent Pointer: 58
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022dd60>
+    Leaf Node
+    Atom Indices: [68, 74, -1, -1]
+    Node ID: 66
+    Parent Pointer: 58
+    Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x7fe00022ddf0>
+    Leaf Node
+    Atom Indices: [34, -1]
+
+
+All tests passed!
