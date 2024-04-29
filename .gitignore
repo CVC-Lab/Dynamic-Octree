@@ -4,3 +4,5 @@ __pycache__/
 
 # Ignore all .pyc files
 *.pyc
+
+# Ignore all logs.txt files

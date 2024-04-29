@@ -79,3 +79,6 @@ class Object:
             id_value (int or None): New identifier for the object.
         """
         self.id = id_value
+
+    def get_id(self):
+        return self.id
