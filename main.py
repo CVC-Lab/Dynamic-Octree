@@ -185,10 +185,66 @@ def test_dynamic_octree():
     # Closing the file after writing
     sys.stdout.close()
 
+def test_object_to_node_map():
+    # Initialize objects
+    atoms = [Object([random.uniform(0, 100), random.uniform(0, 100), random.uniform(0, 100)]) for _ in range(10)]
+    num_atoms = len(atoms)
+    construction_params = OctreeConstructionParams(max_leaf_size=5, max_leaf_dim=10, slack_factor=1.0)
+    max_nodes = 100
+
+    # Initialize DynamicOctree
+    octree = DynamicOctree(atoms, num_atoms, construction_params, verbose=True, max_nodes=max_nodes)
+
+    # Test building the octree
+    assert octree.build_octree() == True
+
+    print("Initial octree status:")
+    print("Number of objects:", octree.num_atoms)
+    print("Number of Nodes:", octree.num_nodes)
+
+    # Print object_to_node_map before adding new object
+    print("object_to_node_map before adding new object:", octree.object_to_node_map)
+
+    # Add new object
+    new_object = Object([50.0, 50.0, 50.0])
+    octree.add_atom_to_non_leaf(0, len(atoms))  # Assuming adding to the root node for simplicity
+    octree.add_atom_to_leaf(0, len(atoms))  # Assuming adding to the root node for simplicity
+
+    # Print object_to_node_map after adding new object
+    print("object_to_node_map after adding new object:", octree.object_to_node_map)
+
+    # Verify if the object_to_node_map is updated properly after adding an object
+    # assert new_object in octree.object_to_node_map
+    # assert octree.object_to_node_map[new_object] == 0  # Assuming added to the root node
+
+    print("Octree status after adding new object:")
+    print("Number of objects:", octree.num_atoms)
+    print("Number of Nodes:", octree.num_nodes)
+
+    # Print object_to_node_map before removing an object
+    print("object_to_node_map before removing an object:", octree.object_to_node_map)
+
+    # Remove an object
+    octree.remove_atom_from_non_leaf(0, len(atoms) - 1)  # Assuming removing from the root node for simplicity
+    octree.remove_atom_from_leaf(0, len(atoms) - 1)  # Assuming removing from the root node for simplicity
+
+    # Print object_to_node_map after removing an object
+    print("object_to_node_map after removing an object:", octree.object_to_node_map)
+
+    # Verify if the object_to_node_map is updated properly after removing an object
+    assert new_object not in octree.object_to_node_map
+
+    print("Octree status after removing an object:")
+    print("Number of objects:", octree.num_atoms)
+    print("Number of Nodes:", octree.num_nodes)
+
+    print("All tests passed!")
+
 
 if __name__ == "__main__":
     # test_dynamic_octree_node()  # This test function is only testing the methods of the DynamicOctreeNode class, 
     # test_dynamic_octree()       # This test function is testing if the octree nodes are generated and expanded correctly or not.
     # test_add_remove_objects()
     # test_traverse_octree()  #TODO: This traversal shows if the parents and chilren are connected correctly. Check and Verify
-    test_dynamic_octree()
+    # test_dynamic_octree()
+    test_object_to_node_map()
