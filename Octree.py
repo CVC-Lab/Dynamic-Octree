@@ -86,7 +86,7 @@ class DynamicOctreeNodeAttr:
 
 # Class for representing an octree node
 class DynamicOctreeNode:
-    def __init__(self):
+    def __init__(self, node_id=None):
         # Initialize attributes of the node
         self.lx = 0.0  # Position of the node
         self.ly = 0.0  # Position of the node
@@ -114,6 +114,7 @@ class DynamicOctreeNode:
         self.parent_pointer = -1
         self.child_pointer = [-1] * 8
         self.leaf = True
+        self.id = None  # Add an id attribute to the node
         self.attribs = DynamicOctreeNodeAttr()
         
     # Method to check if the node is a leaf
@@ -138,6 +139,9 @@ class DynamicOctreeNode:
     
     def get_parent_pointer(self):
         return self.parent_pointer
+    
+    def set_id(self, node_id):
+        self.id = node_id
     
     def set_lx(self, value):
         self.lx = value
@@ -221,6 +225,29 @@ class DynamicOctree:
         self.construction_params = cons_par  # Octree construction parameters
         self.max_nodes = max_nodes  # Maximum number of nodes allowed in the octree
         self.scoring_params = None  # Scoring parameters for the octree
+        self.object_to_node_map = {} # Initialize object to node mapping dictionary
+        
+    def set_node_id(self, obj, node_id):
+        """
+        Set the node ID for the object.
+
+        Args:
+            obj (Object): The object for which to set the node ID.
+            node_id (int): Node ID to associate with the object.
+        """
+        self.object_to_node_map[obj] = node_id
+        
+    def get_node_id(self, obj):
+        """
+        Get the node ID associated with the object.
+
+        Args:
+            obj (Object): The object for which to get the node ID.
+
+        Returns:
+            int or None: Node ID associated with the object, or None if not mapped.
+        """
+        return self.object_to_node_map.get(obj)
 
     def build_octree(self):
         """
@@ -258,6 +285,14 @@ class DynamicOctree:
             print("Numeber of atoms considered while expanding octree: ", indices)
             # Expand octree node
             self.octree_built = self.expand_octree_node(octree_root, indices, indices_temp, 0, self.num_atoms - 1)
+            
+            # Update object to node mapping
+            for atom_id in indices:
+                atom = self.atoms[atom_id]
+                node_id = self.get_node_id(atom)
+                if node_id is not None:
+                    self.set_node_id(atom, octree_root)  # Update node ID to the root node
+
         finally:
             # Free temporary storage
             del indices
@@ -403,6 +438,34 @@ class DynamicOctree:
 
         return True
 
+    # def get_next_free_node(self):  TO ALLOCATE ONLY ONE NODE WHEN THERE ARE NO FREE NODES
+    #     """
+    #     Get the index of the next free node.
+
+    #     Returns:
+    #         int: Index of the next free node.
+    #     """
+    #     if self.verbose:
+    #         print("In DynamicOctree::getNextFreeNode")
+
+    #     if self.next_free_node == -1:
+    #         self.reallocate_nodes(1)  # Allocate only one new node
+
+    #         if self.nodes is None:
+    #             return -1
+
+    #         # Set parent pointer for the new node
+    #         self.nodes[-1].set_parent_pointer(self.next_free_node)
+    #         self.next_free_node = len(self.nodes) - 1
+
+    #     next_node = self.next_free_node
+    #     self.next_free_node = self.nodes[next_node].get_parent_pointer()
+
+    #     if self.verbose:
+    #         print("Next node is", next_node)
+
+    #     return next_node
+
     def get_next_free_node(self):
         """
         Get the index of the next free node.
@@ -426,12 +489,14 @@ class DynamicOctree:
 
             # Set parent pointers and update next free node
             for i in range(new_num_nodes - 1, self.num_nodes, -1):
+                self.nodes[i] = DynamicOctreeNode(i)  # Initialize node with ID
                 self.nodes[i].set_parent_pointer(self.next_free_node)
                 self.next_free_node = i
 
             self.num_nodes = new_num_nodes
 
         next_node = self.next_free_node
+
         self.next_free_node = self.nodes[next_node].get_parent_pointer()
 
         if self.verbose:
@@ -495,9 +560,17 @@ class DynamicOctree:
         Returns:
             bool: True if the node needs expansion, False otherwise.
         """
+        # # Check if the node is the root node and if it contains more atoms than the maximum leaf size
+        # if node.parent_pointer == -1 and node.num_atoms > self.construction_params.get_max_leaf_size():
+        #     return True
+        
+        # # Check if the dimension of the node exceeds the maximum leaf dimension
+        # return node.dim > self.construction_params.get_max_leaf_dim()
+        
         # Check if the number of atoms in the node exceeds the maximum leaf size
         # or if the dimension of the node exceeds the maximum leaf dimension
         return not (node.num_atoms <= self.construction_params.get_max_leaf_size() or node.dim <= self.construction_params.get_max_leaf_dim())
+
 
     def expand_octree_node(self, node_id, indices, indices_temp, start_id, end_id):
         """
@@ -522,7 +595,7 @@ class DynamicOctree:
         node.set_num_atoms(nAtoms)
         print("nAtoms: ", nAtoms)
         
-        self.compute_leaf_attributes(node_id, indices, start_id, end_id)
+        # self.compute_leaf_attributes(node_id, indices, start_id, end_id)
         dim = node.get_dim()
 
         # The node is a leaf. If the atom is fixed, it is placed at the beginning of the list of atom indices.
@@ -545,7 +618,7 @@ class DynamicOctree:
 
                 if self.atoms[j].is_fixed():
                     node.set_atom_index(nfixed, j)
-                    self.atoms[j].set_id(self.create_octree_ptr(node_id, nfixed))
+                    self.atoms[j].node_id = node_id  # Update node_id attribute
                     nfixed += 1
                 else:
                     new_indices[i - start_id + nfixed] = j
@@ -559,7 +632,7 @@ class DynamicOctree:
 
                     if not self.atoms[j].is_fixed():
                         node.set_atom_index(k, j)
-                        self.atoms[j].set_id(self.create_octree_ptr(node_id, k))
+                        self.atoms[j].node_id = node_id  # Update node_id attribute
                         k += 1
 
         # If the node is not a leaf (i.e., it needs expansion), it proceeds to subdivide the node.
@@ -607,6 +680,11 @@ class DynamicOctree:
 
                 else:
                     node.set_child_pointer(i, -1)
+
+        # Update object_to_node_map for each atom in the expanded node
+        for i in range(start_id, end_id + 1):
+            j = indices[i]
+            self.object_to_node_map[self.atoms[j]] = node_id
 
         return True
 
@@ -726,6 +804,9 @@ class DynamicOctree:
         node.ly = ly
         node.lz = lz
         node.dim = dim
+        
+        # Assign the parent node's ID to the child node's ID
+        node.set_id(node_id)  # Assign the ID to the node
 
         if self.verbose:
             print(f"nonroot dim = {dim}")
@@ -754,7 +835,6 @@ class DynamicOctree:
 
         self.nodes[node_id].combine_and_set_attribs(child_attribs)
 
-
     def compute_leaf_attributes(self, node_id, indices, start_id, end_id):
         """
         Compute the attributes for a leaf node.
@@ -772,33 +852,35 @@ class DynamicOctree:
 
         node_atoms = [self.atoms[j] for j in indices[start_id:end_id + 1]]
 
+        # Update node_id attribute for each object
+        for atom in node_atoms:
+            atom.node_id = node_id
+
         print("prepared list of atoms")
 
         self.nodes[node_id].compute_own_attribs(node_atoms)
 
         print("computed attributes")
 
-
     def get_child_id(self, node, atom):
         """
-        Get the child ID of a node based on the position of an atom.
+        Get the child ID of a node based on the position of an object.
 
         Args:
             node (DynamicOctreeNode): The node.
-            atom (PDBParser.Atom): The atom.
+            atom (Object): The object.
 
         Returns:
             int: The child ID.
 
-        This method returns the child ID of a node based on the position of the given atom.
+        This method returns the child ID of a node based on the position of the given object.
         """
         dim = 0.5 * node.dim
         cx, cy, cz = node.lx + dim, node.ly + dim, node.lz + dim
 
-        k = ((atom.z >= cz) << 2) + ((atom.y >= cy) << 1) + (atom.x >= cx)
+        k = ((atom.getZ() >= cz) << 2) + ((atom.getY() >= cy) << 1) + (atom.getX() >= cx)
 
         return k
-        
         
     def collect_atoms_from_leaves(self, node_id, indices, start_id):
         """
@@ -930,7 +1012,6 @@ class DynamicOctree:
 
         return self.get_subtree_size(0)
 
-
     def remove_atom_from_leaf(self, node_id, atom_id):
         """
         Removes an atom from a leaf node.
@@ -971,6 +1052,13 @@ class DynamicOctree:
             node.atom_indices[j] = node.atom_indices[n - 1]
             self.atoms[node.atom_indices[j]].id = atom.id
 
+        # Update node_id attribute of the removed atom
+        self.atoms[atom_id].node_id = None
+        
+        # Remove the mapping from the object to node map
+        if atom_id in self.object_to_node_map:
+            del self.object_to_node_map[atom_id]
+
         node.num_atoms -= 1
 
         if n <= (node.id_cap >> 2):
@@ -1005,6 +1093,20 @@ class DynamicOctree:
         node = self.nodes[node_id]
         atom = self.atoms[atom_id]
 
+        # # Find the index of the atom in the node's atom_indices list
+        # atom_index = None
+        # for i in range(node.num_atoms):
+        #     if node.atom_indices[i] == atom_id:
+        #         atom_index = i
+        #         break
+
+        # if atom_index is None:
+        #     # Atom not found in the node's atom_indices list
+        #     return False
+
+        # # Remove the atom from the node's atom_indices list
+        # del node.atom_indices[atom_index]
+
         node.num_atoms -= 1
 
         if atom.is_fixed():
@@ -1012,11 +1114,17 @@ class DynamicOctree:
 
         node.update_attribs(atom, False)
 
+        # Update the node_id attribute of the removed atom to None
+        atom.node_id = None
+
+        # Remove the atom from the object_to_node_map dictionary
+        del self.object_to_node_map[atom]
+
+        # Check if the node needs dynamic contraction and contract if necessary
         if self.needs_dynamic_contraction(node):
             return self.contract_octree_node(node_id)
 
         return True
-
 
     def add_atom_to_non_leaf(self, node_id, atom_id):
         """
@@ -1038,12 +1146,21 @@ class DynamicOctree:
         node = self.nodes[node_id]
         atom = self.atoms[atom_id]
 
+        # Increase the number of atoms in the node
         node.num_atoms += 1
 
+        # Update the node attributes based on the added atom
+        node.update_attribs(atom, True)
+
+        # If the added atom is fixed, increase the number of fixed atoms in the node
         if atom.is_fixed():
             node.num_fixed += 1
 
-        node.update_attribs(atom, True)
+        # Update the node_id attribute of the added atom
+        atom.node_id = node_id
+
+        # Update the object_to_node_map
+        self.object_to_node_map[atom] = node_id
 
     def add_atom_to_leaf(self, node_id, atom_id):
         """
@@ -1058,7 +1175,7 @@ class DynamicOctree:
         """
         if self.verbose:
             print("In DynamicOctree::addAtomToLeaf")
-            
+
         # Ensure nodes and atoms lists have sufficient capacity
         if node_id >= len(self.nodes):
             self.nodes += [DynamicOctreeNode() for _ in range(node_id - len(self.nodes) + 1)]
@@ -1070,6 +1187,7 @@ class DynamicOctree:
 
         n = node.num_atoms
 
+        # Ensure capacity for atom indices in the leaf node
         if n == node.id_cap:
             if node.id_cap == 0:
                 node.id_cap = 1
@@ -1082,36 +1200,39 @@ class DynamicOctree:
 
             node.id_cap = node.id_cap << 1
 
+        # Add atom to the leaf node
         if atom.is_fixed():
             nf = node.num_fixed
 
+            # Swap if there are non-fixed atoms before the added fixed atom
             if n > 0:
                 node.atom_indices[n] = node.atom_indices[nf]
                 self.atoms[node.atom_indices[n]].id = self.create_octree_ptr(node_id, n)
 
+            # Add the fixed atom to the end
             node.atom_indices[nf] = atom_id
             atom.id = self.create_octree_ptr(node_id, nf)
+            atom.node_id = node_id  # Update node_id attribute
 
             node.num_fixed = nf + 1
         else:
-            # print("n: ", n)
-            # print(len(node.atom_indices))
             # Ensure node.atom_indices has sufficient capacity
             if n >= len(node.atom_indices):
                 node.atom_indices += [-1] * (n - len(node.atom_indices) + 1)
 
-            # Now assign the atom_id to the n-th position in node.atom_indices
+            # Add the non-fixed atom to the end
             node.atom_indices[n] = atom_id
             atom.id = self.create_octree_ptr(node_id, n)
+            atom.node_id = node_id  # Update node_id attribute
 
-        # print("Number of atoms: ", node.num_atoms)
+        # Update node attributes
         # node.num_atoms += 1
-
         node.update_attribs(atom, True)
-        
-        # Update indices list with the newly added atom index
-        indices = node.atom_indices[:node.num_atoms]
 
+        # Update object_to_node_map
+        self.object_to_node_map[atom] = node_id
+
+        # Check if dynamic expansion is needed and expand if necessary
         if self.needs_dynamic_expansion(node):
             temp = [None] * node.num_atoms
 
@@ -1120,9 +1241,9 @@ class DynamicOctree:
                 return False
 
             print("Number of atoms: ", node.num_atoms)
-            print("Indices: ", len(indices))
+            print("Indices: ", len(node.atom_indices))
             print("Node ID: ", node_id)
-            done = self.expand_octree_node(node_id, indices, temp, 0, node.num_atoms - 1)
+            done = self.expand_octree_node(node_id, node.atom_indices, temp, 0, node.num_atoms - 1)
 
             return done
         else:
@@ -1279,27 +1400,21 @@ class DynamicOctree:
 
         return True
 
-    def get_node_id(c):
-        return c >> 14
-
-    def update_octree(self, atom):
+    def update_octree(self, obj):
         """
-        Updates the octree structure with the given atom.
+        Updates the octree structure with the given object.
 
         Args:
-            atom (PDBParser.Atom): The atom to update the octree with.
+            obj (Object): The object to update the octree with.
         """
         if self.verbose:
             print("In DynamicOctree::updateOctree")
 
-        node_id = self.get_node_id(atom.get_id())
+        node_id = self.get_node_id(obj)  # Modify the function call here
         node = self.nodes[node_id]
-        j = self.get_index_in_node(atom.get_id())
-        atom_id = node.get_atom_index(j)
 
-        if not self.inside_node(node, atom):
-            self.pull_up(node_id, atom_id)
-
+        if not self.inside_node(node, obj):
+            self.pull_up(node_id, obj.id)
 
     def compute_score_recursive(self, octree_moving, static_node_id, moving_node_id, score_par, scores):
         """

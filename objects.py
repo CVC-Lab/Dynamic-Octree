@@ -14,6 +14,7 @@ class Object:
         z (float): Z-coordinate of the object's position.
         fixed (bool): Indicates whether the object is fixed in place.
         id (int or None): Unique identifier for the object.
+        object_to_node_map (dictionary): Mapping between Object and node_id
     """
     def __init__(self, position):
         """
@@ -25,6 +26,8 @@ class Object:
         self.x, self.y, self.z = position
         self.fixed = False  # Initialize fixed attribute to False
         self.id = None  # Initialize the id attribute
+        self.node_id = None  # Initialize the node_id attribute
+        # self.object_to_node_map = {}  # Initialize the object to node mapping
         
     def getX(self):
         """
