@@ -291,8 +291,8 @@ class DynamicOctree:
             #     atom = self.atoms[atom_id]
             #     node_id = self.get_node_id(atom)
             #     if node_id is not None:
-            #         self.set_node_id(atom, octree_root)  # Update node ID to the root node
-
+            #         self.set_node_id(atom, node_id)  # Update the object to node mapping to point to the node where the atom resides
+                    
         finally:
             # Free temporary storage
             del indices
