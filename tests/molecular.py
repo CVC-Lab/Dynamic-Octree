@@ -3,9 +3,12 @@ import sys, os
 # Adding Octree root to sys.path
 sys.path.insert(0, '../')
 sys.path.insert(0, "../data/molecular/")
+# File paths
 ATOMS_PATH = "../data/molecular/1BDD/atoms/initial.txt"
-ATOM_DIR = "1BDD/atoms/"
 CHANGES_PATH = "../data/molecular/1BDD/atoms/changes.txt"
+
+# For cleaning
+ATOM_DIR = "1BDD/atoms/"
 
 from Octree import DynamicOctree, OctreeConstructionParams
 from objects import Object
@@ -20,21 +23,20 @@ def populateInitial(atom_path):
         atom_path(str): Directory of all initial atom positions
     
     returns:
-        * all_atoms(dict{atom_id:(x,y,z)}): Dictionary of all atoms and their 
-        initial positions
+        * atoms(dict{atom_id:Object()): Dictionary of all atom objects and their ID
         * atom_list(lst[Object]): List of atom Objects
     """
     # Current atoms and their respective positions
-    # {atom_id:tuple(pos_x,pos_y,pos_z)}
-    atom_pos = {}
+    # {atom_id:Object()}
+    atoms = {}
     # List of atoms and starting positions
     # Used for construction of the octree
     # Populated with Object()
     atom_list = []
 
     # Populating 
-    with open(atom_path, 'r') as atoms:
-        data = [line.rstrip('\n').split() for line in atoms]
+    with open(atom_path, 'r') as path:
+        data = [line.rstrip('\n').split() for line in path]
         for i in data:
             atom_id = float(i[0]) # Atom id
             atom_x, atom_y, atom_z = float(i[1]), float(i[2]), float(i[3]) # xyz
@@ -45,18 +47,11 @@ def populateInitial(atom_path):
             # Populating list of atoms
             atom_list.append(atom)
             # Populating inital octree state
-            atom_pos[atom_id] = position
-    
-    print("Atom positions")
-    print(atom_pos)
-    print()
-    print("Atom List")
-    for i in atom_list:
-        print(f"{i.id} ({i.x},{i.y},{i.z})")
+            atoms[atom_id] = atom
 
-    return atom_pos, atom_list
+    return atoms, atom_list
 
-def populateChanges(atom_pos, changes_path)->list:
+def populateChanges(changes_path)->list:
     r"""
     Reads a changes file and creates a list of changes for the octree to update
 
@@ -88,9 +83,9 @@ def testOctreeMolecular(initial_path, changes_path):
         * initial_path(str): Path to initial atom positions file
         * changes_path(str): Path to changes in atom positions
     """
-    atom_pos, initial_atoms = populateInitial(initial_path)
+    atoms, initial_atoms = populateInitial(initial_path)
     print()
-    changes = populateChanges(atom_pos=atom_pos, changes_path=changes_path)
+    changes = populateChanges(changes_path=changes_path)
     num_atoms = len(initial_atoms)
 
     construction_params = OctreeConstructionParams(max_leaf_size=5,
@@ -109,8 +104,9 @@ def testOctreeMolecular(initial_path, changes_path):
 
     # Testing insertion and deletion of each atom
     # ! TODO
-    for i in changes:
-        octree.update_octree(i)
+    # octree.object_to_node_map: {Object:node_id}
+    for i in octree.object_to_node_map.items():
+        print(i)
 
 if __name__ == "__main__":
     cleanDirectory(ATOM_DIR)

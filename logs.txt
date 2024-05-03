@@ -1,5 +1,5 @@
 Starting DynamicOctree::buildOctree
-Number of Atoms:  20
+Number of Atoms:  10
 In DynamicOctree::initFreeNodeServer
 Inside DynamicOctree::allocateNodes(10)
 Allocated 10 nodes
@@ -18,84 +18,66 @@ In DynamicOctree::getNextFreeNode
 Next node is 0
 Root Node:  0
 In DynamicOctree::computeRootBoundingBox
-root dim = 90.58609295102217
-Numeber of atoms considered while expanding octree:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+root dim = 92.87531289812642
+Numeber of atoms considered while expanding octree:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 In DynamicOctree::expandOctreeNode
-Start and End IDs:  0 19
-nAtoms:  20
-In DynamicOctree::computeLeafAttributes(node_id=0, indices[start_id]=0, indices[end_id]=19)
-prepared list of atoms
-computed attributes
+Start and End IDs:  0 9
+nAtoms:  10
 In DynamicOctree::getNextFreeNode
 Next node is 1
-In DynamicOctree::computeNonRootBoundingBox(node_id=1, child_id=0)
-nonroot dim = 45.29304647551108
+In DynamicOctree::computeNonRootBoundingBox(node_id=1, child_id=2)
+nonroot dim = 46.43765644906321
 In DynamicOctree::expandOctreeNode
-Start and End IDs:  0 2
-nAtoms:  3
-In DynamicOctree::computeLeafAttributes(node_id=1, indices[start_id]=4, indices[end_id]=17)
-prepared list of atoms
-computed attributes
+Start and End IDs:  0 1
+nAtoms:  2
+Mapping <objects.Object object at 0x102fd80b0> to 1
+Mapping <objects.Object object at 0x102fd81d0> to 1
 In DynamicOctree::getNextFreeNode
 Next node is 2
-In DynamicOctree::computeNonRootBoundingBox(node_id=2, child_id=1)
-nonroot dim = 45.29304647551108
+In DynamicOctree::computeNonRootBoundingBox(node_id=2, child_id=3)
+nonroot dim = 46.43765644906321
 In DynamicOctree::expandOctreeNode
-Start and End IDs:  3 4
-nAtoms:  2
-In DynamicOctree::computeLeafAttributes(node_id=2, indices[start_id]=8, indices[end_id]=11)
-prepared list of atoms
-computed attributes
+Start and End IDs:  2 2
+nAtoms:  1
+Mapping <objects.Object object at 0x102fd9490> to 2
 In DynamicOctree::getNextFreeNode
 Next node is 3
-In DynamicOctree::computeNonRootBoundingBox(node_id=3, child_id=2)
-nonroot dim = 45.29304647551108
+In DynamicOctree::computeNonRootBoundingBox(node_id=3, child_id=4)
+nonroot dim = 46.43765644906321
 In DynamicOctree::expandOctreeNode
-Start and End IDs:  5 5
-nAtoms:  1
-In DynamicOctree::computeLeafAttributes(node_id=3, indices[start_id]=7, indices[end_id]=7)
-prepared list of atoms
-computed attributes
+Start and End IDs:  3 5
+nAtoms:  3
+Mapping <objects.Object object at 0x102fd0b90> to 3
+Mapping <objects.Object object at 0x102fd9370> to 3
+Mapping <objects.Object object at 0x102fd8140> to 3
 In DynamicOctree::getNextFreeNode
 Next node is 4
-In DynamicOctree::computeNonRootBoundingBox(node_id=4, child_id=4)
-nonroot dim = 45.29304647551108
+In DynamicOctree::computeNonRootBoundingBox(node_id=4, child_id=5)
+nonroot dim = 46.43765644906321
 In DynamicOctree::expandOctreeNode
-Start and End IDs:  6 8
-nAtoms:  3
-In DynamicOctree::computeLeafAttributes(node_id=4, indices[start_id]=5, indices[end_id]=12)
-prepared list of atoms
-computed attributes
+Start and End IDs:  6 7
+nAtoms:  2
+Mapping <objects.Object object at 0x102fd93d0> to 4
+Mapping <objects.Object object at 0x102fd9430> to 4
 In DynamicOctree::getNextFreeNode
 Next node is 5
-In DynamicOctree::computeNonRootBoundingBox(node_id=5, child_id=5)
-nonroot dim = 45.29304647551108
+In DynamicOctree::computeNonRootBoundingBox(node_id=5, child_id=6)
+nonroot dim = 46.43765644906321
 In DynamicOctree::expandOctreeNode
-Start and End IDs:  9 11
-nAtoms:  3
-In DynamicOctree::computeLeafAttributes(node_id=5, indices[start_id]=10, indices[end_id]=19)
-prepared list of atoms
-computed attributes
-In DynamicOctree::getNextFreeNode
-Next node is 6
-In DynamicOctree::computeNonRootBoundingBox(node_id=6, child_id=6)
-nonroot dim = 45.29304647551108
-In DynamicOctree::expandOctreeNode
-Start and End IDs:  12 14
-nAtoms:  3
-In DynamicOctree::computeLeafAttributes(node_id=6, indices[start_id]=0, indices[end_id]=14)
-prepared list of atoms
-computed attributes
-In DynamicOctree::getNextFreeNode
-Next node is 7
-In DynamicOctree::computeNonRootBoundingBox(node_id=7, child_id=7)
-nonroot dim = 45.29304647551108
-In DynamicOctree::expandOctreeNode
-Start and End IDs:  15 19
-nAtoms:  5
-In DynamicOctree::computeLeafAttributes(node_id=7, indices[start_id]=1, indices[end_id]=18)
-prepared list of atoms
-computed attributes
+Start and End IDs:  8 9
+nAtoms:  2
+Mapping <objects.Object object at 0x102fd3470> to 5
+Mapping <objects.Object object at 0x102fd34a0> to 5
+Mapping <objects.Object object at 0x102fd0b90> to 0
+Mapping <objects.Object object at 0x102fd3470> to 0
+Mapping <objects.Object object at 0x102fd34a0> to 0
+Mapping <objects.Object object at 0x102fd9370> to 0
+Mapping <objects.Object object at 0x102fd93d0> to 0
+Mapping <objects.Object object at 0x102fd9430> to 0
+Mapping <objects.Object object at 0x102fd9490> to 0
+Mapping <objects.Object object at 0x102fd80b0> to 0
+Mapping <objects.Object object at 0x102fd8140> to 0
+Mapping <objects.Object object at 0x102fd81d0> to 0
 Octree built
 Number of Nodes: 10
 In DynamicOctree::print
@@ -103,46 +85,150 @@ In DynamicOctree::print
 
 Node ID: 0
 Parent Pointer: -1
-Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x103040560>
+Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x102fd8410>
 Non-Leaf Node
-Child Pointers: [1, 2, 3, -1, 4, 5, 6, 7]
+Child Pointers: [-1, -1, 1, 2, 3, 4, 5, -1]
   Node ID: 1
   Parent Pointer: 0
-  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x1030405c0>
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x102fd8590>
   Leaf Node
-  Atom Indices: [4, 9, 17, -1, -1, -1]
+  Atom Indices: [7, 9, -1, -1]
   Node ID: 2
   Parent Pointer: 0
-  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x103040620>
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x102fd8710>
   Leaf Node
-  Atom Indices: [8, 11, -1, -1]
+  Atom Indices: [6, -1]
   Node ID: 3
   Parent Pointer: 0
-  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x103040680>
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x102fd95b0>
   Leaf Node
-  Atom Indices: [7, -1]
+  Atom Indices: [0, 3, 8, -1, -1, -1]
   Node ID: 4
   Parent Pointer: 0
-  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x1030406e0>
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x102fd9610>
   Leaf Node
-  Atom Indices: [5, 6, 12, -1, -1, -1]
+  Atom Indices: [4, 5, -1, -1]
   Node ID: 5
   Parent Pointer: 0
-  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x103040740>
+  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x102fd9670>
   Leaf Node
-  Atom Indices: [10, 16, 19, -1, -1, -1]
-  Node ID: 6
-  Parent Pointer: 0
-  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x1030407a0>
-  Leaf Node
-  Atom Indices: [0, 13, 14, -1, -1, -1]
-  Node ID: 7
-  Parent Pointer: 0
-  Node Attributes: <Octree.DynamicOctreeNodeAttr object at 0x103040800>
-  Leaf Node
-  Atom Indices: [1, 2, 3, 15, 18, -1, -1, -1, -1, -1]
+  Atom Indices: [1, 2, -1, -1]
 
 
-In DynamicOctree::traverseOctree
-0 ( 20, 90.586093 ): 
-Traversal completed!
+Initial octree status:
+Number of objects: 10
+Number of Nodes: 10
+object_to_node_map before adding new object: {<objects.Object object at 0x102fd80b0>: 0, <objects.Object object at 0x102fd81d0>: 0, <objects.Object object at 0x102fd9490>: 0, <objects.Object object at 0x102fd0b90>: 0, <objects.Object object at 0x102fd9370>: 0, <objects.Object object at 0x102fd8140>: 0, <objects.Object object at 0x102fd93d0>: 0, <objects.Object object at 0x102fd9430>: 0, <objects.Object object at 0x102fd3470>: 0, <objects.Object object at 0x102fd34a0>: 0}
+In DynamicOctree::addAtomToNonLeaf
+In DynamicOctree::addAtomToLeaf
+Number of atoms:  13
+Indices:  13
+Node ID:  0
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  0 12
+nAtoms:  13
+In DynamicOctree::getNextFreeNode
+Next node is 6
+In DynamicOctree::computeNonRootBoundingBox(node_id=6, child_id=0)
+nonroot dim = 46.43765644906321
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  0 12
+nAtoms:  13
+In DynamicOctree::getNextFreeNode
+Next node is 7
+In DynamicOctree::computeNonRootBoundingBox(node_id=7, child_id=6)
+nonroot dim = 23.218828224531606
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  0 12
+nAtoms:  13
+In DynamicOctree::getNextFreeNode
+Next node is 8
+In DynamicOctree::computeNonRootBoundingBox(node_id=8, child_id=6)
+nonroot dim = 11.609414112265803
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  0 12
+nAtoms:  13
+In DynamicOctree::getNextFreeNode
+Next node is 9
+In DynamicOctree::computeNonRootBoundingBox(node_id=9, child_id=7)
+nonroot dim = 5.8047070561329015
+In DynamicOctree::expandOctreeNode
+Start and End IDs:  0 12
+nAtoms:  13
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 9
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 8
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 7
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 6
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+Mapping <objects.Object object at 0x102fd9940> to 0
+object_to_node_map after adding new object: {<objects.Object object at 0x102fd80b0>: 0, <objects.Object object at 0x102fd81d0>: 0, <objects.Object object at 0x102fd9490>: 0, <objects.Object object at 0x102fd0b90>: 0, <objects.Object object at 0x102fd9370>: 0, <objects.Object object at 0x102fd8140>: 0, <objects.Object object at 0x102fd93d0>: 0, <objects.Object object at 0x102fd9430>: 0, <objects.Object object at 0x102fd3470>: 0, <objects.Object object at 0x102fd34a0>: 0, <objects.Object object at 0x102fd9910>: 0, <objects.Object object at 0x102fd9940>: 0}
+Octree status after adding new object:
+Number of objects: 10
+Number of Nodes: 10
+object_to_node_map before removing an object: {<objects.Object object at 0x102fd80b0>: 0, <objects.Object object at 0x102fd81d0>: 0, <objects.Object object at 0x102fd9490>: 0, <objects.Object object at 0x102fd0b90>: 0, <objects.Object object at 0x102fd9370>: 0, <objects.Object object at 0x102fd8140>: 0, <objects.Object object at 0x102fd93d0>: 0, <objects.Object object at 0x102fd9430>: 0, <objects.Object object at 0x102fd3470>: 0, <objects.Object object at 0x102fd34a0>: 0, <objects.Object object at 0x102fd9910>: 0, <objects.Object object at 0x102fd9940>: 0}
+In DynamicOctree::removeAtomFromNonLeaf
+In DynamicOctree::removeAtomFromLeaf
+object_to_node_map after removing an object: {<objects.Object object at 0x102fd80b0>: 0, <objects.Object object at 0x102fd81d0>: 0, <objects.Object object at 0x102fd9490>: 0, <objects.Object object at 0x102fd0b90>: 0, <objects.Object object at 0x102fd9370>: 0, <objects.Object object at 0x102fd8140>: 0, <objects.Object object at 0x102fd93d0>: 0, <objects.Object object at 0x102fd9430>: 0, <objects.Object object at 0x102fd3470>: 0, <objects.Object object at 0x102fd34a0>: 0, <objects.Object object at 0x102fd9910>: 0}
+Octree status after removing an object:
+Number of objects: 10
+Number of Nodes: 10
+All tests passed!

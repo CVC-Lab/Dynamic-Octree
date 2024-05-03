@@ -212,7 +212,7 @@ def test_object_to_node_map():
 
     # Print object_to_node_map after adding new object
     print("object_to_node_map after adding new object:", octree.object_to_node_map)
-
+    
     # Verify if the object_to_node_map is updated properly after adding an object
     # assert new_object in octree.object_to_node_map
     # assert octree.object_to_node_map[new_object] == 0  # Assuming added to the root node

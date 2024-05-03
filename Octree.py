@@ -285,14 +285,14 @@ class DynamicOctree:
             print("Numeber of atoms considered while expanding octree: ", indices)
             # Expand octree node
             self.octree_built = self.expand_octree_node(octree_root, indices, indices_temp, 0, self.num_atoms - 1)
-            
+            """
             # Update object to node mapping
             for atom_id in indices:
                 atom = self.atoms[atom_id]
                 node_id = self.get_node_id(atom)
                 if node_id is not None:
-                    self.set_node_id(atom, octree_root)  # Update node ID to the root node
-
+                    self.object_to_node_map[atom] = octree_root  # Update node ID to the root node
+            """
         finally:
             # Free temporary storage
             del indices
@@ -684,8 +684,8 @@ class DynamicOctree:
         # Update object_to_node_map for each atom in the expanded node
         for i in range(start_id, end_id + 1):
             j = indices[i]
+            print(f"Mapping {self.atoms[j]} to {node_id}")
             self.object_to_node_map[self.atoms[j]] = node_id
-
         return True
 
     def print_octree(self):
