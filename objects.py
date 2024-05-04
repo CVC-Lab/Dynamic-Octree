@@ -85,3 +85,14 @@ class Object:
 
     def get_id(self):
         return self.id
+    
+    def set_position(self, position):
+        r"""
+        Sets the position of the object given a position tuple
+
+        args:
+            position(tuple(x, y, z)): New position of the objec
+        """
+        self.x = float(position[0])
+        self.y = float(position[1])
+        self.z = float(position[2])

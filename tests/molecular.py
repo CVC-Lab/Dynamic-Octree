@@ -38,7 +38,7 @@ def populateInitial(atom_path):
     with open(atom_path, 'r') as path:
         data = [line.rstrip('\n').split() for line in path]
         for i in data:
-            atom_id = float(i[0]) # Atom id
+            atom_id = int(i[0])-1 # Atom id, 0th indexing
             atom_x, atom_y, atom_z = float(i[1]), float(i[2]), float(i[3]) # xyz
             position = [atom_x, atom_y, atom_z]
             atom = Object(position=position)
@@ -62,20 +62,20 @@ def populateChanges(changes_path)->list:
     returns:
         changes(list[Object]): List of atom objects with new positions (not exclusive)
     """
-    changes = []
+    id_changes = []
+    position_changes = []
 
     with open(changes_path, 'r') as c:
         data = [line.rstrip('\n').split() for line in c]
         for i in data:
-            id = float(i[0]) # atom id
-            position = (i[1], i[2], i[3]) # xyz
-            atom = Object(position=position)
-            atom.set_id(id)
-            changes.append(atom)
+            id = int(i[0])-1 # atom id, 0th indexing
+            position = (float(i[1]), float(i[2]), float(i[3])) # xyz
+            id_changes.append(id)
+            position_changes.append(position)
 
-    return changes
+    return id_changes, position_changes
 
-def testOctreeMolecular(initial_path, changes_path):
+def testOctreeMolecular(initial_path, changes_path, verbose=True):
     r"""
     Testing octree with a short molecular trajectory path
 
@@ -85,7 +85,7 @@ def testOctreeMolecular(initial_path, changes_path):
     """
     atoms, initial_atoms = populateInitial(initial_path)
     print()
-    changes = populateChanges(changes_path=changes_path)
+    id_changes, position_changes = populateChanges(changes_path=changes_path)
     num_atoms = len(initial_atoms)
 
     construction_params = OctreeConstructionParams(max_leaf_size=5,
@@ -103,10 +103,36 @@ def testOctreeMolecular(initial_path, changes_path):
     assert octree.build_octree() == True
 
     # Testing insertion and deletion of each atom
-    # ! TODO
     # octree.object_to_node_map: {Object:node_id}
-    for i in octree.object_to_node_map.items():
-        print(i)
+    # ! TODO
+    for index, value in enumerate(id_changes):
+        # Getting atom object from an id
+        atom_object = atoms[value]
+
+        node_id = octree.object_to_node_map[atom_object]
+        atom_id = value
+
+        try:
+            #* Not sure when to use non-leaf vs leaf
+            octree.remove_atom_from_non_leaf(node_id, atom_id)
+            if verbose:
+                print(node_id, atom_id)
+                print("Atom_object xyz before change")
+                print(atom_object.x, atom_object.y, atom_object.z)
+            position = position_changes[index]
+            atom_object.set_position(position)
+            if verbose:
+                print("Atom_object xyz after change")
+                print(atom_object.x, atom_object.y, atom_object.z)
+                print("")
+                print("")
+
+            # Ideally we would use
+            # octree.update(atom_object)
+            #* Not sure when to use non-leaf vs leaf
+            octree.add_atom_to_non_leaf(node_id, atom_id)
+        except:
+            print(f"Error at {node_id}, {atom_id}")
 
 if __name__ == "__main__":
     cleanDirectory(ATOM_DIR)

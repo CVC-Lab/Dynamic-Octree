@@ -681,8 +681,8 @@ class DynamicOctree:
                         atom_index = indices_temp[k]
                         self.object_to_node_map[self.atoms[atom_index]] = j
                         
-                    print("\nobject to node map after expanding the octree: ", self.object_to_node_map)
-                    print("\n")
+                    # print("\nobject to node map after expanding the octree: ", self.object_to_node_map)
+                    # print("\n")
 
                     if not self.expand_octree_node(j, indices_temp, indices, start_index[i], start_index[i] + count[i] - 1):
                         return False
@@ -911,7 +911,7 @@ class DynamicOctree:
 
         This method recursively collects atoms from leaf nodes and stores their indices in the indices list.
         """
-        if self.nodes[node_id].is_leaf():
+        if self.nodes[node_id].is_leaf:
             for i in range(self.nodes[node_id].num_atoms):
                 indices[start_id + i] = self.nodes[node_id].atom_indices[i]
         else:
@@ -940,8 +940,8 @@ class DynamicOctree:
 
         n_atoms = node.num_atoms
 
-        if not self.needs_contraction(node):
-            return True
+        # if not self.needs_contraction(node):
+        #     return True
 
         self.compute_non_leaf_attributes(node_id)
 
@@ -1136,7 +1136,8 @@ class DynamicOctree:
         atom.node_id = None
 
         # Remove the atom from the object_to_node_map dictionary
-        del self.object_to_node_map[atom]
+        if self.get_node_id(atom) != None:
+            del self.object_to_node_map[atom]
 
         # Check if the node needs dynamic contraction and contract if necessary
         if self.needs_dynamic_contraction(node):
@@ -1433,6 +1434,16 @@ class DynamicOctree:
 
         if not self.inside_node(node, obj):
             self.pull_up(node_id, obj.id)
+
+    def inside_node(self, node, atom):
+        return (
+            (atom.x - node.lx >= 0) and
+            (atom.x - node.lx < node.dim) and
+            (atom.y - node.ly >= 0) and
+            (atom.y - node.ly < node.dim) and
+            (atom.y - node.lz >= 0) and
+            (atom.z - node.lz < node.dim)
+        )
 
     def compute_score_recursive(self, octree_moving, static_node_id, moving_node_id, score_par, scores):
         """
