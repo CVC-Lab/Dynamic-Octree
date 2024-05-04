@@ -109,27 +109,31 @@ def testOctreeMolecular(initial_path, changes_path, verbose=True):
         # Getting atom object from an id
         atom_object = atoms[value]
 
+        # Node and atom_id for the remove_atom/add_atom functions
         node_id = octree.object_to_node_map[atom_object]
         atom_id = value
 
         try:
+            #! Ideally we would use
+            #! octree.update(atom_object)
             #* Not sure when to use non-leaf vs leaf
+            # First removes the atom from the Octree, modifies
+            # the atom with a new position, and readds the atom
             octree.remove_atom_from_non_leaf(node_id, atom_id)
             if verbose:
                 print(node_id, atom_id)
                 print("Atom_object xyz before change")
                 print(atom_object.x, atom_object.y, atom_object.z)
-            position = position_changes[index]
-            atom_object.set_position(position)
+            position = position_changes[index] # Get updated position of atom
+            atom_object.set_position(position) # Set new atom position
             if verbose:
                 print("Atom_object xyz after change")
                 print(atom_object.x, atom_object.y, atom_object.z)
                 print("")
                 print("")
 
-            # Ideally we would use
-            # octree.update(atom_object)
             #* Not sure when to use non-leaf vs leaf
+            # Readds the atom to the Octree
             octree.add_atom_to_non_leaf(node_id, atom_id)
         except:
             print(f"Error at {node_id}, {atom_id}")
