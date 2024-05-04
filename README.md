@@ -34,3 +34,12 @@ The structuring of the repository is as follows:
 - `octree.py`: which contains the key classes of the data structure
 - `main.py`: contains several test cases to showcase the working of the data structure in action
 - `objects.py`: a template class to show how any given object should be defined to work with the data structure.
+
+# Running Tests
+
+# Molecular
+## Generating Datasets
+Install Pyrosetta using the instructions provided [here](https://www.pyrosetta.org/downloads). After installing and activating the Pyrosetta environment, generate the dataset if necessary by going to `./data/molecular/` and running `python  generateTrajectory.py` to generate the trajectory data from a PDB (default=1bdd.pdb). After generating the trajectory data, generate the atoms dataset by running `python writeAtoms.py` in the same directory.
+
+## Running Tests
+Go back to `./tests` and run `python molecular.py > logs.txt` to run the tests and generate the output files into `logs.txt`. *Currently, the octree uses `remove_atoms` followed by `add_atoms` to modify atom positions but in the future it will use `update_octree`.
