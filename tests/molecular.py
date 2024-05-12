@@ -119,22 +119,30 @@ def testOctreeMolecular(initial_path, changes_path, verbose=True):
             #* Not sure when to use non-leaf vs leaf
             # First removes the atom from the Octree, modifies
             # the atom with a new position, and readds the atom
-            octree.remove_atom_from_non_leaf(node_id, atom_id)
+
             if verbose:
                 print(node_id, atom_id)
                 print("Atom_object xyz before change")
                 print(atom_object.x, atom_object.y, atom_object.z)
+
+            octree.remove_atom_from_non_leaf(node_id, atom_id)
+
             position = position_changes[index] # Get updated position of atom
             atom_object.set_position(position) # Set new atom position
+
+            if verbose:
+                print(f"Updated atom {atom_id} to {position}")
+
+            #* Not sure when to use non-leaf vs leaf
+            # Readds the atom to the Octree
+            octree.add_atom_to_non_leaf(node_id, atom_id)
+
             if verbose:
                 print("Atom_object xyz after change")
                 print(atom_object.x, atom_object.y, atom_object.z)
                 print("")
                 print("")
 
-            #* Not sure when to use non-leaf vs leaf
-            # Readds the atom to the Octree
-            octree.add_atom_to_non_leaf(node_id, atom_id)
         except:
             print(f"Error at {node_id}, {atom_id}")
 

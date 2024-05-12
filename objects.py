@@ -16,7 +16,7 @@ class Object:
         id (int or None): Unique identifier for the object.
         object_to_node_map (dictionary): Mapping between Object and node_id
     """
-    def __init__(self, position):
+    def __init__(self, position, id=None):
         """
         Initialize an object with a given position.
 
@@ -25,9 +25,9 @@ class Object:
         """
         self.x, self.y, self.z = position
         self.fixed = False  # Initialize fixed attribute to False
-        self.id = None  # Initialize the id attribute
-        self.node_id = None  # Initialize the node_id attribute
-        # self.object_to_node_map = {}  # Initialize the object to node mapping
+        self.id = id  # Initialize the id attribute
+        self.node_id = 0  # Initialize the node_id attribute
+        self.data = None
         
     def getX(self):
         """
@@ -96,3 +96,36 @@ class Object:
         self.x = float(position[0])
         self.y = float(position[1])
         self.z = float(position[2])
+
+    def setData(self, data):
+        r"""
+        Sets the data for the object
+
+        Args:
+            data(Any): Data for object
+        """
+        self.data = data
+
+    def getData(self):
+        r"""
+        Returns the data for a given object
+
+        returns:
+            self.data(Any): Data for an object
+        """
+        return self.data
+    
+    def setNodeID(self, id):
+        r"""
+        Sets the Node ID of the object
+        """
+        self.node_id = id
+
+    def getNodeID(self):
+        r"""
+        Returns the Node ID of the object
+
+        returns:
+            node_id(int): Node ID associated with object
+        """
+        return self.node_id

@@ -680,6 +680,7 @@ class DynamicOctree:
                     for k in range(start_index[i], start_index[i] + count[i]):
                         atom_index = indices_temp[k]
                         self.object_to_node_map[self.atoms[atom_index]] = j
+                        self.atoms[atom_index].setNodeID(j)
                         
                     # print("\nobject to node map after expanding the octree: ", self.object_to_node_map)
                     # print("\n")
@@ -1180,6 +1181,7 @@ class DynamicOctree:
 
         # Update the object_to_node_map
         self.object_to_node_map[atom] = node_id
+        atom.setNodeID(node_id)
 
     def add_atom_to_leaf(self, node_id, atom_id):
         """
@@ -1250,6 +1252,7 @@ class DynamicOctree:
 
         # Update object_to_node_map
         self.object_to_node_map[atom] = node_id
+        atom.setNodeID(node_id)
 
         # Check if dynamic expansion is needed and expand if necessary
         if self.needs_dynamic_expansion(node):

@@ -35,6 +35,9 @@ The structuring of the repository is as follows:
 - `main.py`: contains several test cases to showcase the working of the data structure in action
 - `objects.py`: a template class to show how any given object should be defined to work with the data structure.
 
+# Cython Implementation of the Octree
+Navigate to the `Octree/cython/` directory and run `python setup.py build_ext --inplace` to build the Octree file. This will build the associated `objects.pyx` and `octree.pyx` to be able to use later on.
+
 # Running Tests
 
 # Molecular
