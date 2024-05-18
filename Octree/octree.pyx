@@ -1,16 +1,9 @@
-# octree.pyx
-cdef class Object:
-    cdef public double x, y, z
-    cdef public bint fixed
-    cdef public int id
-    cdef public int node_id
-    cdef public object data
-
 from objects cimport Object
 
 import sys
 from libc.math cimport sqrt
 from libc.stdlib cimport malloc, free
+import random
 
 cdef int INIT_NUM_OCTREE_NODES = 5
 cdef int LOW_BITS = 14
@@ -129,6 +122,12 @@ cdef class DynamicOctreeNode:
         self.attribs = DynamicOctreeNodeAttr()
 
     cpdef bint is_leaf(self):
+        """
+        Check if the node is a leaf node.
+
+        Returns:
+            bool: True if the node is a leaf, False otherwise.
+        """
         return self.leaf
 
     cpdef void set_child_pointer(self, int loc, int ptr):
@@ -506,11 +505,10 @@ cdef class DynamicOctree:
         if self.verbose:
             print("In DynamicOctree::print")
         print("\n")
-        # self.traverse_and_print(0, 3)
         self.print_node_details(0)
         print("\n")
 
-    cdef void print_node_details(self, int node_id, str indent=""):
+    cpdef void print_node_details(self, int node_id, str indent=""):
         """
         Print details of a node and its children recursively.
 
@@ -535,7 +533,7 @@ cdef class DynamicOctree:
                 if child_id != -1:
                     self.print_node_details(child_id, indent + "  ")
 
-    cdef void traverse_and_print(self, int node_id, int depth):
+    cpdef void traverse_and_print(self, int node_id, int depth):
         """
         Traverse the octree and print the contents of each node.
 
@@ -566,7 +564,7 @@ cdef class DynamicOctree:
         #             self.traverse_and_print(child_id, depth + 1)
         print("\n")
 
-    cdef void compute_non_root_bounding_box(self, int node_id, int child_id=None):
+    cpdef void compute_non_root_bounding_box(self, int node_id, int child_id=-1):
         """
         Compute the bounding box for a non-root node.
 
@@ -586,13 +584,13 @@ cdef class DynamicOctree:
 
         cdef DynamicOctreeNode pnode = self.nodes[node.parent_pointer]
 
-        if child_id is None:
+        if child_id is -1:
             for i in range(8):
                 if pnode.child_pointer[i] == node_id:
                     child_id = i
                     break
 
-            if child_id is None:
+            if child_id is -1:
                 return
 
         cdef double lx = pnode.lx
@@ -620,7 +618,7 @@ cdef class DynamicOctree:
         # if self.verbose:
         #     print(f"nonroot dim = {dim}")
 
-    cdef void compute_non_leaf_attributes(self, int node_id):
+    cpdef void compute_non_leaf_attributes(self, int node_id):
         """
         Compute the attributes for a non-leaf node.
 
@@ -646,7 +644,7 @@ cdef class DynamicOctree:
 
         self.nodes[node_id].combine_and_set_attribs(child_attribs)
 
-    cdef void compute_leaf_attributes(self, int node_id, list indices, int start_id, int end_id):
+    cpdef void compute_leaf_attributes(self, int node_id, list indices, int start_id, int end_id):
         """
         Compute the attributes for a leaf node.
 
@@ -673,7 +671,7 @@ cdef class DynamicOctree:
 
         # print("computed attributes")
 
-    cdef int get_child_id(self, DynamicOctreeNode node, Object atom):
+    cpdef int get_child_id(self, DynamicOctreeNode node, Object atom):
         """
         Get the child ID of a node based on the position of an object.
 
@@ -695,7 +693,7 @@ cdef class DynamicOctree:
 
         return k
 
-    cdef void collect_atoms_from_leaves(self, int node_id, list indices, int start_id):
+    cpdef void collect_atoms_from_leaves(self, int node_id, list indices, int start_id):
         """
         Recursively collects atoms from leaf nodes.
 
@@ -717,7 +715,7 @@ cdef class DynamicOctree:
                     start_id += self.nodes[child_id].num_atoms
                     self.free_node(child_id)
 
-    cdef bint contract_octree_node(self, int node_id):
+    cpdef bint contract_octree_node(self, int node_id):
         """
         Contracts the octree node if necessary.
 
@@ -754,13 +752,13 @@ cdef class DynamicOctree:
             j = new_indices[i]
             self.atoms[j].set_id(self.create_octree_ptr(node_id, i))
 
-        node.is_leaf = True
+        node.leaf = True
         node.id_cap = 2 * n_atoms
         node.atom_indices = new_indices
 
         return True
 
-    cdef void traverse_octree(self, int node_id):
+    cpdef void traverse_octree(self, int node_id):
         """
         Traverses the octree recursively and prints information about each node.
 
@@ -772,21 +770,21 @@ cdef class DynamicOctree:
 
         cdef DynamicOctreeNode node = self.nodes[node_id]
 
-        print("%d ( %d, %lf ): " % (node_id, node.num_atoms, node.dim), end="")  # REMOVED num_fixed from here, CHECK IF THAT IS USEFUL
+        print("%d ( %d, %lf ): " % (node_id, node.num_atoms, node.dim))
 
-        if not node.is_leaf:
+        if not node.leaf:
             for i in range(8):
                 if node.child_pointers[i] >= 0:
-                    print("%d " % node.child_pointers[i], end="")
+                    print("%d " % node.child_pointers[i])
 
         print()
 
-        if not node.is_leaf:
+        if not node.leaf:
             for i in range(8):
                 if node.child_pointers[i] >= 0:
                     self.traverse_octree(node.child_pointers[i])
 
-    cdef int get_subtree_size(self, int node_id):
+    cpdef int get_subtree_size(self, int node_id):
         """
         Calculates the size of the subtree rooted at the given node.
 
@@ -805,14 +803,14 @@ cdef class DynamicOctree:
 
         s += node.id_cap * sys.getsizeof(int)
 
-        if not node.is_leaf:
+        if not node.is_leaf():
             for i in range(8):
                 if node.child_pointers[i] >= 0:
                     s += self.get_subtree_size(node.child_pointers[i])
 
         return s
 
-    cdef int get_octree_size(self):
+    cpdef int get_octree_size(self):
         """
         Calculates the size of the entire octree.
 
@@ -824,67 +822,59 @@ cdef class DynamicOctree:
 
         return self.get_subtree_size(0)
 
-cdef bint remove_atom_from_leaf(self, int node_id, int atom_id):
-    """ Removes an atom from a leaf node.
-    Args:
-        node_id (int): The ID of the leaf node.
-        atom_id (int): The ID of the atom to remove.
-    Returns:
-        bool: True if successful, False otherwise.
-    """
-cdef bint remove_atom_from_leaf(self, int node_id, int atom_id):
-    """ Removes an atom from a leaf node.
-    Args:
-        node_id (int): The ID of the leaf node.
-        atom_id (int): The ID of the atom to remove.
-    Returns:
-        bool: True if successful, False otherwise.
-    """
-    if self.verbose:
-        print("In DynamicOctree::removeAtomFromLeaf")
-    cdef Object atom = self.atoms[atom_id]
-    cdef int j = self.get_index_in_node(atom.id)
-    cdef DynamicOctreeNode node = self.nodes[node_id]
-    cdef int n = node.num_atoms
-    cdef int index_nf, index_j
-    if atom.is_fixed():
-        n_fixed = node.n_fixed
-        node.atom_indices[j] = node.atom_indices[n_fixed - 1]
-        node.atom_indices[n_fixed - 1] = node.atom_indices[n - 1]
-        index_nf = node.atom_indices[n_fixed - 1]
-        index_j = node.atom_indices[j]
-        self.atoms[index_nf].id = self.atoms[index_j].id
-        self.atoms[index_j].id = atom.id
-        node.n_fixed = n_fixed - 1
-    else:
-        node.atom_indices[j] = node.atom_indices[n - 1]
-        self.atoms[node.atom_indices[j]].id = atom.id
+    cpdef bint remove_atom_from_leaf(self, int node_id, int atom_id):
+        """ Removes an atom from a leaf node.
+        Args:
+            node_id (int): The ID of the leaf node.
+            atom_id (int): The ID of the atom to remove.
+        Returns:
+            bool: True if successful, False otherwise.
+        """
+        if self.verbose:
+            print("In DynamicOctree::removeAtomFromLeaf")
+        cdef Object atom = self.atoms[atom_id]
+        cdef int j = self.get_index_in_node(atom.id)
+        cdef DynamicOctreeNode node = self.nodes[node_id]
+        cdef int n = node.num_atoms
+        cdef int index_nf, index_j
+        if atom.is_fixed():
+            n_fixed = node.n_fixed
+            node.atom_indices[j] = node.atom_indices[n_fixed - 1]
+            node.atom_indices[n_fixed - 1] = node.atom_indices[n - 1]
+            index_nf = node.atom_indices[n_fixed - 1]
+            index_j = node.atom_indices[j]
+            self.atoms[index_nf].id = self.atoms[index_j].id
+            self.atoms[index_j].id = atom.id
+            node.n_fixed = n_fixed - 1
+        else:
+            node.atom_indices[j] = node.atom_indices[n - 1]
+            self.atoms[node.atom_indices[j]].id = atom.id
 
-        # Update node_id attribute of the removed atom
-        self.atoms[atom_id].node_id = None
+            # Update node_id attribute of the removed atom
+            self.atoms[atom_id].node_id = None
 
-        # Remove the mapping from the object to node map
-        if atom_id in self.object_to_node_map:
-            del self.object_to_node_map[atom_id]
+            # Remove the mapping from the object to node map
+            if atom_id in self.object_to_node_map:
+                del self.object_to_node_map[atom_id]
 
-        node.num_atoms -= 1
+            node.num_atoms -= 1
 
-        if n <= (node.id_cap >> 2):
-            new_indices = node.atom_indices[:node.id_cap >> 1]
+            if n <= (node.id_cap >> 2):
+                new_indices = node.atom_indices[:node.id_cap >> 1]
 
-            if new_indices is None:
-                print("Failed to contract leaf storage for octree!")
-                return False
+                if new_indices is None:
+                    print("Failed to contract leaf storage for octree!")
+                    return False
 
-            node.atom_indices = new_indices
-            node.id_cap = node.id_cap >> 1
+                node.atom_indices = new_indices
+                node.id_cap = node.id_cap >> 1
 
-        node.update_attribs(atom, False)
-        atom.id = -1
+            node.update_attribs(atom, False)
+            atom.id = -1
 
-        return True
+            return True
 
-    cdef bint remove_atom_from_non_leaf(self, int node_id, int atom_id):
+    cpdef bint remove_atom_from_non_leaf(self, int node_id, int atom_id):
         """
         Removes an atom from a non-leaf node.
 
@@ -900,3 +890,332 @@ cdef bint remove_atom_from_leaf(self, int node_id, int atom_id):
 
         cdef DynamicOctreeNode node = self.nodes[node_id]
         cdef Object atom = self.atoms[atom_id]
+
+        node.num_atoms -= 1
+
+        if atom.is_fixed():
+            node.num_fixed -= 1
+
+        node.update_attribs(atom, False)
+
+        # Update the node_id attribute of the removed atom to None
+        atom.node_id = -1
+
+        # Remove the atom from the object_to_node_map dictionary
+        if self.get_node_id(atom) is not None:
+            del self.object_to_node_map[atom]
+
+        # Check if the node needs dynamic contraction and contract if necessary
+        if self.needs_dynamic_contraction(node):
+            return self.contract_octree_node(node_id)
+
+        return True
+
+    cpdef void add_atom_to_non_leaf(self, int node_id, int atom_id):
+        """
+        Adds an atom to a non-leaf node.
+
+        Args:
+            node_id (int): The ID of the non-leaf node.
+            atom_id (int): The ID of the atom to add.
+        """
+        if self.verbose:
+            print("In DynamicOctree::addAtomToNonLeaf")
+
+        # Ensure nodes and atoms lists have sufficient capacity
+        if node_id >= len(self.nodes):
+            self.nodes += [DynamicOctreeNode() for _ in range(node_id - len(self.nodes) + 1)]
+        if atom_id >= len(self.atoms):
+            self.atoms += [Object([random.uniform(0, 100), random.uniform(0, 100), random.uniform(0, 100)]) for _ in range(atom_id - len(self.atoms) + 1)]
+
+        cdef DynamicOctreeNode node = self.nodes[node_id]
+        cdef Object atom = self.atoms[atom_id]
+
+        # Increase the number of atoms in the node
+        node.num_atoms += 1
+
+        # Update the node attributes based on the added atom
+        node.update_attribs(atom, True)
+
+        # If the added atom is fixed, increase the number of fixed atoms in the node
+        if atom.is_fixed():
+            node.num_fixed += 1
+
+        # Update the node_id attribute of the added atom
+        atom.node_id = node_id
+
+        # Update the object_to_node_map
+        self.object_to_node_map[atom] = node_id
+        atom.setNodeID(node_id)
+
+    cpdef bint add_atom_to_leaf(self, int node_id, int atom_id):
+        """
+        Adds an atom to a leaf node.
+
+        Args:
+            node_id (int): The ID of the leaf node.
+            atom_id (int): The ID of the atom to add.
+
+        Returns:
+            bool: True if successful, False otherwise.
+        """
+        if self.verbose:
+            print("In DynamicOctree::addAtomToLeaf")
+
+        # Ensure nodes and atoms lists have sufficient capacity
+        if node_id >= len(self.nodes):
+            self.nodes += [DynamicOctreeNode() for _ in range(node_id - len(self.nodes) + 1)]
+        if atom_id >= len(self.atoms):
+            self.atoms += [Object([random.uniform(0, 100), random.uniform(0, 100), random.uniform(0, 100)]) for _ in range(atom_id - len(self.atoms) + 1)]
+
+        cdef DynamicOctreeNode node = self.nodes[node_id]
+        cdef Object atom = self.atoms[atom_id]
+
+        cdef int n = node.num_atoms
+        cdef int nf
+
+        # Ensure capacity for atom indices in the leaf node
+        if n == node.id_cap:
+            if node.id_cap == 0:
+                node.id_cap = 1
+                node.atom_indices = [None] * (node.id_cap << 1)
+            else:
+                node.atom_indices += [None] * (node.id_cap << 1)
+            if node.atom_indices is None:
+                print("Failed to expand leaf storage for octree!")
+                return False
+
+            node.id_cap = node.id_cap << 1
+
+        # Add atom to the leaf node
+        if atom.is_fixed():
+            nf = node.num_fixed
+
+            # Swap if there are non-fixed atoms before the added fixed atom
+            if n > 0:
+                node.atom_indices[n] = node.atom_indices[nf]
+                self.atoms[node.atom_indices[n]].id = self.create_octree_ptr(node_id, n)
+
+            # Add the fixed atom to the end
+            node.atom_indices[nf] = atom_id
+            atom.id = self.create_octree_ptr(node_id, nf)
+            atom.node_id = node_id  # Update node_id attribute
+
+            node.num_fixed = nf + 1
+        else:
+            # Ensure node.atom_indices has sufficient capacity
+            if n >= len(node.atom_indices):
+                node.atom_indices += [-1] * (n - len(node.atom_indices) + 1)
+
+            # Add the non-fixed atom to the end
+            node.atom_indices[n] = atom_id
+            atom.id = self.create_octree_ptr(node_id, n)
+            atom.node_id = node_id  # Update node_id attribute
+
+        # Update node attributes
+        # node.num_atoms += 1
+        node.update_attribs(atom, True)
+
+        # Update object_to_node_map
+        self.object_to_node_map[atom] = node_id
+        atom.setNodeID(node_id)
+
+        # Check if dynamic expansion is needed and expand if necessary
+        if self.needs_dynamic_expansion(node):
+            temp = [None] * node.num_atoms
+
+            if temp is None:
+                print("Failed to allocate temporary storage for octree!")
+                return False
+
+            print("Number of atoms: ", node.num_atoms)
+            print("Indices: ", len(node.atom_indices))
+            print("Node ID: ", node_id)
+            done = self.expand_octree_node(node_id, node.atom_indices, temp, 0, node.num_atoms - 1)
+
+            return done
+        else:
+            return True
+
+    cpdef bint pull_up(self, int node_id, int atom_id):
+        """
+        Pulls up an atom in the octree.
+
+        Args:
+            node_id (int): The ID of the current node.
+            atom_id (int): The ID of the atom to pull up.
+
+        Returns:
+            bool: True if successful, False otherwise.
+        """
+        if self.verbose:
+            print("In DynamicOctree::pullUp")
+
+        cdef DynamicOctreeNode node = self.nodes[node_id]
+        cdef Object atom = self.atoms[atom_id]
+
+        if not self.inside_node(node, atom):
+            if node.parent_pointer < 0:
+                print("Atom has moved outside the root bounding box!")
+                return False
+
+            if node.is_leaf():
+                self.remove_atom_from_leaf(node_id, atom_id)
+            else:
+                self.remove_atom_from_non_leaf(node_id, atom_id)
+
+            return self.pull_up(node.parent_pointer, atom_id)
+        else:
+            return self.push_down(node_id, atom_id)
+
+    cpdef bint push_down(self, int node_id, int atom_id):
+        """
+        Pushes down an atom in the octree.
+
+        Args:
+            node_id (int): The ID of the current node.
+            atom_id (int): The ID of the atom to push down.
+
+        Returns:
+            bool: True if successful, False otherwise.
+        """
+        if self.verbose:
+            print("In DynamicOctree::pushDown")
+
+        cdef DynamicOctreeNode node = self.nodes[node_id]
+        cdef Object atom = self.atoms[atom_id]
+        cdef double lx, ly, lz, hdim
+        cdef int j
+
+        if node.is_leaf():
+            return self.add_atom_to_leaf(node_id, atom_id)
+        else:
+            self.add_atom_to_non_leaf(node_id, atom_id)
+
+            for i in range(8):
+                if node.child_pointer[i] >= 0:
+                    cnode = self.nodes[node.child_pointer[i]]
+                    if self.inside_node(cnode, atom):
+                        return self.push_down(node.child_pointer[i], atom_id)
+                else:
+                    lx = node.lx
+                    ly = node.ly
+                    lz = node.lz
+                    hdim = 0.5 * node.dim
+
+                    if i & 1:
+                        lx += hdim
+                    if i & 2:
+                        ly += hdim
+                    if i & 4:
+                        lz += hdim
+
+                    if not (lx <= atom.x < lx + hdim and ly <= atom.y < ly + hdim and lz <= atom.z < lz + hdim):
+                        continue
+
+                    j = self.get_next_free_node()
+                    node = self.nodes[node_id]
+                    node.child_pointer[i] = j
+                    cnode = self.nodes[j]
+                    cnode.parent_pointer = node_id
+                    cnode.lx = lx
+                    cnode.ly = ly
+                    cnode.lz = lz
+                    cnode.dim = hdim
+                    cnode.is_leaf = True
+                    return self.push_down(j, atom_id)
+
+            return False
+
+    cpdef void destroy_octree(self):
+        """
+        Destroys the octree, freeing memory.
+        """
+        if self.verbose:
+            print("In DynamicOctree::destroyOctree")
+
+        if self.octree_built:
+            self.free_subtree_nodes(0)
+
+        self.free_mem(self.nodes)
+
+    cpdef void free_subtree_nodes(self, int node_id):
+        """
+        Frees the memory occupied by the subtree rooted at the given node.
+
+        Args:
+            node_id (int): The ID of the node to start the subtree from.
+        """
+        if self.verbose:
+            print("In DynamicOctree::freeSubtreeNodes")
+
+        if node_id >= self.num_nodes or node_id < 0:
+            print("Node_id is out of bounds in freeSubtreeNodes")
+            return
+
+        cdef DynamicOctreeNode node = self.nodes[node_id]
+
+        if not node.is_leaf():
+            for i in range(8):
+                if node.get_child_pointer(i) >= 0:
+                    self.free_subtree_nodes(node.get_child_pointer(i))
+
+        self.free_node(node_id)
+
+    cpdef bint reorganize_octree(self, bint batch_update):
+        """
+        Reorganizes the octree by updating its structure.
+
+        Args:
+            batch_update (bool): Flag indicating whether to perform batch updates.
+
+        Returns:
+            bool: True if reorganization succeeds, False otherwise.
+        """
+        cdef int emp
+
+        if self.verbose:
+            print("In DynamicOctree::reorganizeOctree")
+
+        if batch_update:
+            emp = 0
+            if not self.batch_pull_up(0, emp):
+                return False
+            if not self.batch_push_down(0):
+                return False
+        else:
+            for i in range(self.num_atoms):
+                atom = self.atoms[i]
+                if not atom.is_fixed():
+                    self.update_octree(atom)
+
+        return True
+
+    cpdef void update_octree(self, Object obj):
+        """
+        Updates the octree structure with the given object.
+
+        Args:
+            obj (Object): The object to update the octree with.
+        """
+        if self.verbose:
+            print("In DynamicOctree::updateOctree")
+
+        cdef int node_id = self.get_node_id(obj)  # Modify the function call here
+        cdef DynamicOctreeNode node = self.nodes[node_id]
+
+        if not self.inside_node(node, obj):
+            self.pull_up(node_id, obj.id)
+
+    cpdef bint inside_node(self, DynamicOctreeNode node, Object atom):
+        return (
+            (atom.x - node.lx >= 0) and
+            (atom.x - node.lx < node.dim) and
+            (atom.y - node.ly >= 0) and
+            (atom.y - node.ly < node.dim) and
+            (atom.y - node.lz >= 0) and
+            (atom.z - node.lz < node.dim)
+        )
+    
+    cpdef print_test(self):
+        print("Testing")

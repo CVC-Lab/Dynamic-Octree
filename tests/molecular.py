@@ -11,7 +11,7 @@ CHANGES_PATH = "../data/molecular/1BDD/atoms/changes.txt"
 ATOM_DIR = "1BDD/atoms/"
 
 from Octree import DynamicOctree, OctreeConstructionParams
-from objects import Object
+from Old_Octree.objects import Object
 from utils import cleanDirectory
 
 def populateInitial(atom_path):

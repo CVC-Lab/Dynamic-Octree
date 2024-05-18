@@ -1,5 +1,5 @@
 import sys, math, random
-from objects import Object   # Import the Object class from the objects module
+from Old_Octree.objects import Object   # Import the Object class from the objects module
 
 INIT_NUM_OCTREE_NODES = 5  # Initial number of octree nodes
 LOW_BITS = 14  # Low bits used for generating the Octree IDs

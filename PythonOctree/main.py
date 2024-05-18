@@ -1,6 +1,6 @@
 from Octree import DynamicOctree, DynamicOctreeNode, DynamicOctreeNodeAttr, OctreeConstructionParams
 import random
-from objects import Object
+from Old_Octree.objects import Object
 import sys
 
 def generate_random_objects(num_objects):
