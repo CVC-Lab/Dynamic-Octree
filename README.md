@@ -36,7 +36,7 @@ The structuring of the repository is as follows:
 - `objects.py`: a template class to show how any given object should be defined to work with the data structure.
 
 # Cython Implementation of the Octree
-Navigate to the `Octree/cython/` directory and run `python setup.py build_ext --inplace` to build the Octree file. This will build the associated `objects.pyx` and `octree.pyx` to be able to use later on.
+Navigate to the `Octree/cython/` directory and run `make Octree` to build the Octree file. This will build the associated `objects.c` and `octree.c` to be able to use later on. If needed, you can also run `make clean` to clean any junk files in the Octree directory. To import the Octree into a file, you must add the path of `octree.c` to your system path using a path (for example `os.path.abspath(os.path.join(os.getcwd(), '..', 'Octree'))`).
 
 # Running Tests
 
