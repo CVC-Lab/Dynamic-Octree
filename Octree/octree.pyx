@@ -1217,10 +1217,13 @@ cdef class DynamicOctree:
             (atom.z - node.lz < node.dim)
         )
     
-    cpdef void only_find_neighbors(self, int n, ):
+    cpdef void only_find_neighbors(self, int n, float[:] inp, void params):
         """
         * n: total dimensions of atom positions (3 * num atoms)
         * inp: the new array of atom positions
-        * prms: parm struct containing energy parms
+        * params: parm struct containing energy parms
         """
+        atoms = self.atoms
+        
+
         

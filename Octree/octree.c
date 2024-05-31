@@ -6,8 +6,7 @@
         "depends": [],
         "name": "octree",
         "sources": [
-            "octree.pyx",
-            "objects.pyx"
+            "octree.pyx"
         ]
     },
     "module_name": "octree"
@@ -1767,7 +1766,7 @@ struct __pyx_vtabstruct_6octree_DynamicOctree {
   int (*reorganize_octree)(struct __pyx_obj_6octree_DynamicOctree *, int, int __pyx_skip_dispatch);
   void (*update_octree)(struct __pyx_obj_6octree_DynamicOctree *, struct __pyx_obj_7objects_Object *, int __pyx_skip_dispatch);
   int (*inside_node)(struct __pyx_obj_6octree_DynamicOctree *, struct __pyx_obj_6octree_DynamicOctreeNode *, struct __pyx_obj_7objects_Object *, int __pyx_skip_dispatch);
-  PyObject *(*print_test)(struct __pyx_obj_6octree_DynamicOctree *, int __pyx_skip_dispatch);
+  void (*only_find_neighbors)(struct __pyx_obj_6octree_DynamicOctree *, int, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_6octree_DynamicOctree *__pyx_vtabptr_6octree_DynamicOctree;
 /* #### Code section: utility_code_proto ### */
@@ -2334,37 +2333,6 @@ static PyObject* __Pyx_PyInt_SubtractObjC(PyObject *op1, PyObject *op2, long int
     (inplace ? PyNumber_InPlaceSubtract(op1, op2) : PyNumber_Subtract(op1, op2))
 #endif
 
-/* UnicodeConcatInPlace.proto */
-# if CYTHON_COMPILING_IN_CPYTHON && PY_MAJOR_VERSION >= 3
-    #if CYTHON_REFNANNY
-        #define __Pyx_PyUnicode_ConcatInPlace(left, right) __Pyx_PyUnicode_ConcatInPlaceImpl(&left, right, __pyx_refnanny)
-    #else
-        #define __Pyx_PyUnicode_ConcatInPlace(left, right) __Pyx_PyUnicode_ConcatInPlaceImpl(&left, right)
-    #endif
-    static CYTHON_INLINE PyObject *__Pyx_PyUnicode_ConcatInPlaceImpl(PyObject **p_left, PyObject *right
-        #if CYTHON_REFNANNY
-        , void* __pyx_refnanny
-        #endif
-    );
-#else
-#define __Pyx_PyUnicode_ConcatInPlace __Pyx_PyUnicode_Concat
-#endif
-#define __Pyx_PyUnicode_ConcatInPlaceSafe(left, right) ((unlikely((left) == Py_None) || unlikely((right) == Py_None)) ?\
-    PyNumber_InPlaceAdd(left, right) : __Pyx_PyUnicode_ConcatInPlace(left, right))
-
-/* StrConcatInPlace.proto */
-#if PY_MAJOR_VERSION >= 3
-    #define __Pyx_PyStr_Concat __Pyx_PyUnicode_Concat
-    #define __Pyx_PyStr_ConcatInPlace __Pyx_PyUnicode_ConcatInPlace
-#else
-    #define __Pyx_PyStr_Concat PyNumber_Add
-    #define __Pyx_PyStr_ConcatInPlace PyNumber_InPlaceAdd
-#endif
-#define __Pyx_PyStr_ConcatSafe(a, b) ((unlikely((a) == Py_None) || unlikely((b) == Py_None)) ?\
-    PyNumber_Add(a, b) : __Pyx_PyStr_Concat(a, b))
-#define __Pyx_PyStr_ConcatInPlaceSafe(a, b) ((unlikely((a) == Py_None) || unlikely((b) == Py_None)) ?\
-    PyNumber_InPlaceAdd(a, b) : __Pyx_PyStr_ConcatInPlace(a, b))
-
 /* PySequenceMultiply.proto */
 #define __Pyx_PySequence_Multiply_Left(mul, seq)  __Pyx_PySequence_Multiply(seq, mul)
 static CYTHON_INLINE PyObject* __Pyx_PySequence_Multiply(PyObject *seq, Py_ssize_t mul);
@@ -2762,7 +2730,7 @@ static void __pyx_f_6octree_13DynamicOctree_free_subtree_nodes(struct __pyx_obj_
 static int __pyx_f_6octree_13DynamicOctree_reorganize_octree(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, int __pyx_v_batch_update, int __pyx_skip_dispatch); /* proto*/
 static void __pyx_f_6octree_13DynamicOctree_update_octree(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, struct __pyx_obj_7objects_Object *__pyx_v_obj, int __pyx_skip_dispatch); /* proto*/
 static int __pyx_f_6octree_13DynamicOctree_inside_node(CYTHON_UNUSED struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, struct __pyx_obj_6octree_DynamicOctreeNode *__pyx_v_node, struct __pyx_obj_7objects_Object *__pyx_v_atom, int __pyx_skip_dispatch); /* proto*/
-static PyObject *__pyx_f_6octree_13DynamicOctree_print_test(CYTHON_UNUSED struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static void __pyx_f_6octree_13DynamicOctree_only_find_neighbors(CYTHON_UNUSED struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, CYTHON_UNUSED int __pyx_v_n, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from "objects" */
 
@@ -2798,6 +2766,7 @@ static const char __pyx_k_b[] = "b";
 static const char __pyx_k_c[] = "c";
 static const char __pyx_k_d[] = "d";
 static const char __pyx_k_i[] = "i";
+static const char __pyx_k_n[] = "n";
 static const char __pyx_k_x[] = "x";
 static const char __pyx_k_y[] = "y";
 static const char __pyx_k_z[] = "z";
@@ -2814,7 +2783,7 @@ static const char __pyx_k__15[] = "\n";
 static const char __pyx_k__17[] = "";
 static const char __pyx_k__18[] = "  ";
 static const char __pyx_k__19[] = ", ";
-static const char __pyx_k__46[] = "*";
+static const char __pyx_k__45[] = "*";
 static const char __pyx_k_add[] = "add";
 static const char __pyx_k_atm[] = "atm";
 static const char __pyx_k_d_2[] = "%d ";
@@ -2865,7 +2834,6 @@ static const char __pyx_k_update[] = "update";
 static const char __pyx_k_Indices[] = "Indices: ";
 static const char __pyx_k_Is_Leaf[] = "Is Leaf: ";
 static const char __pyx_k_Node_ID[] = "Node ID: ";
-static const char __pyx_k_Testing[] = "Testing";
 static const char __pyx_k_atom_id[] = "atom_id";
 static const char __pyx_k_attribs[] = "attribs";
 static const char __pyx_k_disable[] = "disable";
@@ -2913,7 +2881,6 @@ static const char __pyx_k_Attributes[] = "Attributes:";
 static const char __pyx_k_ValueError[] = "ValueError";
 static const char __pyx_k_child_id_2[] = "child_id";
 static const char __pyx_k_octree_pyx[] = "octree.pyx";
-static const char __pyx_k_print_test[] = "print_test";
 static const char __pyx_k_pyx_result[] = "__pyx_result";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
 static const char __pyx_k_OctreeScore[] = "OctreeScore";
@@ -2998,6 +2965,7 @@ static const char __pyx_k_print_node_details[] = "print_node_details";
 static const char __pyx_k_set_parent_pointer[] = "set_parent_pointer";
 static const char __pyx_k_traverse_and_print[] = "traverse_and_print";
 static const char __pyx_k_compute_own_attribs[] = "compute_own_attribs";
+static const char __pyx_k_only_find_neighbors[] = "only_find_neighbors";
 static const char __pyx_k_add_atom_to_non_leaf[] = "add_atom_to_non_leaf";
 static const char __pyx_k_contract_octree_node[] = "contract_octree_node";
 static const char __pyx_k_DynamicOctreeNodeAttr[] = "DynamicOctreeNodeAttr";
@@ -3017,7 +2985,6 @@ static const char __pyx_k_DynamicOctreeNode_set_id[] = "DynamicOctreeNode.set_id
 static const char __pyx_k_DynamicOctreeNode_set_lx[] = "DynamicOctreeNode.set_lx";
 static const char __pyx_k_DynamicOctreeNode_set_ly[] = "DynamicOctreeNode.set_ly";
 static const char __pyx_k_DynamicOctreeNode_set_lz[] = "DynamicOctreeNode.set_lz";
-static const char __pyx_k_DynamicOctree_print_test[] = "DynamicOctree.print_test";
 static const char __pyx_k_OctreeConstructionParams[] = "OctreeConstructionParams";
 static const char __pyx_k_pyx_unpickle_OctreeScore[] = "__pyx_unpickle_OctreeScore";
 static const char __pyx_k_DynamicOctreeNode_get_dim[] = "DynamicOctreeNode.get_dim";
@@ -3097,6 +3064,7 @@ static const char __pyx_k_DynamicOctree_get_next_free_node[] = "DynamicOctree.ge
 static const char __pyx_k_DynamicOctree_init_free_node_ser[] = "DynamicOctree.init_free_node_server";
 static const char __pyx_k_DynamicOctree_needs_dynamic_cont[] = "DynamicOctree.needs_dynamic_contraction";
 static const char __pyx_k_DynamicOctree_needs_dynamic_expa[] = "DynamicOctree.needs_dynamic_expansion";
+static const char __pyx_k_DynamicOctree_only_find_neighbor[] = "DynamicOctree.only_find_neighbors";
 static const char __pyx_k_DynamicOctree_print_node_details[] = "DynamicOctree.print_node_details";
 static const char __pyx_k_DynamicOctree_remove_atom_from_l[] = "DynamicOctree.remove_atom_from_leaf";
 static const char __pyx_k_DynamicOctree_remove_atom_from_n[] = "DynamicOctree.remove_atom_from_non_leaf";
@@ -3265,7 +3233,7 @@ static PyObject *__pyx_pf_6octree_13DynamicOctree_68free_subtree_nodes(struct __
 static PyObject *__pyx_pf_6octree_13DynamicOctree_70reorganize_octree(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, int __pyx_v_batch_update); /* proto */
 static PyObject *__pyx_pf_6octree_13DynamicOctree_72update_octree(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, struct __pyx_obj_7objects_Object *__pyx_v_obj); /* proto */
 static PyObject *__pyx_pf_6octree_13DynamicOctree_74inside_node(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, struct __pyx_obj_6octree_DynamicOctreeNode *__pyx_v_node, struct __pyx_obj_7objects_Object *__pyx_v_atom); /* proto */
-static PyObject *__pyx_pf_6octree_13DynamicOctree_76print_test(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6octree_13DynamicOctree_76only_find_neighbors(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, int __pyx_v_n); /* proto */
 static PyObject *__pyx_pf_6octree_13DynamicOctree_5nodes___get__(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self); /* proto */
 static int __pyx_pf_6octree_13DynamicOctree_5nodes_2__set__(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static int __pyx_pf_6octree_13DynamicOctree_5nodes_4__del__(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self); /* proto */
@@ -3357,8 +3325,8 @@ typedef struct {
   PyObject *__pyx_kp_u_;
   PyObject *__pyx_kp_u_Allocated;
   PyObject *__pyx_kp_u_Atom_Indices;
-  PyObject *__pyx_kp_s_Atom_has_moved_outside_the_root;
-  PyObject *__pyx_kp_s_Attributes;
+  PyObject *__pyx_kp_u_Atom_has_moved_outside_the_root;
+  PyObject *__pyx_kp_u_Attributes;
   PyObject *__pyx_kp_u_Child_Pointers;
   PyObject *__pyx_kp_u_Dimension;
   PyObject *__pyx_n_s_DynamicOctree;
@@ -3418,9 +3386,9 @@ typedef struct {
   PyObject *__pyx_n_s_DynamicOctree_needs_dynamic_cont;
   PyObject *__pyx_n_s_DynamicOctree_needs_dynamic_expa;
   PyObject *__pyx_n_s_DynamicOctree_needs_expansion;
+  PyObject *__pyx_n_s_DynamicOctree_only_find_neighbor;
   PyObject *__pyx_n_s_DynamicOctree_print_node_details;
   PyObject *__pyx_n_s_DynamicOctree_print_octree;
-  PyObject *__pyx_n_s_DynamicOctree_print_test;
   PyObject *__pyx_n_s_DynamicOctree_pull_up;
   PyObject *__pyx_n_s_DynamicOctree_push_down;
   PyObject *__pyx_n_s_DynamicOctree_reallocate_nodes;
@@ -3431,56 +3399,55 @@ typedef struct {
   PyObject *__pyx_n_s_DynamicOctree_traverse_and_print;
   PyObject *__pyx_n_s_DynamicOctree_traverse_octree;
   PyObject *__pyx_n_s_DynamicOctree_update_octree;
-  PyObject *__pyx_kp_s_ERROR_Could_not_create_free_node;
-  PyObject *__pyx_kp_s_ERROR_Could_not_get_next_node;
-  PyObject *__pyx_kp_s_Error_Invalid_child_pointer_inde;
-  PyObject *__pyx_kp_s_Failed_to_allocate_leaf_node_mem;
-  PyObject *__pyx_kp_s_Failed_to_allocate_temporary_sto;
-  PyObject *__pyx_kp_s_Failed_to_contract_leaf_storage;
-  PyObject *__pyx_kp_s_Failed_to_expand_leaf_storage_fo;
+  PyObject *__pyx_kp_u_ERROR_Could_not_create_free_node;
+  PyObject *__pyx_kp_u_ERROR_Could_not_get_next_node;
+  PyObject *__pyx_kp_u_Error_Invalid_child_pointer_inde;
+  PyObject *__pyx_kp_u_Failed_to_allocate_leaf_node_mem;
+  PyObject *__pyx_kp_u_Failed_to_allocate_temporary_sto;
+  PyObject *__pyx_kp_u_Failed_to_contract_leaf_storage;
+  PyObject *__pyx_kp_u_Failed_to_expand_leaf_storage_fo;
   PyObject *__pyx_n_u_False;
-  PyObject *__pyx_kp_s_In_DynamicOctree_addAtomToLeaf;
-  PyObject *__pyx_kp_s_In_DynamicOctree_addAtomToNonLea;
+  PyObject *__pyx_kp_u_In_DynamicOctree_addAtomToLeaf;
+  PyObject *__pyx_kp_u_In_DynamicOctree_addAtomToNonLea;
   PyObject *__pyx_kp_u_In_DynamicOctree_computeLeafAttr;
   PyObject *__pyx_kp_u_In_DynamicOctree_computeNonLeafA;
   PyObject *__pyx_kp_u_In_DynamicOctree_computeNonRootB;
-  PyObject *__pyx_kp_s_In_DynamicOctree_computeRootBoun;
-  PyObject *__pyx_kp_s_In_DynamicOctree_contractOctreeN;
-  PyObject *__pyx_kp_s_In_DynamicOctree_destroyOctree;
-  PyObject *__pyx_kp_s_In_DynamicOctree_expandOctreeNod;
-  PyObject *__pyx_kp_s_In_DynamicOctree_freeSubtreeNode;
-  PyObject *__pyx_kp_s_In_DynamicOctree_getNextFreeNode;
-  PyObject *__pyx_kp_s_In_DynamicOctree_getOctreeSize;
-  PyObject *__pyx_kp_s_In_DynamicOctree_getSubtreeSize;
-  PyObject *__pyx_kp_s_In_DynamicOctree_initFreeNodeSer;
-  PyObject *__pyx_kp_s_In_DynamicOctree_print;
-  PyObject *__pyx_kp_s_In_DynamicOctree_pullUp;
-  PyObject *__pyx_kp_s_In_DynamicOctree_pushDown;
-  PyObject *__pyx_kp_s_In_DynamicOctree_removeAtomFromL;
-  PyObject *__pyx_kp_s_In_DynamicOctree_removeAtomFromN;
-  PyObject *__pyx_kp_s_In_DynamicOctree_reorganizeOctre;
-  PyObject *__pyx_kp_s_In_DynamicOctree_traverseOctree;
-  PyObject *__pyx_kp_s_In_DynamicOctree_updateOctree;
+  PyObject *__pyx_kp_u_In_DynamicOctree_computeRootBoun;
+  PyObject *__pyx_kp_u_In_DynamicOctree_contractOctreeN;
+  PyObject *__pyx_kp_u_In_DynamicOctree_destroyOctree;
+  PyObject *__pyx_kp_u_In_DynamicOctree_expandOctreeNod;
+  PyObject *__pyx_kp_u_In_DynamicOctree_freeSubtreeNode;
+  PyObject *__pyx_kp_u_In_DynamicOctree_getNextFreeNode;
+  PyObject *__pyx_kp_u_In_DynamicOctree_getOctreeSize;
+  PyObject *__pyx_kp_u_In_DynamicOctree_getSubtreeSize;
+  PyObject *__pyx_kp_u_In_DynamicOctree_initFreeNodeSer;
+  PyObject *__pyx_kp_u_In_DynamicOctree_print;
+  PyObject *__pyx_kp_u_In_DynamicOctree_pullUp;
+  PyObject *__pyx_kp_u_In_DynamicOctree_pushDown;
+  PyObject *__pyx_kp_u_In_DynamicOctree_removeAtomFromL;
+  PyObject *__pyx_kp_u_In_DynamicOctree_removeAtomFromN;
+  PyObject *__pyx_kp_u_In_DynamicOctree_reorganizeOctre;
+  PyObject *__pyx_kp_u_In_DynamicOctree_traverseOctree;
+  PyObject *__pyx_kp_u_In_DynamicOctree_updateOctree;
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0;
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2;
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_3;
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_4;
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5;
-  PyObject *__pyx_kp_s_Indices;
+  PyObject *__pyx_kp_u_Indices;
   PyObject *__pyx_kp_u_Inside_DynamicOctree_allocateNod;
   PyObject *__pyx_kp_u_Inside_DynamicOctree_reallocateN;
   PyObject *__pyx_kp_u_Is_Leaf;
-  PyObject *__pyx_kp_s_Leaf_Node;
-  PyObject *__pyx_kp_s_Location_index_must_be_non_negat;
+  PyObject *__pyx_kp_u_Leaf_Node;
+  PyObject *__pyx_kp_u_Location_index_must_be_non_negat;
   PyObject *__pyx_kp_u_Max_leaf_size;
   PyObject *__pyx_kp_u_Node_Attributes;
-  PyObject *__pyx_kp_s_Node_ID;
   PyObject *__pyx_kp_u_Node_ID;
-  PyObject *__pyx_kp_s_Node_id_is_out_of_bounds_in_free;
-  PyObject *__pyx_kp_s_Non_Leaf_Node;
+  PyObject *__pyx_kp_u_Node_id_is_out_of_bounds_in_free;
+  PyObject *__pyx_kp_u_Non_Leaf_Node;
   PyObject *__pyx_kp_u_Number_of_Atoms;
   PyObject *__pyx_kp_u_Number_of_Fixed_Atoms;
-  PyObject *__pyx_kp_s_Number_of_atoms;
+  PyObject *__pyx_kp_u_Number_of_atoms;
   PyObject *__pyx_n_s_OctreeConstructionParams;
   PyObject *__pyx_n_s_OctreeConstructionParams___reduc;
   PyObject *__pyx_n_s_OctreeConstructionParams___setst;
@@ -3497,20 +3464,19 @@ typedef struct {
   PyObject *__pyx_n_s_OctreeScore_get_score;
   PyObject *__pyx_n_s_OctreeScore_set_score;
   PyObject *__pyx_kp_u_Parent_Node_ID;
-  PyObject *__pyx_kp_s_Parent_Nodes;
+  PyObject *__pyx_kp_u_Parent_Nodes;
   PyObject *__pyx_kp_u_Parent_Pointer;
   PyObject *__pyx_n_s_PickleError;
   PyObject *__pyx_kp_u_Position;
-  PyObject *__pyx_kp_s_Starting_DynamicOctree_buildOctr;
-  PyObject *__pyx_n_s_Testing;
+  PyObject *__pyx_kp_u_Starting_DynamicOctree_buildOctr;
   PyObject *__pyx_n_u_True;
   PyObject *__pyx_n_s_ValueError;
-  PyObject *__pyx_kp_s__15;
+  PyObject *__pyx_kp_u__15;
   PyObject *__pyx_n_s__168;
-  PyObject *__pyx_kp_s__17;
-  PyObject *__pyx_kp_s__18;
+  PyObject *__pyx_kp_u__17;
+  PyObject *__pyx_kp_u__18;
   PyObject *__pyx_kp_u__19;
-  PyObject *__pyx_n_s__46;
+  PyObject *__pyx_n_s__45;
   PyObject *__pyx_kp_u__7;
   PyObject *__pyx_n_s_a;
   PyObject *__pyx_n_s_add;
@@ -3552,8 +3518,8 @@ typedef struct {
   PyObject *__pyx_n_s_contract_octree_node;
   PyObject *__pyx_n_s_create_octree_ptr;
   PyObject *__pyx_n_s_d;
-  PyObject *__pyx_kp_s_d_2;
-  PyObject *__pyx_kp_s_d_d_lf;
+  PyObject *__pyx_kp_u_d_2;
+  PyObject *__pyx_kp_u_d_d_lf;
   PyObject *__pyx_n_s_depth;
   PyObject *__pyx_n_s_destroy_octree;
   PyObject *__pyx_n_s_dict;
@@ -3611,6 +3577,7 @@ typedef struct {
   PyObject *__pyx_n_s_max_leaf_dim;
   PyObject *__pyx_n_s_max_leaf_size;
   PyObject *__pyx_n_s_max_nodes;
+  PyObject *__pyx_n_s_n;
   PyObject *__pyx_n_s_n_atoms;
   PyObject *__pyx_n_s_n_fixed;
   PyObject *__pyx_n_s_name;
@@ -3627,13 +3594,13 @@ typedef struct {
   PyObject *__pyx_n_s_obj;
   PyObject *__pyx_n_s_octree;
   PyObject *__pyx_kp_s_octree_pyx;
+  PyObject *__pyx_n_s_only_find_neighbors;
   PyObject *__pyx_n_s_parent_pointer;
   PyObject *__pyx_n_s_pickle;
   PyObject *__pyx_n_s_print;
   PyObject *__pyx_n_s_print_node_details;
   PyObject *__pyx_n_s_print_octree;
   PyObject *__pyx_n_s_print_params;
-  PyObject *__pyx_n_s_print_test;
   PyObject *__pyx_n_s_ptr;
   PyObject *__pyx_n_s_pull_up;
   PyObject *__pyx_n_s_push_down;
@@ -3759,67 +3726,68 @@ typedef struct {
   PyObject *__pyx_tuple__42;
   PyObject *__pyx_tuple__43;
   PyObject *__pyx_tuple__44;
-  PyObject *__pyx_tuple__45;
-  PyObject *__pyx_tuple__47;
-  PyObject *__pyx_tuple__49;
-  PyObject *__pyx_tuple__51;
-  PyObject *__pyx_tuple__53;
-  PyObject *__pyx_tuple__55;
-  PyObject *__pyx_tuple__57;
-  PyObject *__pyx_tuple__59;
-  PyObject *__pyx_tuple__67;
-  PyObject *__pyx_tuple__69;
-  PyObject *__pyx_tuple__71;
-  PyObject *__pyx_tuple__77;
-  PyObject *__pyx_tuple__79;
-  PyObject *__pyx_tuple__82;
-  PyObject *__pyx_tuple__84;
-  PyObject *__pyx_tuple__94;
-  PyObject *__pyx_tuple__97;
-  PyObject *__pyx_tuple__100;
-  PyObject *__pyx_tuple__104;
-  PyObject *__pyx_tuple__106;
-  PyObject *__pyx_tuple__109;
-  PyObject *__pyx_tuple__111;
-  PyObject *__pyx_tuple__113;
-  PyObject *__pyx_tuple__116;
-  PyObject *__pyx_tuple__121;
-  PyObject *__pyx_tuple__124;
-  PyObject *__pyx_tuple__127;
+  PyObject *__pyx_tuple__46;
+  PyObject *__pyx_tuple__48;
+  PyObject *__pyx_tuple__50;
+  PyObject *__pyx_tuple__52;
+  PyObject *__pyx_tuple__54;
+  PyObject *__pyx_tuple__56;
+  PyObject *__pyx_tuple__58;
+  PyObject *__pyx_tuple__66;
+  PyObject *__pyx_tuple__68;
+  PyObject *__pyx_tuple__70;
+  PyObject *__pyx_tuple__76;
+  PyObject *__pyx_tuple__78;
+  PyObject *__pyx_tuple__81;
+  PyObject *__pyx_tuple__83;
+  PyObject *__pyx_tuple__93;
+  PyObject *__pyx_tuple__96;
+  PyObject *__pyx_tuple__99;
+  PyObject *__pyx_tuple__103;
+  PyObject *__pyx_tuple__105;
+  PyObject *__pyx_tuple__108;
+  PyObject *__pyx_tuple__110;
+  PyObject *__pyx_tuple__112;
+  PyObject *__pyx_tuple__115;
+  PyObject *__pyx_tuple__120;
+  PyObject *__pyx_tuple__123;
+  PyObject *__pyx_tuple__126;
+  PyObject *__pyx_tuple__128;
   PyObject *__pyx_tuple__129;
-  PyObject *__pyx_tuple__130;
-  PyObject *__pyx_tuple__132;
-  PyObject *__pyx_tuple__134;
-  PyObject *__pyx_tuple__136;
-  PyObject *__pyx_tuple__138;
-  PyObject *__pyx_tuple__140;
-  PyObject *__pyx_tuple__146;
-  PyObject *__pyx_tuple__155;
+  PyObject *__pyx_tuple__131;
+  PyObject *__pyx_tuple__133;
+  PyObject *__pyx_tuple__135;
+  PyObject *__pyx_tuple__137;
+  PyObject *__pyx_tuple__139;
+  PyObject *__pyx_tuple__145;
+  PyObject *__pyx_tuple__154;
+  PyObject *__pyx_tuple__158;
   PyObject *__pyx_tuple__162;
-  PyObject *__pyx_codeobj__48;
-  PyObject *__pyx_codeobj__50;
-  PyObject *__pyx_codeobj__52;
-  PyObject *__pyx_codeobj__54;
-  PyObject *__pyx_codeobj__56;
-  PyObject *__pyx_codeobj__58;
+  PyObject *__pyx_codeobj__47;
+  PyObject *__pyx_codeobj__49;
+  PyObject *__pyx_codeobj__51;
+  PyObject *__pyx_codeobj__53;
+  PyObject *__pyx_codeobj__55;
+  PyObject *__pyx_codeobj__57;
+  PyObject *__pyx_codeobj__59;
   PyObject *__pyx_codeobj__60;
   PyObject *__pyx_codeobj__61;
   PyObject *__pyx_codeobj__62;
   PyObject *__pyx_codeobj__63;
   PyObject *__pyx_codeobj__64;
   PyObject *__pyx_codeobj__65;
-  PyObject *__pyx_codeobj__66;
-  PyObject *__pyx_codeobj__68;
-  PyObject *__pyx_codeobj__70;
+  PyObject *__pyx_codeobj__67;
+  PyObject *__pyx_codeobj__69;
+  PyObject *__pyx_codeobj__71;
   PyObject *__pyx_codeobj__72;
   PyObject *__pyx_codeobj__73;
   PyObject *__pyx_codeobj__74;
   PyObject *__pyx_codeobj__75;
-  PyObject *__pyx_codeobj__76;
-  PyObject *__pyx_codeobj__78;
+  PyObject *__pyx_codeobj__77;
+  PyObject *__pyx_codeobj__79;
   PyObject *__pyx_codeobj__80;
-  PyObject *__pyx_codeobj__81;
-  PyObject *__pyx_codeobj__83;
+  PyObject *__pyx_codeobj__82;
+  PyObject *__pyx_codeobj__84;
   PyObject *__pyx_codeobj__85;
   PyObject *__pyx_codeobj__86;
   PyObject *__pyx_codeobj__87;
@@ -3828,40 +3796,40 @@ typedef struct {
   PyObject *__pyx_codeobj__90;
   PyObject *__pyx_codeobj__91;
   PyObject *__pyx_codeobj__92;
-  PyObject *__pyx_codeobj__93;
+  PyObject *__pyx_codeobj__94;
   PyObject *__pyx_codeobj__95;
-  PyObject *__pyx_codeobj__96;
+  PyObject *__pyx_codeobj__97;
   PyObject *__pyx_codeobj__98;
-  PyObject *__pyx_codeobj__99;
+  PyObject *__pyx_codeobj__100;
   PyObject *__pyx_codeobj__101;
   PyObject *__pyx_codeobj__102;
-  PyObject *__pyx_codeobj__103;
-  PyObject *__pyx_codeobj__105;
+  PyObject *__pyx_codeobj__104;
+  PyObject *__pyx_codeobj__106;
   PyObject *__pyx_codeobj__107;
-  PyObject *__pyx_codeobj__108;
-  PyObject *__pyx_codeobj__110;
-  PyObject *__pyx_codeobj__112;
+  PyObject *__pyx_codeobj__109;
+  PyObject *__pyx_codeobj__111;
+  PyObject *__pyx_codeobj__113;
   PyObject *__pyx_codeobj__114;
-  PyObject *__pyx_codeobj__115;
+  PyObject *__pyx_codeobj__116;
   PyObject *__pyx_codeobj__117;
   PyObject *__pyx_codeobj__118;
   PyObject *__pyx_codeobj__119;
-  PyObject *__pyx_codeobj__120;
+  PyObject *__pyx_codeobj__121;
   PyObject *__pyx_codeobj__122;
-  PyObject *__pyx_codeobj__123;
+  PyObject *__pyx_codeobj__124;
   PyObject *__pyx_codeobj__125;
-  PyObject *__pyx_codeobj__126;
-  PyObject *__pyx_codeobj__128;
-  PyObject *__pyx_codeobj__131;
-  PyObject *__pyx_codeobj__133;
-  PyObject *__pyx_codeobj__135;
-  PyObject *__pyx_codeobj__137;
-  PyObject *__pyx_codeobj__139;
+  PyObject *__pyx_codeobj__127;
+  PyObject *__pyx_codeobj__130;
+  PyObject *__pyx_codeobj__132;
+  PyObject *__pyx_codeobj__134;
+  PyObject *__pyx_codeobj__136;
+  PyObject *__pyx_codeobj__138;
+  PyObject *__pyx_codeobj__140;
   PyObject *__pyx_codeobj__141;
   PyObject *__pyx_codeobj__142;
   PyObject *__pyx_codeobj__143;
   PyObject *__pyx_codeobj__144;
-  PyObject *__pyx_codeobj__145;
+  PyObject *__pyx_codeobj__146;
   PyObject *__pyx_codeobj__147;
   PyObject *__pyx_codeobj__148;
   PyObject *__pyx_codeobj__149;
@@ -3869,10 +3837,9 @@ typedef struct {
   PyObject *__pyx_codeobj__151;
   PyObject *__pyx_codeobj__152;
   PyObject *__pyx_codeobj__153;
-  PyObject *__pyx_codeobj__154;
+  PyObject *__pyx_codeobj__155;
   PyObject *__pyx_codeobj__156;
   PyObject *__pyx_codeobj__157;
-  PyObject *__pyx_codeobj__158;
   PyObject *__pyx_codeobj__159;
   PyObject *__pyx_codeobj__160;
   PyObject *__pyx_codeobj__161;
@@ -3937,8 +3904,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Allocated);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Atom_Indices);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Atom_has_moved_outside_the_root);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Attributes);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Atom_has_moved_outside_the_root);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Attributes);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Child_Pointers);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Dimension);
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree);
@@ -3998,9 +3965,9 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_needs_dynamic_cont);
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_needs_dynamic_expa);
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_needs_expansion);
+  Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_only_find_neighbor);
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_print_node_details);
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_print_octree);
-  Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_print_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_pull_up);
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_push_down);
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_reallocate_nodes);
@@ -4011,56 +3978,55 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_traverse_and_print);
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_traverse_octree);
   Py_CLEAR(clear_module_state->__pyx_n_s_DynamicOctree_update_octree);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_ERROR_Could_not_create_free_node);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_ERROR_Could_not_get_next_node);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Error_Invalid_child_pointer_inde);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Failed_to_allocate_leaf_node_mem);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Failed_to_allocate_temporary_sto);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Failed_to_contract_leaf_storage);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Failed_to_expand_leaf_storage_fo);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_ERROR_Could_not_create_free_node);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_ERROR_Could_not_get_next_node);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Error_Invalid_child_pointer_inde);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Failed_to_allocate_leaf_node_mem);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Failed_to_allocate_temporary_sto);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Failed_to_contract_leaf_storage);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Failed_to_expand_leaf_storage_fo);
   Py_CLEAR(clear_module_state->__pyx_n_u_False);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_addAtomToLeaf);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_addAtomToNonLea);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_addAtomToLeaf);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_addAtomToNonLea);
   Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_computeLeafAttr);
   Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_computeNonLeafA);
   Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_computeNonRootB);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_computeRootBoun);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_contractOctreeN);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_destroyOctree);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_expandOctreeNod);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_freeSubtreeNode);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_getNextFreeNode);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_getOctreeSize);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_getSubtreeSize);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_initFreeNodeSer);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_print);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_pullUp);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_pushDown);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_removeAtomFromL);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_removeAtomFromN);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_reorganizeOctre);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_traverseOctree);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_In_DynamicOctree_updateOctree);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_computeRootBoun);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_contractOctreeN);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_destroyOctree);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_expandOctreeNod);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_freeSubtreeNode);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_getNextFreeNode);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_getOctreeSize);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_getSubtreeSize);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_initFreeNodeSer);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_print);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_pullUp);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_pushDown);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_removeAtomFromL);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_removeAtomFromN);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_reorganizeOctre);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_traverseOctree);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_In_DynamicOctree_updateOctree);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_3);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_4);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Indices);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Indices);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Inside_DynamicOctree_allocateNod);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Inside_DynamicOctree_reallocateN);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Is_Leaf);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Leaf_Node);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Location_index_must_be_non_negat);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Leaf_Node);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Location_index_must_be_non_negat);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Max_leaf_size);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Node_Attributes);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Node_ID);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Node_ID);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Node_id_is_out_of_bounds_in_free);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Non_Leaf_Node);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Node_id_is_out_of_bounds_in_free);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Non_Leaf_Node);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Number_of_Atoms);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Number_of_Fixed_Atoms);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Number_of_atoms);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Number_of_atoms);
   Py_CLEAR(clear_module_state->__pyx_n_s_OctreeConstructionParams);
   Py_CLEAR(clear_module_state->__pyx_n_s_OctreeConstructionParams___reduc);
   Py_CLEAR(clear_module_state->__pyx_n_s_OctreeConstructionParams___setst);
@@ -4077,20 +4043,19 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_OctreeScore_get_score);
   Py_CLEAR(clear_module_state->__pyx_n_s_OctreeScore_set_score);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Parent_Node_ID);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Parent_Nodes);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Parent_Nodes);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Parent_Pointer);
   Py_CLEAR(clear_module_state->__pyx_n_s_PickleError);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Position);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Starting_DynamicOctree_buildOctr);
-  Py_CLEAR(clear_module_state->__pyx_n_s_Testing);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Starting_DynamicOctree_buildOctr);
   Py_CLEAR(clear_module_state->__pyx_n_u_True);
   Py_CLEAR(clear_module_state->__pyx_n_s_ValueError);
-  Py_CLEAR(clear_module_state->__pyx_kp_s__15);
+  Py_CLEAR(clear_module_state->__pyx_kp_u__15);
   Py_CLEAR(clear_module_state->__pyx_n_s__168);
-  Py_CLEAR(clear_module_state->__pyx_kp_s__17);
-  Py_CLEAR(clear_module_state->__pyx_kp_s__18);
+  Py_CLEAR(clear_module_state->__pyx_kp_u__17);
+  Py_CLEAR(clear_module_state->__pyx_kp_u__18);
   Py_CLEAR(clear_module_state->__pyx_kp_u__19);
-  Py_CLEAR(clear_module_state->__pyx_n_s__46);
+  Py_CLEAR(clear_module_state->__pyx_n_s__45);
   Py_CLEAR(clear_module_state->__pyx_kp_u__7);
   Py_CLEAR(clear_module_state->__pyx_n_s_a);
   Py_CLEAR(clear_module_state->__pyx_n_s_add);
@@ -4132,8 +4097,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_contract_octree_node);
   Py_CLEAR(clear_module_state->__pyx_n_s_create_octree_ptr);
   Py_CLEAR(clear_module_state->__pyx_n_s_d);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_d_2);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_d_d_lf);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_d_2);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_d_d_lf);
   Py_CLEAR(clear_module_state->__pyx_n_s_depth);
   Py_CLEAR(clear_module_state->__pyx_n_s_destroy_octree);
   Py_CLEAR(clear_module_state->__pyx_n_s_dict);
@@ -4191,6 +4156,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_max_leaf_dim);
   Py_CLEAR(clear_module_state->__pyx_n_s_max_leaf_size);
   Py_CLEAR(clear_module_state->__pyx_n_s_max_nodes);
+  Py_CLEAR(clear_module_state->__pyx_n_s_n);
   Py_CLEAR(clear_module_state->__pyx_n_s_n_atoms);
   Py_CLEAR(clear_module_state->__pyx_n_s_n_fixed);
   Py_CLEAR(clear_module_state->__pyx_n_s_name);
@@ -4207,13 +4173,13 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_obj);
   Py_CLEAR(clear_module_state->__pyx_n_s_octree);
   Py_CLEAR(clear_module_state->__pyx_kp_s_octree_pyx);
+  Py_CLEAR(clear_module_state->__pyx_n_s_only_find_neighbors);
   Py_CLEAR(clear_module_state->__pyx_n_s_parent_pointer);
   Py_CLEAR(clear_module_state->__pyx_n_s_pickle);
   Py_CLEAR(clear_module_state->__pyx_n_s_print);
   Py_CLEAR(clear_module_state->__pyx_n_s_print_node_details);
   Py_CLEAR(clear_module_state->__pyx_n_s_print_octree);
   Py_CLEAR(clear_module_state->__pyx_n_s_print_params);
-  Py_CLEAR(clear_module_state->__pyx_n_s_print_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_ptr);
   Py_CLEAR(clear_module_state->__pyx_n_s_pull_up);
   Py_CLEAR(clear_module_state->__pyx_n_s_push_down);
@@ -4339,67 +4305,68 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_tuple__42);
   Py_CLEAR(clear_module_state->__pyx_tuple__43);
   Py_CLEAR(clear_module_state->__pyx_tuple__44);
-  Py_CLEAR(clear_module_state->__pyx_tuple__45);
-  Py_CLEAR(clear_module_state->__pyx_tuple__47);
-  Py_CLEAR(clear_module_state->__pyx_tuple__49);
-  Py_CLEAR(clear_module_state->__pyx_tuple__51);
-  Py_CLEAR(clear_module_state->__pyx_tuple__53);
-  Py_CLEAR(clear_module_state->__pyx_tuple__55);
-  Py_CLEAR(clear_module_state->__pyx_tuple__57);
-  Py_CLEAR(clear_module_state->__pyx_tuple__59);
-  Py_CLEAR(clear_module_state->__pyx_tuple__67);
-  Py_CLEAR(clear_module_state->__pyx_tuple__69);
-  Py_CLEAR(clear_module_state->__pyx_tuple__71);
-  Py_CLEAR(clear_module_state->__pyx_tuple__77);
-  Py_CLEAR(clear_module_state->__pyx_tuple__79);
-  Py_CLEAR(clear_module_state->__pyx_tuple__82);
-  Py_CLEAR(clear_module_state->__pyx_tuple__84);
-  Py_CLEAR(clear_module_state->__pyx_tuple__94);
-  Py_CLEAR(clear_module_state->__pyx_tuple__97);
-  Py_CLEAR(clear_module_state->__pyx_tuple__100);
-  Py_CLEAR(clear_module_state->__pyx_tuple__104);
-  Py_CLEAR(clear_module_state->__pyx_tuple__106);
-  Py_CLEAR(clear_module_state->__pyx_tuple__109);
-  Py_CLEAR(clear_module_state->__pyx_tuple__111);
-  Py_CLEAR(clear_module_state->__pyx_tuple__113);
-  Py_CLEAR(clear_module_state->__pyx_tuple__116);
-  Py_CLEAR(clear_module_state->__pyx_tuple__121);
-  Py_CLEAR(clear_module_state->__pyx_tuple__124);
-  Py_CLEAR(clear_module_state->__pyx_tuple__127);
+  Py_CLEAR(clear_module_state->__pyx_tuple__46);
+  Py_CLEAR(clear_module_state->__pyx_tuple__48);
+  Py_CLEAR(clear_module_state->__pyx_tuple__50);
+  Py_CLEAR(clear_module_state->__pyx_tuple__52);
+  Py_CLEAR(clear_module_state->__pyx_tuple__54);
+  Py_CLEAR(clear_module_state->__pyx_tuple__56);
+  Py_CLEAR(clear_module_state->__pyx_tuple__58);
+  Py_CLEAR(clear_module_state->__pyx_tuple__66);
+  Py_CLEAR(clear_module_state->__pyx_tuple__68);
+  Py_CLEAR(clear_module_state->__pyx_tuple__70);
+  Py_CLEAR(clear_module_state->__pyx_tuple__76);
+  Py_CLEAR(clear_module_state->__pyx_tuple__78);
+  Py_CLEAR(clear_module_state->__pyx_tuple__81);
+  Py_CLEAR(clear_module_state->__pyx_tuple__83);
+  Py_CLEAR(clear_module_state->__pyx_tuple__93);
+  Py_CLEAR(clear_module_state->__pyx_tuple__96);
+  Py_CLEAR(clear_module_state->__pyx_tuple__99);
+  Py_CLEAR(clear_module_state->__pyx_tuple__103);
+  Py_CLEAR(clear_module_state->__pyx_tuple__105);
+  Py_CLEAR(clear_module_state->__pyx_tuple__108);
+  Py_CLEAR(clear_module_state->__pyx_tuple__110);
+  Py_CLEAR(clear_module_state->__pyx_tuple__112);
+  Py_CLEAR(clear_module_state->__pyx_tuple__115);
+  Py_CLEAR(clear_module_state->__pyx_tuple__120);
+  Py_CLEAR(clear_module_state->__pyx_tuple__123);
+  Py_CLEAR(clear_module_state->__pyx_tuple__126);
+  Py_CLEAR(clear_module_state->__pyx_tuple__128);
   Py_CLEAR(clear_module_state->__pyx_tuple__129);
-  Py_CLEAR(clear_module_state->__pyx_tuple__130);
-  Py_CLEAR(clear_module_state->__pyx_tuple__132);
-  Py_CLEAR(clear_module_state->__pyx_tuple__134);
-  Py_CLEAR(clear_module_state->__pyx_tuple__136);
-  Py_CLEAR(clear_module_state->__pyx_tuple__138);
-  Py_CLEAR(clear_module_state->__pyx_tuple__140);
-  Py_CLEAR(clear_module_state->__pyx_tuple__146);
-  Py_CLEAR(clear_module_state->__pyx_tuple__155);
+  Py_CLEAR(clear_module_state->__pyx_tuple__131);
+  Py_CLEAR(clear_module_state->__pyx_tuple__133);
+  Py_CLEAR(clear_module_state->__pyx_tuple__135);
+  Py_CLEAR(clear_module_state->__pyx_tuple__137);
+  Py_CLEAR(clear_module_state->__pyx_tuple__139);
+  Py_CLEAR(clear_module_state->__pyx_tuple__145);
+  Py_CLEAR(clear_module_state->__pyx_tuple__154);
+  Py_CLEAR(clear_module_state->__pyx_tuple__158);
   Py_CLEAR(clear_module_state->__pyx_tuple__162);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__48);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__50);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__52);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__54);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__56);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__58);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__47);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__49);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__51);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__53);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__55);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__57);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__59);
   Py_CLEAR(clear_module_state->__pyx_codeobj__60);
   Py_CLEAR(clear_module_state->__pyx_codeobj__61);
   Py_CLEAR(clear_module_state->__pyx_codeobj__62);
   Py_CLEAR(clear_module_state->__pyx_codeobj__63);
   Py_CLEAR(clear_module_state->__pyx_codeobj__64);
   Py_CLEAR(clear_module_state->__pyx_codeobj__65);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__66);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__68);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__70);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__67);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__69);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__71);
   Py_CLEAR(clear_module_state->__pyx_codeobj__72);
   Py_CLEAR(clear_module_state->__pyx_codeobj__73);
   Py_CLEAR(clear_module_state->__pyx_codeobj__74);
   Py_CLEAR(clear_module_state->__pyx_codeobj__75);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__76);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__78);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__77);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__79);
   Py_CLEAR(clear_module_state->__pyx_codeobj__80);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__81);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__83);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__82);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__84);
   Py_CLEAR(clear_module_state->__pyx_codeobj__85);
   Py_CLEAR(clear_module_state->__pyx_codeobj__86);
   Py_CLEAR(clear_module_state->__pyx_codeobj__87);
@@ -4408,40 +4375,40 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_codeobj__90);
   Py_CLEAR(clear_module_state->__pyx_codeobj__91);
   Py_CLEAR(clear_module_state->__pyx_codeobj__92);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__93);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__94);
   Py_CLEAR(clear_module_state->__pyx_codeobj__95);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__96);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__97);
   Py_CLEAR(clear_module_state->__pyx_codeobj__98);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__99);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__100);
   Py_CLEAR(clear_module_state->__pyx_codeobj__101);
   Py_CLEAR(clear_module_state->__pyx_codeobj__102);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__103);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__105);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__104);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__106);
   Py_CLEAR(clear_module_state->__pyx_codeobj__107);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__108);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__110);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__112);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__109);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__111);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__113);
   Py_CLEAR(clear_module_state->__pyx_codeobj__114);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__115);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__116);
   Py_CLEAR(clear_module_state->__pyx_codeobj__117);
   Py_CLEAR(clear_module_state->__pyx_codeobj__118);
   Py_CLEAR(clear_module_state->__pyx_codeobj__119);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__120);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__121);
   Py_CLEAR(clear_module_state->__pyx_codeobj__122);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__123);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__124);
   Py_CLEAR(clear_module_state->__pyx_codeobj__125);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__126);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__128);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__131);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__133);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__135);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__137);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__139);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__127);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__130);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__132);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__134);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__136);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__138);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__140);
   Py_CLEAR(clear_module_state->__pyx_codeobj__141);
   Py_CLEAR(clear_module_state->__pyx_codeobj__142);
   Py_CLEAR(clear_module_state->__pyx_codeobj__143);
   Py_CLEAR(clear_module_state->__pyx_codeobj__144);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__145);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__146);
   Py_CLEAR(clear_module_state->__pyx_codeobj__147);
   Py_CLEAR(clear_module_state->__pyx_codeobj__148);
   Py_CLEAR(clear_module_state->__pyx_codeobj__149);
@@ -4449,10 +4416,9 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_codeobj__151);
   Py_CLEAR(clear_module_state->__pyx_codeobj__152);
   Py_CLEAR(clear_module_state->__pyx_codeobj__153);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__154);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__155);
   Py_CLEAR(clear_module_state->__pyx_codeobj__156);
   Py_CLEAR(clear_module_state->__pyx_codeobj__157);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__158);
   Py_CLEAR(clear_module_state->__pyx_codeobj__159);
   Py_CLEAR(clear_module_state->__pyx_codeobj__160);
   Py_CLEAR(clear_module_state->__pyx_codeobj__161);
@@ -4495,8 +4461,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Allocated);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Atom_Indices);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Atom_has_moved_outside_the_root);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Attributes);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Atom_has_moved_outside_the_root);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Attributes);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Child_Pointers);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Dimension);
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree);
@@ -4556,9 +4522,9 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_needs_dynamic_cont);
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_needs_dynamic_expa);
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_needs_expansion);
+  Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_only_find_neighbor);
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_print_node_details);
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_print_octree);
-  Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_print_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_pull_up);
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_push_down);
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_reallocate_nodes);
@@ -4569,56 +4535,55 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_traverse_and_print);
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_traverse_octree);
   Py_VISIT(traverse_module_state->__pyx_n_s_DynamicOctree_update_octree);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_ERROR_Could_not_create_free_node);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_ERROR_Could_not_get_next_node);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Error_Invalid_child_pointer_inde);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Failed_to_allocate_leaf_node_mem);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Failed_to_allocate_temporary_sto);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Failed_to_contract_leaf_storage);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Failed_to_expand_leaf_storage_fo);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_ERROR_Could_not_create_free_node);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_ERROR_Could_not_get_next_node);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Error_Invalid_child_pointer_inde);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Failed_to_allocate_leaf_node_mem);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Failed_to_allocate_temporary_sto);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Failed_to_contract_leaf_storage);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Failed_to_expand_leaf_storage_fo);
   Py_VISIT(traverse_module_state->__pyx_n_u_False);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_addAtomToLeaf);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_addAtomToNonLea);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_addAtomToLeaf);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_addAtomToNonLea);
   Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_computeLeafAttr);
   Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_computeNonLeafA);
   Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_computeNonRootB);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_computeRootBoun);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_contractOctreeN);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_destroyOctree);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_expandOctreeNod);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_freeSubtreeNode);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_getNextFreeNode);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_getOctreeSize);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_getSubtreeSize);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_initFreeNodeSer);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_print);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_pullUp);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_pushDown);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_removeAtomFromL);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_removeAtomFromN);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_reorganizeOctre);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_traverseOctree);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_In_DynamicOctree_updateOctree);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_computeRootBoun);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_contractOctreeN);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_destroyOctree);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_expandOctreeNod);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_freeSubtreeNode);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_getNextFreeNode);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_getOctreeSize);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_getSubtreeSize);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_initFreeNodeSer);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_print);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_pullUp);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_pushDown);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_removeAtomFromL);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_removeAtomFromN);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_reorganizeOctre);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_traverseOctree);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_In_DynamicOctree_updateOctree);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_3);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_4);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Indices);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Indices);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Inside_DynamicOctree_allocateNod);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Inside_DynamicOctree_reallocateN);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Is_Leaf);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Leaf_Node);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Location_index_must_be_non_negat);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Leaf_Node);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Location_index_must_be_non_negat);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Max_leaf_size);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Node_Attributes);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Node_ID);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Node_ID);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Node_id_is_out_of_bounds_in_free);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Non_Leaf_Node);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Node_id_is_out_of_bounds_in_free);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Non_Leaf_Node);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Number_of_Atoms);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Number_of_Fixed_Atoms);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Number_of_atoms);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Number_of_atoms);
   Py_VISIT(traverse_module_state->__pyx_n_s_OctreeConstructionParams);
   Py_VISIT(traverse_module_state->__pyx_n_s_OctreeConstructionParams___reduc);
   Py_VISIT(traverse_module_state->__pyx_n_s_OctreeConstructionParams___setst);
@@ -4635,20 +4600,19 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_OctreeScore_get_score);
   Py_VISIT(traverse_module_state->__pyx_n_s_OctreeScore_set_score);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Parent_Node_ID);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Parent_Nodes);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Parent_Nodes);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Parent_Pointer);
   Py_VISIT(traverse_module_state->__pyx_n_s_PickleError);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Position);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Starting_DynamicOctree_buildOctr);
-  Py_VISIT(traverse_module_state->__pyx_n_s_Testing);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Starting_DynamicOctree_buildOctr);
   Py_VISIT(traverse_module_state->__pyx_n_u_True);
   Py_VISIT(traverse_module_state->__pyx_n_s_ValueError);
-  Py_VISIT(traverse_module_state->__pyx_kp_s__15);
+  Py_VISIT(traverse_module_state->__pyx_kp_u__15);
   Py_VISIT(traverse_module_state->__pyx_n_s__168);
-  Py_VISIT(traverse_module_state->__pyx_kp_s__17);
-  Py_VISIT(traverse_module_state->__pyx_kp_s__18);
+  Py_VISIT(traverse_module_state->__pyx_kp_u__17);
+  Py_VISIT(traverse_module_state->__pyx_kp_u__18);
   Py_VISIT(traverse_module_state->__pyx_kp_u__19);
-  Py_VISIT(traverse_module_state->__pyx_n_s__46);
+  Py_VISIT(traverse_module_state->__pyx_n_s__45);
   Py_VISIT(traverse_module_state->__pyx_kp_u__7);
   Py_VISIT(traverse_module_state->__pyx_n_s_a);
   Py_VISIT(traverse_module_state->__pyx_n_s_add);
@@ -4690,8 +4654,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_contract_octree_node);
   Py_VISIT(traverse_module_state->__pyx_n_s_create_octree_ptr);
   Py_VISIT(traverse_module_state->__pyx_n_s_d);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_d_2);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_d_d_lf);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_d_2);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_d_d_lf);
   Py_VISIT(traverse_module_state->__pyx_n_s_depth);
   Py_VISIT(traverse_module_state->__pyx_n_s_destroy_octree);
   Py_VISIT(traverse_module_state->__pyx_n_s_dict);
@@ -4749,6 +4713,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_max_leaf_dim);
   Py_VISIT(traverse_module_state->__pyx_n_s_max_leaf_size);
   Py_VISIT(traverse_module_state->__pyx_n_s_max_nodes);
+  Py_VISIT(traverse_module_state->__pyx_n_s_n);
   Py_VISIT(traverse_module_state->__pyx_n_s_n_atoms);
   Py_VISIT(traverse_module_state->__pyx_n_s_n_fixed);
   Py_VISIT(traverse_module_state->__pyx_n_s_name);
@@ -4765,13 +4730,13 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_obj);
   Py_VISIT(traverse_module_state->__pyx_n_s_octree);
   Py_VISIT(traverse_module_state->__pyx_kp_s_octree_pyx);
+  Py_VISIT(traverse_module_state->__pyx_n_s_only_find_neighbors);
   Py_VISIT(traverse_module_state->__pyx_n_s_parent_pointer);
   Py_VISIT(traverse_module_state->__pyx_n_s_pickle);
   Py_VISIT(traverse_module_state->__pyx_n_s_print);
   Py_VISIT(traverse_module_state->__pyx_n_s_print_node_details);
   Py_VISIT(traverse_module_state->__pyx_n_s_print_octree);
   Py_VISIT(traverse_module_state->__pyx_n_s_print_params);
-  Py_VISIT(traverse_module_state->__pyx_n_s_print_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_ptr);
   Py_VISIT(traverse_module_state->__pyx_n_s_pull_up);
   Py_VISIT(traverse_module_state->__pyx_n_s_push_down);
@@ -4897,67 +4862,68 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_tuple__42);
   Py_VISIT(traverse_module_state->__pyx_tuple__43);
   Py_VISIT(traverse_module_state->__pyx_tuple__44);
-  Py_VISIT(traverse_module_state->__pyx_tuple__45);
-  Py_VISIT(traverse_module_state->__pyx_tuple__47);
-  Py_VISIT(traverse_module_state->__pyx_tuple__49);
-  Py_VISIT(traverse_module_state->__pyx_tuple__51);
-  Py_VISIT(traverse_module_state->__pyx_tuple__53);
-  Py_VISIT(traverse_module_state->__pyx_tuple__55);
-  Py_VISIT(traverse_module_state->__pyx_tuple__57);
-  Py_VISIT(traverse_module_state->__pyx_tuple__59);
-  Py_VISIT(traverse_module_state->__pyx_tuple__67);
-  Py_VISIT(traverse_module_state->__pyx_tuple__69);
-  Py_VISIT(traverse_module_state->__pyx_tuple__71);
-  Py_VISIT(traverse_module_state->__pyx_tuple__77);
-  Py_VISIT(traverse_module_state->__pyx_tuple__79);
-  Py_VISIT(traverse_module_state->__pyx_tuple__82);
-  Py_VISIT(traverse_module_state->__pyx_tuple__84);
-  Py_VISIT(traverse_module_state->__pyx_tuple__94);
-  Py_VISIT(traverse_module_state->__pyx_tuple__97);
-  Py_VISIT(traverse_module_state->__pyx_tuple__100);
-  Py_VISIT(traverse_module_state->__pyx_tuple__104);
-  Py_VISIT(traverse_module_state->__pyx_tuple__106);
-  Py_VISIT(traverse_module_state->__pyx_tuple__109);
-  Py_VISIT(traverse_module_state->__pyx_tuple__111);
-  Py_VISIT(traverse_module_state->__pyx_tuple__113);
-  Py_VISIT(traverse_module_state->__pyx_tuple__116);
-  Py_VISIT(traverse_module_state->__pyx_tuple__121);
-  Py_VISIT(traverse_module_state->__pyx_tuple__124);
-  Py_VISIT(traverse_module_state->__pyx_tuple__127);
+  Py_VISIT(traverse_module_state->__pyx_tuple__46);
+  Py_VISIT(traverse_module_state->__pyx_tuple__48);
+  Py_VISIT(traverse_module_state->__pyx_tuple__50);
+  Py_VISIT(traverse_module_state->__pyx_tuple__52);
+  Py_VISIT(traverse_module_state->__pyx_tuple__54);
+  Py_VISIT(traverse_module_state->__pyx_tuple__56);
+  Py_VISIT(traverse_module_state->__pyx_tuple__58);
+  Py_VISIT(traverse_module_state->__pyx_tuple__66);
+  Py_VISIT(traverse_module_state->__pyx_tuple__68);
+  Py_VISIT(traverse_module_state->__pyx_tuple__70);
+  Py_VISIT(traverse_module_state->__pyx_tuple__76);
+  Py_VISIT(traverse_module_state->__pyx_tuple__78);
+  Py_VISIT(traverse_module_state->__pyx_tuple__81);
+  Py_VISIT(traverse_module_state->__pyx_tuple__83);
+  Py_VISIT(traverse_module_state->__pyx_tuple__93);
+  Py_VISIT(traverse_module_state->__pyx_tuple__96);
+  Py_VISIT(traverse_module_state->__pyx_tuple__99);
+  Py_VISIT(traverse_module_state->__pyx_tuple__103);
+  Py_VISIT(traverse_module_state->__pyx_tuple__105);
+  Py_VISIT(traverse_module_state->__pyx_tuple__108);
+  Py_VISIT(traverse_module_state->__pyx_tuple__110);
+  Py_VISIT(traverse_module_state->__pyx_tuple__112);
+  Py_VISIT(traverse_module_state->__pyx_tuple__115);
+  Py_VISIT(traverse_module_state->__pyx_tuple__120);
+  Py_VISIT(traverse_module_state->__pyx_tuple__123);
+  Py_VISIT(traverse_module_state->__pyx_tuple__126);
+  Py_VISIT(traverse_module_state->__pyx_tuple__128);
   Py_VISIT(traverse_module_state->__pyx_tuple__129);
-  Py_VISIT(traverse_module_state->__pyx_tuple__130);
-  Py_VISIT(traverse_module_state->__pyx_tuple__132);
-  Py_VISIT(traverse_module_state->__pyx_tuple__134);
-  Py_VISIT(traverse_module_state->__pyx_tuple__136);
-  Py_VISIT(traverse_module_state->__pyx_tuple__138);
-  Py_VISIT(traverse_module_state->__pyx_tuple__140);
-  Py_VISIT(traverse_module_state->__pyx_tuple__146);
-  Py_VISIT(traverse_module_state->__pyx_tuple__155);
+  Py_VISIT(traverse_module_state->__pyx_tuple__131);
+  Py_VISIT(traverse_module_state->__pyx_tuple__133);
+  Py_VISIT(traverse_module_state->__pyx_tuple__135);
+  Py_VISIT(traverse_module_state->__pyx_tuple__137);
+  Py_VISIT(traverse_module_state->__pyx_tuple__139);
+  Py_VISIT(traverse_module_state->__pyx_tuple__145);
+  Py_VISIT(traverse_module_state->__pyx_tuple__154);
+  Py_VISIT(traverse_module_state->__pyx_tuple__158);
   Py_VISIT(traverse_module_state->__pyx_tuple__162);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__48);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__50);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__52);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__54);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__56);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__58);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__47);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__49);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__51);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__53);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__55);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__57);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__59);
   Py_VISIT(traverse_module_state->__pyx_codeobj__60);
   Py_VISIT(traverse_module_state->__pyx_codeobj__61);
   Py_VISIT(traverse_module_state->__pyx_codeobj__62);
   Py_VISIT(traverse_module_state->__pyx_codeobj__63);
   Py_VISIT(traverse_module_state->__pyx_codeobj__64);
   Py_VISIT(traverse_module_state->__pyx_codeobj__65);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__66);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__68);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__70);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__67);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__69);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__71);
   Py_VISIT(traverse_module_state->__pyx_codeobj__72);
   Py_VISIT(traverse_module_state->__pyx_codeobj__73);
   Py_VISIT(traverse_module_state->__pyx_codeobj__74);
   Py_VISIT(traverse_module_state->__pyx_codeobj__75);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__76);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__78);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__77);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__79);
   Py_VISIT(traverse_module_state->__pyx_codeobj__80);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__81);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__83);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__82);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__84);
   Py_VISIT(traverse_module_state->__pyx_codeobj__85);
   Py_VISIT(traverse_module_state->__pyx_codeobj__86);
   Py_VISIT(traverse_module_state->__pyx_codeobj__87);
@@ -4966,40 +4932,40 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_codeobj__90);
   Py_VISIT(traverse_module_state->__pyx_codeobj__91);
   Py_VISIT(traverse_module_state->__pyx_codeobj__92);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__93);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__94);
   Py_VISIT(traverse_module_state->__pyx_codeobj__95);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__96);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__97);
   Py_VISIT(traverse_module_state->__pyx_codeobj__98);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__99);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__100);
   Py_VISIT(traverse_module_state->__pyx_codeobj__101);
   Py_VISIT(traverse_module_state->__pyx_codeobj__102);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__103);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__105);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__104);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__106);
   Py_VISIT(traverse_module_state->__pyx_codeobj__107);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__108);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__110);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__112);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__109);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__111);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__113);
   Py_VISIT(traverse_module_state->__pyx_codeobj__114);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__115);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__116);
   Py_VISIT(traverse_module_state->__pyx_codeobj__117);
   Py_VISIT(traverse_module_state->__pyx_codeobj__118);
   Py_VISIT(traverse_module_state->__pyx_codeobj__119);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__120);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__121);
   Py_VISIT(traverse_module_state->__pyx_codeobj__122);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__123);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__124);
   Py_VISIT(traverse_module_state->__pyx_codeobj__125);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__126);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__128);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__131);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__133);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__135);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__137);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__139);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__127);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__130);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__132);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__134);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__136);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__138);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__140);
   Py_VISIT(traverse_module_state->__pyx_codeobj__141);
   Py_VISIT(traverse_module_state->__pyx_codeobj__142);
   Py_VISIT(traverse_module_state->__pyx_codeobj__143);
   Py_VISIT(traverse_module_state->__pyx_codeobj__144);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__145);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__146);
   Py_VISIT(traverse_module_state->__pyx_codeobj__147);
   Py_VISIT(traverse_module_state->__pyx_codeobj__148);
   Py_VISIT(traverse_module_state->__pyx_codeobj__149);
@@ -5007,10 +4973,9 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_codeobj__151);
   Py_VISIT(traverse_module_state->__pyx_codeobj__152);
   Py_VISIT(traverse_module_state->__pyx_codeobj__153);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__154);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__155);
   Py_VISIT(traverse_module_state->__pyx_codeobj__156);
   Py_VISIT(traverse_module_state->__pyx_codeobj__157);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__158);
   Py_VISIT(traverse_module_state->__pyx_codeobj__159);
   Py_VISIT(traverse_module_state->__pyx_codeobj__160);
   Py_VISIT(traverse_module_state->__pyx_codeobj__161);
@@ -5071,8 +5036,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_ __pyx_mstate_global->__pyx_kp_u_
 #define __pyx_kp_u_Allocated __pyx_mstate_global->__pyx_kp_u_Allocated
 #define __pyx_kp_u_Atom_Indices __pyx_mstate_global->__pyx_kp_u_Atom_Indices
-#define __pyx_kp_s_Atom_has_moved_outside_the_root __pyx_mstate_global->__pyx_kp_s_Atom_has_moved_outside_the_root
-#define __pyx_kp_s_Attributes __pyx_mstate_global->__pyx_kp_s_Attributes
+#define __pyx_kp_u_Atom_has_moved_outside_the_root __pyx_mstate_global->__pyx_kp_u_Atom_has_moved_outside_the_root
+#define __pyx_kp_u_Attributes __pyx_mstate_global->__pyx_kp_u_Attributes
 #define __pyx_kp_u_Child_Pointers __pyx_mstate_global->__pyx_kp_u_Child_Pointers
 #define __pyx_kp_u_Dimension __pyx_mstate_global->__pyx_kp_u_Dimension
 #define __pyx_n_s_DynamicOctree __pyx_mstate_global->__pyx_n_s_DynamicOctree
@@ -5132,9 +5097,9 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_DynamicOctree_needs_dynamic_cont __pyx_mstate_global->__pyx_n_s_DynamicOctree_needs_dynamic_cont
 #define __pyx_n_s_DynamicOctree_needs_dynamic_expa __pyx_mstate_global->__pyx_n_s_DynamicOctree_needs_dynamic_expa
 #define __pyx_n_s_DynamicOctree_needs_expansion __pyx_mstate_global->__pyx_n_s_DynamicOctree_needs_expansion
+#define __pyx_n_s_DynamicOctree_only_find_neighbor __pyx_mstate_global->__pyx_n_s_DynamicOctree_only_find_neighbor
 #define __pyx_n_s_DynamicOctree_print_node_details __pyx_mstate_global->__pyx_n_s_DynamicOctree_print_node_details
 #define __pyx_n_s_DynamicOctree_print_octree __pyx_mstate_global->__pyx_n_s_DynamicOctree_print_octree
-#define __pyx_n_s_DynamicOctree_print_test __pyx_mstate_global->__pyx_n_s_DynamicOctree_print_test
 #define __pyx_n_s_DynamicOctree_pull_up __pyx_mstate_global->__pyx_n_s_DynamicOctree_pull_up
 #define __pyx_n_s_DynamicOctree_push_down __pyx_mstate_global->__pyx_n_s_DynamicOctree_push_down
 #define __pyx_n_s_DynamicOctree_reallocate_nodes __pyx_mstate_global->__pyx_n_s_DynamicOctree_reallocate_nodes
@@ -5145,56 +5110,55 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_DynamicOctree_traverse_and_print __pyx_mstate_global->__pyx_n_s_DynamicOctree_traverse_and_print
 #define __pyx_n_s_DynamicOctree_traverse_octree __pyx_mstate_global->__pyx_n_s_DynamicOctree_traverse_octree
 #define __pyx_n_s_DynamicOctree_update_octree __pyx_mstate_global->__pyx_n_s_DynamicOctree_update_octree
-#define __pyx_kp_s_ERROR_Could_not_create_free_node __pyx_mstate_global->__pyx_kp_s_ERROR_Could_not_create_free_node
-#define __pyx_kp_s_ERROR_Could_not_get_next_node __pyx_mstate_global->__pyx_kp_s_ERROR_Could_not_get_next_node
-#define __pyx_kp_s_Error_Invalid_child_pointer_inde __pyx_mstate_global->__pyx_kp_s_Error_Invalid_child_pointer_inde
-#define __pyx_kp_s_Failed_to_allocate_leaf_node_mem __pyx_mstate_global->__pyx_kp_s_Failed_to_allocate_leaf_node_mem
-#define __pyx_kp_s_Failed_to_allocate_temporary_sto __pyx_mstate_global->__pyx_kp_s_Failed_to_allocate_temporary_sto
-#define __pyx_kp_s_Failed_to_contract_leaf_storage __pyx_mstate_global->__pyx_kp_s_Failed_to_contract_leaf_storage
-#define __pyx_kp_s_Failed_to_expand_leaf_storage_fo __pyx_mstate_global->__pyx_kp_s_Failed_to_expand_leaf_storage_fo
+#define __pyx_kp_u_ERROR_Could_not_create_free_node __pyx_mstate_global->__pyx_kp_u_ERROR_Could_not_create_free_node
+#define __pyx_kp_u_ERROR_Could_not_get_next_node __pyx_mstate_global->__pyx_kp_u_ERROR_Could_not_get_next_node
+#define __pyx_kp_u_Error_Invalid_child_pointer_inde __pyx_mstate_global->__pyx_kp_u_Error_Invalid_child_pointer_inde
+#define __pyx_kp_u_Failed_to_allocate_leaf_node_mem __pyx_mstate_global->__pyx_kp_u_Failed_to_allocate_leaf_node_mem
+#define __pyx_kp_u_Failed_to_allocate_temporary_sto __pyx_mstate_global->__pyx_kp_u_Failed_to_allocate_temporary_sto
+#define __pyx_kp_u_Failed_to_contract_leaf_storage __pyx_mstate_global->__pyx_kp_u_Failed_to_contract_leaf_storage
+#define __pyx_kp_u_Failed_to_expand_leaf_storage_fo __pyx_mstate_global->__pyx_kp_u_Failed_to_expand_leaf_storage_fo
 #define __pyx_n_u_False __pyx_mstate_global->__pyx_n_u_False
-#define __pyx_kp_s_In_DynamicOctree_addAtomToLeaf __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_addAtomToLeaf
-#define __pyx_kp_s_In_DynamicOctree_addAtomToNonLea __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_addAtomToNonLea
+#define __pyx_kp_u_In_DynamicOctree_addAtomToLeaf __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_addAtomToLeaf
+#define __pyx_kp_u_In_DynamicOctree_addAtomToNonLea __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_addAtomToNonLea
 #define __pyx_kp_u_In_DynamicOctree_computeLeafAttr __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_computeLeafAttr
 #define __pyx_kp_u_In_DynamicOctree_computeNonLeafA __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_computeNonLeafA
 #define __pyx_kp_u_In_DynamicOctree_computeNonRootB __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_computeNonRootB
-#define __pyx_kp_s_In_DynamicOctree_computeRootBoun __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_computeRootBoun
-#define __pyx_kp_s_In_DynamicOctree_contractOctreeN __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_contractOctreeN
-#define __pyx_kp_s_In_DynamicOctree_destroyOctree __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_destroyOctree
-#define __pyx_kp_s_In_DynamicOctree_expandOctreeNod __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_expandOctreeNod
-#define __pyx_kp_s_In_DynamicOctree_freeSubtreeNode __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_freeSubtreeNode
-#define __pyx_kp_s_In_DynamicOctree_getNextFreeNode __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_getNextFreeNode
-#define __pyx_kp_s_In_DynamicOctree_getOctreeSize __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_getOctreeSize
-#define __pyx_kp_s_In_DynamicOctree_getSubtreeSize __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_getSubtreeSize
-#define __pyx_kp_s_In_DynamicOctree_initFreeNodeSer __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_initFreeNodeSer
-#define __pyx_kp_s_In_DynamicOctree_print __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_print
-#define __pyx_kp_s_In_DynamicOctree_pullUp __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_pullUp
-#define __pyx_kp_s_In_DynamicOctree_pushDown __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_pushDown
-#define __pyx_kp_s_In_DynamicOctree_removeAtomFromL __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_removeAtomFromL
-#define __pyx_kp_s_In_DynamicOctree_removeAtomFromN __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_removeAtomFromN
-#define __pyx_kp_s_In_DynamicOctree_reorganizeOctre __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_reorganizeOctre
-#define __pyx_kp_s_In_DynamicOctree_traverseOctree __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_traverseOctree
-#define __pyx_kp_s_In_DynamicOctree_updateOctree __pyx_mstate_global->__pyx_kp_s_In_DynamicOctree_updateOctree
+#define __pyx_kp_u_In_DynamicOctree_computeRootBoun __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_computeRootBoun
+#define __pyx_kp_u_In_DynamicOctree_contractOctreeN __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_contractOctreeN
+#define __pyx_kp_u_In_DynamicOctree_destroyOctree __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_destroyOctree
+#define __pyx_kp_u_In_DynamicOctree_expandOctreeNod __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_expandOctreeNod
+#define __pyx_kp_u_In_DynamicOctree_freeSubtreeNode __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_freeSubtreeNode
+#define __pyx_kp_u_In_DynamicOctree_getNextFreeNode __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_getNextFreeNode
+#define __pyx_kp_u_In_DynamicOctree_getOctreeSize __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_getOctreeSize
+#define __pyx_kp_u_In_DynamicOctree_getSubtreeSize __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_getSubtreeSize
+#define __pyx_kp_u_In_DynamicOctree_initFreeNodeSer __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_initFreeNodeSer
+#define __pyx_kp_u_In_DynamicOctree_print __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_print
+#define __pyx_kp_u_In_DynamicOctree_pullUp __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_pullUp
+#define __pyx_kp_u_In_DynamicOctree_pushDown __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_pushDown
+#define __pyx_kp_u_In_DynamicOctree_removeAtomFromL __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_removeAtomFromL
+#define __pyx_kp_u_In_DynamicOctree_removeAtomFromN __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_removeAtomFromN
+#define __pyx_kp_u_In_DynamicOctree_reorganizeOctre __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_reorganizeOctre
+#define __pyx_kp_u_In_DynamicOctree_traverseOctree __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_traverseOctree
+#define __pyx_kp_u_In_DynamicOctree_updateOctree __pyx_mstate_global->__pyx_kp_u_In_DynamicOctree_updateOctree
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0_3 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_3
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0_4 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_4
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5
-#define __pyx_kp_s_Indices __pyx_mstate_global->__pyx_kp_s_Indices
+#define __pyx_kp_u_Indices __pyx_mstate_global->__pyx_kp_u_Indices
 #define __pyx_kp_u_Inside_DynamicOctree_allocateNod __pyx_mstate_global->__pyx_kp_u_Inside_DynamicOctree_allocateNod
 #define __pyx_kp_u_Inside_DynamicOctree_reallocateN __pyx_mstate_global->__pyx_kp_u_Inside_DynamicOctree_reallocateN
 #define __pyx_kp_u_Is_Leaf __pyx_mstate_global->__pyx_kp_u_Is_Leaf
-#define __pyx_kp_s_Leaf_Node __pyx_mstate_global->__pyx_kp_s_Leaf_Node
-#define __pyx_kp_s_Location_index_must_be_non_negat __pyx_mstate_global->__pyx_kp_s_Location_index_must_be_non_negat
+#define __pyx_kp_u_Leaf_Node __pyx_mstate_global->__pyx_kp_u_Leaf_Node
+#define __pyx_kp_u_Location_index_must_be_non_negat __pyx_mstate_global->__pyx_kp_u_Location_index_must_be_non_negat
 #define __pyx_kp_u_Max_leaf_size __pyx_mstate_global->__pyx_kp_u_Max_leaf_size
 #define __pyx_kp_u_Node_Attributes __pyx_mstate_global->__pyx_kp_u_Node_Attributes
-#define __pyx_kp_s_Node_ID __pyx_mstate_global->__pyx_kp_s_Node_ID
 #define __pyx_kp_u_Node_ID __pyx_mstate_global->__pyx_kp_u_Node_ID
-#define __pyx_kp_s_Node_id_is_out_of_bounds_in_free __pyx_mstate_global->__pyx_kp_s_Node_id_is_out_of_bounds_in_free
-#define __pyx_kp_s_Non_Leaf_Node __pyx_mstate_global->__pyx_kp_s_Non_Leaf_Node
+#define __pyx_kp_u_Node_id_is_out_of_bounds_in_free __pyx_mstate_global->__pyx_kp_u_Node_id_is_out_of_bounds_in_free
+#define __pyx_kp_u_Non_Leaf_Node __pyx_mstate_global->__pyx_kp_u_Non_Leaf_Node
 #define __pyx_kp_u_Number_of_Atoms __pyx_mstate_global->__pyx_kp_u_Number_of_Atoms
 #define __pyx_kp_u_Number_of_Fixed_Atoms __pyx_mstate_global->__pyx_kp_u_Number_of_Fixed_Atoms
-#define __pyx_kp_s_Number_of_atoms __pyx_mstate_global->__pyx_kp_s_Number_of_atoms
+#define __pyx_kp_u_Number_of_atoms __pyx_mstate_global->__pyx_kp_u_Number_of_atoms
 #define __pyx_n_s_OctreeConstructionParams __pyx_mstate_global->__pyx_n_s_OctreeConstructionParams
 #define __pyx_n_s_OctreeConstructionParams___reduc __pyx_mstate_global->__pyx_n_s_OctreeConstructionParams___reduc
 #define __pyx_n_s_OctreeConstructionParams___setst __pyx_mstate_global->__pyx_n_s_OctreeConstructionParams___setst
@@ -5211,20 +5175,19 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_OctreeScore_get_score __pyx_mstate_global->__pyx_n_s_OctreeScore_get_score
 #define __pyx_n_s_OctreeScore_set_score __pyx_mstate_global->__pyx_n_s_OctreeScore_set_score
 #define __pyx_kp_u_Parent_Node_ID __pyx_mstate_global->__pyx_kp_u_Parent_Node_ID
-#define __pyx_kp_s_Parent_Nodes __pyx_mstate_global->__pyx_kp_s_Parent_Nodes
+#define __pyx_kp_u_Parent_Nodes __pyx_mstate_global->__pyx_kp_u_Parent_Nodes
 #define __pyx_kp_u_Parent_Pointer __pyx_mstate_global->__pyx_kp_u_Parent_Pointer
 #define __pyx_n_s_PickleError __pyx_mstate_global->__pyx_n_s_PickleError
 #define __pyx_kp_u_Position __pyx_mstate_global->__pyx_kp_u_Position
-#define __pyx_kp_s_Starting_DynamicOctree_buildOctr __pyx_mstate_global->__pyx_kp_s_Starting_DynamicOctree_buildOctr
-#define __pyx_n_s_Testing __pyx_mstate_global->__pyx_n_s_Testing
+#define __pyx_kp_u_Starting_DynamicOctree_buildOctr __pyx_mstate_global->__pyx_kp_u_Starting_DynamicOctree_buildOctr
 #define __pyx_n_u_True __pyx_mstate_global->__pyx_n_u_True
 #define __pyx_n_s_ValueError __pyx_mstate_global->__pyx_n_s_ValueError
-#define __pyx_kp_s__15 __pyx_mstate_global->__pyx_kp_s__15
+#define __pyx_kp_u__15 __pyx_mstate_global->__pyx_kp_u__15
 #define __pyx_n_s__168 __pyx_mstate_global->__pyx_n_s__168
-#define __pyx_kp_s__17 __pyx_mstate_global->__pyx_kp_s__17
-#define __pyx_kp_s__18 __pyx_mstate_global->__pyx_kp_s__18
+#define __pyx_kp_u__17 __pyx_mstate_global->__pyx_kp_u__17
+#define __pyx_kp_u__18 __pyx_mstate_global->__pyx_kp_u__18
 #define __pyx_kp_u__19 __pyx_mstate_global->__pyx_kp_u__19
-#define __pyx_n_s__46 __pyx_mstate_global->__pyx_n_s__46
+#define __pyx_n_s__45 __pyx_mstate_global->__pyx_n_s__45
 #define __pyx_kp_u__7 __pyx_mstate_global->__pyx_kp_u__7
 #define __pyx_n_s_a __pyx_mstate_global->__pyx_n_s_a
 #define __pyx_n_s_add __pyx_mstate_global->__pyx_n_s_add
@@ -5266,8 +5229,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_contract_octree_node __pyx_mstate_global->__pyx_n_s_contract_octree_node
 #define __pyx_n_s_create_octree_ptr __pyx_mstate_global->__pyx_n_s_create_octree_ptr
 #define __pyx_n_s_d __pyx_mstate_global->__pyx_n_s_d
-#define __pyx_kp_s_d_2 __pyx_mstate_global->__pyx_kp_s_d_2
-#define __pyx_kp_s_d_d_lf __pyx_mstate_global->__pyx_kp_s_d_d_lf
+#define __pyx_kp_u_d_2 __pyx_mstate_global->__pyx_kp_u_d_2
+#define __pyx_kp_u_d_d_lf __pyx_mstate_global->__pyx_kp_u_d_d_lf
 #define __pyx_n_s_depth __pyx_mstate_global->__pyx_n_s_depth
 #define __pyx_n_s_destroy_octree __pyx_mstate_global->__pyx_n_s_destroy_octree
 #define __pyx_n_s_dict __pyx_mstate_global->__pyx_n_s_dict
@@ -5325,6 +5288,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_max_leaf_dim __pyx_mstate_global->__pyx_n_s_max_leaf_dim
 #define __pyx_n_s_max_leaf_size __pyx_mstate_global->__pyx_n_s_max_leaf_size
 #define __pyx_n_s_max_nodes __pyx_mstate_global->__pyx_n_s_max_nodes
+#define __pyx_n_s_n __pyx_mstate_global->__pyx_n_s_n
 #define __pyx_n_s_n_atoms __pyx_mstate_global->__pyx_n_s_n_atoms
 #define __pyx_n_s_n_fixed __pyx_mstate_global->__pyx_n_s_n_fixed
 #define __pyx_n_s_name __pyx_mstate_global->__pyx_n_s_name
@@ -5341,13 +5305,13 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_obj __pyx_mstate_global->__pyx_n_s_obj
 #define __pyx_n_s_octree __pyx_mstate_global->__pyx_n_s_octree
 #define __pyx_kp_s_octree_pyx __pyx_mstate_global->__pyx_kp_s_octree_pyx
+#define __pyx_n_s_only_find_neighbors __pyx_mstate_global->__pyx_n_s_only_find_neighbors
 #define __pyx_n_s_parent_pointer __pyx_mstate_global->__pyx_n_s_parent_pointer
 #define __pyx_n_s_pickle __pyx_mstate_global->__pyx_n_s_pickle
 #define __pyx_n_s_print __pyx_mstate_global->__pyx_n_s_print
 #define __pyx_n_s_print_node_details __pyx_mstate_global->__pyx_n_s_print_node_details
 #define __pyx_n_s_print_octree __pyx_mstate_global->__pyx_n_s_print_octree
 #define __pyx_n_s_print_params __pyx_mstate_global->__pyx_n_s_print_params
-#define __pyx_n_s_print_test __pyx_mstate_global->__pyx_n_s_print_test
 #define __pyx_n_s_ptr __pyx_mstate_global->__pyx_n_s_ptr
 #define __pyx_n_s_pull_up __pyx_mstate_global->__pyx_n_s_pull_up
 #define __pyx_n_s_push_down __pyx_mstate_global->__pyx_n_s_push_down
@@ -5473,67 +5437,68 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_tuple__42 __pyx_mstate_global->__pyx_tuple__42
 #define __pyx_tuple__43 __pyx_mstate_global->__pyx_tuple__43
 #define __pyx_tuple__44 __pyx_mstate_global->__pyx_tuple__44
-#define __pyx_tuple__45 __pyx_mstate_global->__pyx_tuple__45
-#define __pyx_tuple__47 __pyx_mstate_global->__pyx_tuple__47
-#define __pyx_tuple__49 __pyx_mstate_global->__pyx_tuple__49
-#define __pyx_tuple__51 __pyx_mstate_global->__pyx_tuple__51
-#define __pyx_tuple__53 __pyx_mstate_global->__pyx_tuple__53
-#define __pyx_tuple__55 __pyx_mstate_global->__pyx_tuple__55
-#define __pyx_tuple__57 __pyx_mstate_global->__pyx_tuple__57
-#define __pyx_tuple__59 __pyx_mstate_global->__pyx_tuple__59
-#define __pyx_tuple__67 __pyx_mstate_global->__pyx_tuple__67
-#define __pyx_tuple__69 __pyx_mstate_global->__pyx_tuple__69
-#define __pyx_tuple__71 __pyx_mstate_global->__pyx_tuple__71
-#define __pyx_tuple__77 __pyx_mstate_global->__pyx_tuple__77
-#define __pyx_tuple__79 __pyx_mstate_global->__pyx_tuple__79
-#define __pyx_tuple__82 __pyx_mstate_global->__pyx_tuple__82
-#define __pyx_tuple__84 __pyx_mstate_global->__pyx_tuple__84
-#define __pyx_tuple__94 __pyx_mstate_global->__pyx_tuple__94
-#define __pyx_tuple__97 __pyx_mstate_global->__pyx_tuple__97
-#define __pyx_tuple__100 __pyx_mstate_global->__pyx_tuple__100
-#define __pyx_tuple__104 __pyx_mstate_global->__pyx_tuple__104
-#define __pyx_tuple__106 __pyx_mstate_global->__pyx_tuple__106
-#define __pyx_tuple__109 __pyx_mstate_global->__pyx_tuple__109
-#define __pyx_tuple__111 __pyx_mstate_global->__pyx_tuple__111
-#define __pyx_tuple__113 __pyx_mstate_global->__pyx_tuple__113
-#define __pyx_tuple__116 __pyx_mstate_global->__pyx_tuple__116
-#define __pyx_tuple__121 __pyx_mstate_global->__pyx_tuple__121
-#define __pyx_tuple__124 __pyx_mstate_global->__pyx_tuple__124
-#define __pyx_tuple__127 __pyx_mstate_global->__pyx_tuple__127
+#define __pyx_tuple__46 __pyx_mstate_global->__pyx_tuple__46
+#define __pyx_tuple__48 __pyx_mstate_global->__pyx_tuple__48
+#define __pyx_tuple__50 __pyx_mstate_global->__pyx_tuple__50
+#define __pyx_tuple__52 __pyx_mstate_global->__pyx_tuple__52
+#define __pyx_tuple__54 __pyx_mstate_global->__pyx_tuple__54
+#define __pyx_tuple__56 __pyx_mstate_global->__pyx_tuple__56
+#define __pyx_tuple__58 __pyx_mstate_global->__pyx_tuple__58
+#define __pyx_tuple__66 __pyx_mstate_global->__pyx_tuple__66
+#define __pyx_tuple__68 __pyx_mstate_global->__pyx_tuple__68
+#define __pyx_tuple__70 __pyx_mstate_global->__pyx_tuple__70
+#define __pyx_tuple__76 __pyx_mstate_global->__pyx_tuple__76
+#define __pyx_tuple__78 __pyx_mstate_global->__pyx_tuple__78
+#define __pyx_tuple__81 __pyx_mstate_global->__pyx_tuple__81
+#define __pyx_tuple__83 __pyx_mstate_global->__pyx_tuple__83
+#define __pyx_tuple__93 __pyx_mstate_global->__pyx_tuple__93
+#define __pyx_tuple__96 __pyx_mstate_global->__pyx_tuple__96
+#define __pyx_tuple__99 __pyx_mstate_global->__pyx_tuple__99
+#define __pyx_tuple__103 __pyx_mstate_global->__pyx_tuple__103
+#define __pyx_tuple__105 __pyx_mstate_global->__pyx_tuple__105
+#define __pyx_tuple__108 __pyx_mstate_global->__pyx_tuple__108
+#define __pyx_tuple__110 __pyx_mstate_global->__pyx_tuple__110
+#define __pyx_tuple__112 __pyx_mstate_global->__pyx_tuple__112
+#define __pyx_tuple__115 __pyx_mstate_global->__pyx_tuple__115
+#define __pyx_tuple__120 __pyx_mstate_global->__pyx_tuple__120
+#define __pyx_tuple__123 __pyx_mstate_global->__pyx_tuple__123
+#define __pyx_tuple__126 __pyx_mstate_global->__pyx_tuple__126
+#define __pyx_tuple__128 __pyx_mstate_global->__pyx_tuple__128
 #define __pyx_tuple__129 __pyx_mstate_global->__pyx_tuple__129
-#define __pyx_tuple__130 __pyx_mstate_global->__pyx_tuple__130
-#define __pyx_tuple__132 __pyx_mstate_global->__pyx_tuple__132
-#define __pyx_tuple__134 __pyx_mstate_global->__pyx_tuple__134
-#define __pyx_tuple__136 __pyx_mstate_global->__pyx_tuple__136
-#define __pyx_tuple__138 __pyx_mstate_global->__pyx_tuple__138
-#define __pyx_tuple__140 __pyx_mstate_global->__pyx_tuple__140
-#define __pyx_tuple__146 __pyx_mstate_global->__pyx_tuple__146
-#define __pyx_tuple__155 __pyx_mstate_global->__pyx_tuple__155
+#define __pyx_tuple__131 __pyx_mstate_global->__pyx_tuple__131
+#define __pyx_tuple__133 __pyx_mstate_global->__pyx_tuple__133
+#define __pyx_tuple__135 __pyx_mstate_global->__pyx_tuple__135
+#define __pyx_tuple__137 __pyx_mstate_global->__pyx_tuple__137
+#define __pyx_tuple__139 __pyx_mstate_global->__pyx_tuple__139
+#define __pyx_tuple__145 __pyx_mstate_global->__pyx_tuple__145
+#define __pyx_tuple__154 __pyx_mstate_global->__pyx_tuple__154
+#define __pyx_tuple__158 __pyx_mstate_global->__pyx_tuple__158
 #define __pyx_tuple__162 __pyx_mstate_global->__pyx_tuple__162
-#define __pyx_codeobj__48 __pyx_mstate_global->__pyx_codeobj__48
-#define __pyx_codeobj__50 __pyx_mstate_global->__pyx_codeobj__50
-#define __pyx_codeobj__52 __pyx_mstate_global->__pyx_codeobj__52
-#define __pyx_codeobj__54 __pyx_mstate_global->__pyx_codeobj__54
-#define __pyx_codeobj__56 __pyx_mstate_global->__pyx_codeobj__56
-#define __pyx_codeobj__58 __pyx_mstate_global->__pyx_codeobj__58
+#define __pyx_codeobj__47 __pyx_mstate_global->__pyx_codeobj__47
+#define __pyx_codeobj__49 __pyx_mstate_global->__pyx_codeobj__49
+#define __pyx_codeobj__51 __pyx_mstate_global->__pyx_codeobj__51
+#define __pyx_codeobj__53 __pyx_mstate_global->__pyx_codeobj__53
+#define __pyx_codeobj__55 __pyx_mstate_global->__pyx_codeobj__55
+#define __pyx_codeobj__57 __pyx_mstate_global->__pyx_codeobj__57
+#define __pyx_codeobj__59 __pyx_mstate_global->__pyx_codeobj__59
 #define __pyx_codeobj__60 __pyx_mstate_global->__pyx_codeobj__60
 #define __pyx_codeobj__61 __pyx_mstate_global->__pyx_codeobj__61
 #define __pyx_codeobj__62 __pyx_mstate_global->__pyx_codeobj__62
 #define __pyx_codeobj__63 __pyx_mstate_global->__pyx_codeobj__63
 #define __pyx_codeobj__64 __pyx_mstate_global->__pyx_codeobj__64
 #define __pyx_codeobj__65 __pyx_mstate_global->__pyx_codeobj__65
-#define __pyx_codeobj__66 __pyx_mstate_global->__pyx_codeobj__66
-#define __pyx_codeobj__68 __pyx_mstate_global->__pyx_codeobj__68
-#define __pyx_codeobj__70 __pyx_mstate_global->__pyx_codeobj__70
+#define __pyx_codeobj__67 __pyx_mstate_global->__pyx_codeobj__67
+#define __pyx_codeobj__69 __pyx_mstate_global->__pyx_codeobj__69
+#define __pyx_codeobj__71 __pyx_mstate_global->__pyx_codeobj__71
 #define __pyx_codeobj__72 __pyx_mstate_global->__pyx_codeobj__72
 #define __pyx_codeobj__73 __pyx_mstate_global->__pyx_codeobj__73
 #define __pyx_codeobj__74 __pyx_mstate_global->__pyx_codeobj__74
 #define __pyx_codeobj__75 __pyx_mstate_global->__pyx_codeobj__75
-#define __pyx_codeobj__76 __pyx_mstate_global->__pyx_codeobj__76
-#define __pyx_codeobj__78 __pyx_mstate_global->__pyx_codeobj__78
+#define __pyx_codeobj__77 __pyx_mstate_global->__pyx_codeobj__77
+#define __pyx_codeobj__79 __pyx_mstate_global->__pyx_codeobj__79
 #define __pyx_codeobj__80 __pyx_mstate_global->__pyx_codeobj__80
-#define __pyx_codeobj__81 __pyx_mstate_global->__pyx_codeobj__81
-#define __pyx_codeobj__83 __pyx_mstate_global->__pyx_codeobj__83
+#define __pyx_codeobj__82 __pyx_mstate_global->__pyx_codeobj__82
+#define __pyx_codeobj__84 __pyx_mstate_global->__pyx_codeobj__84
 #define __pyx_codeobj__85 __pyx_mstate_global->__pyx_codeobj__85
 #define __pyx_codeobj__86 __pyx_mstate_global->__pyx_codeobj__86
 #define __pyx_codeobj__87 __pyx_mstate_global->__pyx_codeobj__87
@@ -5542,40 +5507,40 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_codeobj__90 __pyx_mstate_global->__pyx_codeobj__90
 #define __pyx_codeobj__91 __pyx_mstate_global->__pyx_codeobj__91
 #define __pyx_codeobj__92 __pyx_mstate_global->__pyx_codeobj__92
-#define __pyx_codeobj__93 __pyx_mstate_global->__pyx_codeobj__93
+#define __pyx_codeobj__94 __pyx_mstate_global->__pyx_codeobj__94
 #define __pyx_codeobj__95 __pyx_mstate_global->__pyx_codeobj__95
-#define __pyx_codeobj__96 __pyx_mstate_global->__pyx_codeobj__96
+#define __pyx_codeobj__97 __pyx_mstate_global->__pyx_codeobj__97
 #define __pyx_codeobj__98 __pyx_mstate_global->__pyx_codeobj__98
-#define __pyx_codeobj__99 __pyx_mstate_global->__pyx_codeobj__99
+#define __pyx_codeobj__100 __pyx_mstate_global->__pyx_codeobj__100
 #define __pyx_codeobj__101 __pyx_mstate_global->__pyx_codeobj__101
 #define __pyx_codeobj__102 __pyx_mstate_global->__pyx_codeobj__102
-#define __pyx_codeobj__103 __pyx_mstate_global->__pyx_codeobj__103
-#define __pyx_codeobj__105 __pyx_mstate_global->__pyx_codeobj__105
+#define __pyx_codeobj__104 __pyx_mstate_global->__pyx_codeobj__104
+#define __pyx_codeobj__106 __pyx_mstate_global->__pyx_codeobj__106
 #define __pyx_codeobj__107 __pyx_mstate_global->__pyx_codeobj__107
-#define __pyx_codeobj__108 __pyx_mstate_global->__pyx_codeobj__108
-#define __pyx_codeobj__110 __pyx_mstate_global->__pyx_codeobj__110
-#define __pyx_codeobj__112 __pyx_mstate_global->__pyx_codeobj__112
+#define __pyx_codeobj__109 __pyx_mstate_global->__pyx_codeobj__109
+#define __pyx_codeobj__111 __pyx_mstate_global->__pyx_codeobj__111
+#define __pyx_codeobj__113 __pyx_mstate_global->__pyx_codeobj__113
 #define __pyx_codeobj__114 __pyx_mstate_global->__pyx_codeobj__114
-#define __pyx_codeobj__115 __pyx_mstate_global->__pyx_codeobj__115
+#define __pyx_codeobj__116 __pyx_mstate_global->__pyx_codeobj__116
 #define __pyx_codeobj__117 __pyx_mstate_global->__pyx_codeobj__117
 #define __pyx_codeobj__118 __pyx_mstate_global->__pyx_codeobj__118
 #define __pyx_codeobj__119 __pyx_mstate_global->__pyx_codeobj__119
-#define __pyx_codeobj__120 __pyx_mstate_global->__pyx_codeobj__120
+#define __pyx_codeobj__121 __pyx_mstate_global->__pyx_codeobj__121
 #define __pyx_codeobj__122 __pyx_mstate_global->__pyx_codeobj__122
-#define __pyx_codeobj__123 __pyx_mstate_global->__pyx_codeobj__123
+#define __pyx_codeobj__124 __pyx_mstate_global->__pyx_codeobj__124
 #define __pyx_codeobj__125 __pyx_mstate_global->__pyx_codeobj__125
-#define __pyx_codeobj__126 __pyx_mstate_global->__pyx_codeobj__126
-#define __pyx_codeobj__128 __pyx_mstate_global->__pyx_codeobj__128
-#define __pyx_codeobj__131 __pyx_mstate_global->__pyx_codeobj__131
-#define __pyx_codeobj__133 __pyx_mstate_global->__pyx_codeobj__133
-#define __pyx_codeobj__135 __pyx_mstate_global->__pyx_codeobj__135
-#define __pyx_codeobj__137 __pyx_mstate_global->__pyx_codeobj__137
-#define __pyx_codeobj__139 __pyx_mstate_global->__pyx_codeobj__139
+#define __pyx_codeobj__127 __pyx_mstate_global->__pyx_codeobj__127
+#define __pyx_codeobj__130 __pyx_mstate_global->__pyx_codeobj__130
+#define __pyx_codeobj__132 __pyx_mstate_global->__pyx_codeobj__132
+#define __pyx_codeobj__134 __pyx_mstate_global->__pyx_codeobj__134
+#define __pyx_codeobj__136 __pyx_mstate_global->__pyx_codeobj__136
+#define __pyx_codeobj__138 __pyx_mstate_global->__pyx_codeobj__138
+#define __pyx_codeobj__140 __pyx_mstate_global->__pyx_codeobj__140
 #define __pyx_codeobj__141 __pyx_mstate_global->__pyx_codeobj__141
 #define __pyx_codeobj__142 __pyx_mstate_global->__pyx_codeobj__142
 #define __pyx_codeobj__143 __pyx_mstate_global->__pyx_codeobj__143
 #define __pyx_codeobj__144 __pyx_mstate_global->__pyx_codeobj__144
-#define __pyx_codeobj__145 __pyx_mstate_global->__pyx_codeobj__145
+#define __pyx_codeobj__146 __pyx_mstate_global->__pyx_codeobj__146
 #define __pyx_codeobj__147 __pyx_mstate_global->__pyx_codeobj__147
 #define __pyx_codeobj__148 __pyx_mstate_global->__pyx_codeobj__148
 #define __pyx_codeobj__149 __pyx_mstate_global->__pyx_codeobj__149
@@ -5583,10 +5548,9 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_codeobj__151 __pyx_mstate_global->__pyx_codeobj__151
 #define __pyx_codeobj__152 __pyx_mstate_global->__pyx_codeobj__152
 #define __pyx_codeobj__153 __pyx_mstate_global->__pyx_codeobj__153
-#define __pyx_codeobj__154 __pyx_mstate_global->__pyx_codeobj__154
+#define __pyx_codeobj__155 __pyx_mstate_global->__pyx_codeobj__155
 #define __pyx_codeobj__156 __pyx_mstate_global->__pyx_codeobj__156
 #define __pyx_codeobj__157 __pyx_mstate_global->__pyx_codeobj__157
-#define __pyx_codeobj__158 __pyx_mstate_global->__pyx_codeobj__158
 #define __pyx_codeobj__159 __pyx_mstate_global->__pyx_codeobj__159
 #define __pyx_codeobj__160 __pyx_mstate_global->__pyx_codeobj__160
 #define __pyx_codeobj__161 __pyx_mstate_global->__pyx_codeobj__161
@@ -23924,7 +23888,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static void __pyx_f_6octree_13DynamicOctree_print_node_details(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, int __pyx_v_node_id, int __pyx_skip_dispatch, struct __pyx_opt_args_6octree_13DynamicOctree_print_node_details *__pyx_optional_args) {
-  PyObject *__pyx_v_indent = ((PyObject*)__pyx_kp_s__17);
+  PyObject *__pyx_v_indent = ((PyObject*)__pyx_kp_u__17);
   struct __pyx_obj_6octree_DynamicOctreeNode *__pyx_v_node = 0;
   PyObject *__pyx_v_child_id = NULL;
   __Pyx_RefNannyDeclarations
@@ -24094,7 +24058,7 @@ static void __pyx_f_6octree_13DynamicOctree_print_node_details(struct __pyx_obj_
  *             print(indent + f"Atom Indices: {node.atom_indices}")
  *         else:
  */
-    __pyx_t_2 = __Pyx_PyStr_ConcatSafe(__pyx_v_indent, __pyx_kp_s_Leaf_Node); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 525, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyUnicode_ConcatSafe(__pyx_v_indent, __pyx_kp_u_Leaf_Node); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 525, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 525, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -24139,7 +24103,7 @@ static void __pyx_f_6octree_13DynamicOctree_print_node_details(struct __pyx_obj_
  * 
  */
   /*else*/ {
-    __pyx_t_2 = __Pyx_PyStr_ConcatSafe(__pyx_v_indent, __pyx_kp_s_Non_Leaf_Node); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 528, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyUnicode_ConcatSafe(__pyx_v_indent, __pyx_kp_u_Non_Leaf_Node); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 528, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 528, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -24214,7 +24178,7 @@ static void __pyx_f_6octree_13DynamicOctree_print_node_details(struct __pyx_obj_
  *     cpdef void traverse_and_print(self, int node_id, int depth):
  */
         __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_v_child_id); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 534, __pyx_L1_error)
-        __pyx_t_1 = __Pyx_PyStr_ConcatSafe(__pyx_v_indent, __pyx_kp_s__18); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 534, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyUnicode_ConcatSafe(__pyx_v_indent, __pyx_kp_u__18); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 534, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __pyx_t_9.__pyx_n = 1;
         __pyx_t_9.indent = ((PyObject*)__pyx_t_1);
@@ -24305,7 +24269,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
   {
     PyObject **__pyx_pyargnames[] = {&__pyx_n_s_node_id,&__pyx_n_s_indent,0};
-    values[1] = __Pyx_Arg_NewRef_FASTCALL(((PyObject*)__pyx_kp_s__17));
+    values[1] = __Pyx_Arg_NewRef_FASTCALL(((PyObject*)__pyx_kp_u__17));
     if (__pyx_kwds) {
       Py_ssize_t kw_args;
       switch (__pyx_nargs) {
@@ -24365,7 +24329,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_indent), (&PyString_Type), 1, "indent", 1))) __PYX_ERR(0, 511, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_indent), (&PyUnicode_Type), 1, "indent", 1))) __PYX_ERR(0, 511, __pyx_L1_error)
   __pyx_r = __pyx_pf_6octree_13DynamicOctree_32print_node_details(((struct __pyx_obj_6octree_DynamicOctree *)__pyx_v_self), __pyx_v_node_id, __pyx_v_indent);
 
   /* function exit code */
@@ -24527,7 +24491,7 @@ static void __pyx_f_6octree_13DynamicOctree_traverse_and_print(struct __pyx_obj_
  *         print(prefix + f"Node ID: {node_id}")
  *         print(prefix + f"Position: ({node.lx}, {node.ly}, {node.lz})")
  */
-  __pyx_t_1 = __Pyx_PySequence_Multiply(__pyx_kp_s__18, __pyx_v_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 545, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PySequence_Multiply(__pyx_kp_u__18, __pyx_v_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 545, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_prefix = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
@@ -24770,7 +24734,7 @@ static void __pyx_f_6octree_13DynamicOctree_traverse_and_print(struct __pyx_obj_
  *         print(prefix + f"  sx: {node.attribs.sx}")
  *         print(prefix + f"  sy: {node.attribs.sy}")
  */
-  __pyx_t_5 = __Pyx_PyStr_Concat(__pyx_v_prefix, __pyx_kp_s_Attributes); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 555, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyUnicode_Concat(__pyx_v_prefix, __pyx_kp_u_Attributes); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 555, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 555, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -28262,7 +28226,7 @@ static void __pyx_f_6octree_13DynamicOctree_traverse_octree(struct __pyx_obj_6oc
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyString_Format(__pyx_kp_s_d_d_lf, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 773, __pyx_L1_error)
+  __pyx_t_4 = PyUnicode_Format(__pyx_kp_u_d_d_lf, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 773, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 773, __pyx_L1_error)
@@ -28320,7 +28284,7 @@ static void __pyx_f_6octree_13DynamicOctree_traverse_octree(struct __pyx_obj_6oc
         __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, __pyx_v_i, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 778, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyString_FormatSafe(__pyx_kp_s_d_2, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 778, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyUnicode_FormatSafe(__pyx_kp_u_d_2, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 778, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 778, __pyx_L1_error)
@@ -31889,9 +31853,9 @@ static int __pyx_f_6octree_13DynamicOctree_add_atom_to_leaf(struct __pyx_obj_6oc
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1031, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_INCREF(__pyx_kp_s_Number_of_atoms);
-    __Pyx_GIVEREF(__pyx_kp_s_Number_of_atoms);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_s_Number_of_atoms)) __PYX_ERR(0, 1031, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_kp_u_Number_of_atoms);
+    __Pyx_GIVEREF(__pyx_kp_u_Number_of_atoms);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_Number_of_atoms)) __PYX_ERR(0, 1031, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_2);
     if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2)) __PYX_ERR(0, 1031, __pyx_L1_error);
     __pyx_t_2 = 0;
@@ -31919,9 +31883,9 @@ static int __pyx_f_6octree_13DynamicOctree_add_atom_to_leaf(struct __pyx_obj_6oc
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1032, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_INCREF(__pyx_kp_s_Indices);
-    __Pyx_GIVEREF(__pyx_kp_s_Indices);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_s_Indices)) __PYX_ERR(0, 1032, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_kp_u_Indices);
+    __Pyx_GIVEREF(__pyx_kp_u_Indices);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_Indices)) __PYX_ERR(0, 1032, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_2);
     if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2)) __PYX_ERR(0, 1032, __pyx_L1_error);
     __pyx_t_2 = 0;
@@ -31941,9 +31905,9 @@ static int __pyx_f_6octree_13DynamicOctree_add_atom_to_leaf(struct __pyx_obj_6oc
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1033, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_INCREF(__pyx_kp_s_Node_ID);
-    __Pyx_GIVEREF(__pyx_kp_s_Node_ID);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_s_Node_ID)) __PYX_ERR(0, 1033, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_kp_u_Node_ID);
+    __Pyx_GIVEREF(__pyx_kp_u_Node_ID);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_Node_ID)) __PYX_ERR(0, 1033, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_2);
     if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2)) __PYX_ERR(0, 1033, __pyx_L1_error);
     __pyx_t_2 = 0;
@@ -35306,29 +35270,30 @@ static PyObject *__pyx_pf_6octree_13DynamicOctree_74inside_node(struct __pyx_obj
 /* "octree.pyx":1220
  *         )
  * 
- *     cpdef print_test(self):             # <<<<<<<<<<<<<<
- *         print("Testing")
+ *     cpdef void only_find_neighbors(self, int n, ):             # <<<<<<<<<<<<<<
+ *         """
+ *         * n: total dimensions of atom positions (3 * num atoms)
  */
 
-static PyObject *__pyx_pw_6octree_13DynamicOctree_77print_test(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6octree_13DynamicOctree_77only_find_neighbors(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_6octree_13DynamicOctree_print_test(CYTHON_UNUSED struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, int __pyx_skip_dispatch) {
-  PyObject *__pyx_r = NULL;
+static void __pyx_f_6octree_13DynamicOctree_only_find_neighbors(CYTHON_UNUSED struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, CYTHON_UNUSED int __pyx_v_n, int __pyx_skip_dispatch) {
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  int __pyx_t_5;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_t_6;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("print_test", 1);
+  __Pyx_RefNannySetupContext("only_find_neighbors", 1);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
@@ -35338,35 +35303,36 @@ static PyObject *__pyx_f_6octree_13DynamicOctree_print_test(CYTHON_UNUSED struct
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_print_test); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1220, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_only_find_neighbors); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1220, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_6octree_13DynamicOctree_77print_test)) {
-        __Pyx_XDECREF(__pyx_r);
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_6octree_13DynamicOctree_77only_find_neighbors)) {
+        __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1220, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
-        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
-        __pyx_t_5 = 0;
+        __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+        __pyx_t_6 = 0;
         #if CYTHON_UNPACK_METHODS
-        if (unlikely(PyMethod_Check(__pyx_t_3))) {
-          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-          if (likely(__pyx_t_4)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-            __Pyx_INCREF(__pyx_t_4);
+        if (unlikely(PyMethod_Check(__pyx_t_4))) {
+          __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+          if (likely(__pyx_t_5)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+            __Pyx_INCREF(__pyx_t_5);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_3, function);
-            __pyx_t_5 = 1;
+            __Pyx_DECREF_SET(__pyx_t_4, function);
+            __pyx_t_6 = 1;
           }
         }
         #endif
         {
-          PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
-          __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
-          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+          PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
+          __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
+          __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1220, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         }
-        __pyx_r = __pyx_t_2;
-        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         goto __pyx_L0;
       }
@@ -35385,59 +35351,62 @@ static PyObject *__pyx_f_6octree_13DynamicOctree_print_test(CYTHON_UNUSED struct
 
   /* "octree.pyx":1221
  * 
- *     cpdef print_test(self):
- *         print("Testing")             # <<<<<<<<<<<<<<
- */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple__40, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1221, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "octree.pyx":1220
- *         )
- * 
- *     cpdef print_test(self):             # <<<<<<<<<<<<<<
- *         print("Testing")
+ *     cpdef void only_find_neighbors(self, int n, ):
+ *         """             # <<<<<<<<<<<<<<
+ *         * n: total dimensions of atom positions (3 * num atoms)
+ *         * inp: the new array of atom positions
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("octree.DynamicOctree.print_test", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("octree.DynamicOctree.only_find_neighbors", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
-  return __pyx_r;
 }
 
+/* "octree.pyx":1220
+ *         )
+ * 
+ *     cpdef void only_find_neighbors(self, int n, ):             # <<<<<<<<<<<<<<
+ *         """
+ *         * n: total dimensions of atom positions (3 * num atoms)
+ */
+
 /* Python wrapper */
-static PyObject *__pyx_pw_6octree_13DynamicOctree_77print_test(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6octree_13DynamicOctree_77only_find_neighbors(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_6octree_13DynamicOctree_77print_test = {"print_test", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6octree_13DynamicOctree_77print_test, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6octree_13DynamicOctree_77print_test(PyObject *__pyx_v_self, 
+PyDoc_STRVAR(__pyx_doc_6octree_13DynamicOctree_76only_find_neighbors, "\n        * n: total dimensions of atom positions (3 * num atoms)\n        * inp: the new array of atom positions\n        * prms: parm struct containing energy parms\n        ");
+static PyMethodDef __pyx_mdef_6octree_13DynamicOctree_77only_find_neighbors = {"only_find_neighbors", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6octree_13DynamicOctree_77only_find_neighbors, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6octree_13DynamicOctree_76only_find_neighbors};
+static PyObject *__pyx_pw_6octree_13DynamicOctree_77only_find_neighbors(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ) {
+  int __pyx_v_n;
   #if !CYTHON_METH_FASTCALL
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   #endif
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[1] = {0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("print_test (wrapper)", 0);
+  __Pyx_RefNannySetupContext("only_find_neighbors (wrapper)", 0);
   #if !CYTHON_METH_FASTCALL
   #if CYTHON_ASSUME_SAFE_MACROS
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
@@ -35446,26 +35415,77 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   #endif
   #endif
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
-  if (unlikely(__pyx_nargs > 0)) {
-    __Pyx_RaiseArgtupleInvalid("print_test", 1, 0, 0, __pyx_nargs); return NULL;}
-  if (unlikely(__pyx_kwds) && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "print_test", 0))) return NULL;
-  __pyx_r = __pyx_pf_6octree_13DynamicOctree_76print_test(((struct __pyx_obj_6octree_DynamicOctree *)__pyx_v_self));
+  {
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_n,0};
+    if (__pyx_kwds) {
+      Py_ssize_t kw_args;
+      switch (__pyx_nargs) {
+        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
+      switch (__pyx_nargs) {
+        case  0:
+        if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_n)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 1220, __pyx_L3_error)
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        const Py_ssize_t kwd_pos_args = __pyx_nargs;
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "only_find_neighbors") < 0)) __PYX_ERR(0, 1220, __pyx_L3_error)
+      }
+    } else if (unlikely(__pyx_nargs != 1)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+    }
+    __pyx_v_n = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_n == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1220, __pyx_L3_error)
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("only_find_neighbors", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 1220, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_AddTraceback("octree.DynamicOctree.only_find_neighbors", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6octree_13DynamicOctree_76only_find_neighbors(((struct __pyx_obj_6octree_DynamicOctree *)__pyx_v_self), __pyx_v_n);
 
   /* function exit code */
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6octree_13DynamicOctree_76print_test(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self) {
+static PyObject *__pyx_pf_6octree_13DynamicOctree_76only_find_neighbors(struct __pyx_obj_6octree_DynamicOctree *__pyx_v_self, int __pyx_v_n) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("print_test", 1);
+  __Pyx_RefNannySetupContext("only_find_neighbors", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_6octree_13DynamicOctree_print_test(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1220, __pyx_L1_error)
+  __pyx_f_6octree_13DynamicOctree_only_find_neighbors(__pyx_v_self, __pyx_v_n, 1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 1220, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -35474,7 +35494,7 @@ static PyObject *__pyx_pf_6octree_13DynamicOctree_76print_test(struct __pyx_obj_
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("octree.DynamicOctree.print_test", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("octree.DynamicOctree.only_find_neighbors", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -37147,7 +37167,7 @@ static PyObject *__pyx_pf_6octree___pyx_unpickle_OctreeScore(CYTHON_UNUSED PyObj
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__41, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__40, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
@@ -37589,7 +37609,7 @@ static PyObject *__pyx_pf_6octree_2__pyx_unpickle_OctreeConstructionParams(CYTHO
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__42, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__41, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
@@ -38049,7 +38069,7 @@ static PyObject *__pyx_pf_6octree_4__pyx_unpickle_DynamicOctreeNodeAttr(CYTHON_U
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__43, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__42, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
@@ -38509,7 +38529,7 @@ static PyObject *__pyx_pf_6octree_6__pyx_unpickle_DynamicOctreeNode(CYTHON_UNUSE
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__44, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__43, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
@@ -39068,7 +39088,7 @@ static PyObject *__pyx_pf_6octree_8__pyx_unpickle_DynamicOctree(CYTHON_UNUSED Py
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__45, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__44, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
@@ -40767,8 +40787,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u_, __pyx_k_, sizeof(__pyx_k_), 0, 1, 0, 0},
     {&__pyx_kp_u_Allocated, __pyx_k_Allocated, sizeof(__pyx_k_Allocated), 0, 1, 0, 0},
     {&__pyx_kp_u_Atom_Indices, __pyx_k_Atom_Indices, sizeof(__pyx_k_Atom_Indices), 0, 1, 0, 0},
-    {&__pyx_kp_s_Atom_has_moved_outside_the_root, __pyx_k_Atom_has_moved_outside_the_root, sizeof(__pyx_k_Atom_has_moved_outside_the_root), 0, 0, 1, 0},
-    {&__pyx_kp_s_Attributes, __pyx_k_Attributes, sizeof(__pyx_k_Attributes), 0, 0, 1, 0},
+    {&__pyx_kp_u_Atom_has_moved_outside_the_root, __pyx_k_Atom_has_moved_outside_the_root, sizeof(__pyx_k_Atom_has_moved_outside_the_root), 0, 1, 0, 0},
+    {&__pyx_kp_u_Attributes, __pyx_k_Attributes, sizeof(__pyx_k_Attributes), 0, 1, 0, 0},
     {&__pyx_kp_u_Child_Pointers, __pyx_k_Child_Pointers, sizeof(__pyx_k_Child_Pointers), 0, 1, 0, 0},
     {&__pyx_kp_u_Dimension, __pyx_k_Dimension, sizeof(__pyx_k_Dimension), 0, 1, 0, 0},
     {&__pyx_n_s_DynamicOctree, __pyx_k_DynamicOctree, sizeof(__pyx_k_DynamicOctree), 0, 0, 1, 1},
@@ -40828,9 +40848,9 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_DynamicOctree_needs_dynamic_cont, __pyx_k_DynamicOctree_needs_dynamic_cont, sizeof(__pyx_k_DynamicOctree_needs_dynamic_cont), 0, 0, 1, 1},
     {&__pyx_n_s_DynamicOctree_needs_dynamic_expa, __pyx_k_DynamicOctree_needs_dynamic_expa, sizeof(__pyx_k_DynamicOctree_needs_dynamic_expa), 0, 0, 1, 1},
     {&__pyx_n_s_DynamicOctree_needs_expansion, __pyx_k_DynamicOctree_needs_expansion, sizeof(__pyx_k_DynamicOctree_needs_expansion), 0, 0, 1, 1},
+    {&__pyx_n_s_DynamicOctree_only_find_neighbor, __pyx_k_DynamicOctree_only_find_neighbor, sizeof(__pyx_k_DynamicOctree_only_find_neighbor), 0, 0, 1, 1},
     {&__pyx_n_s_DynamicOctree_print_node_details, __pyx_k_DynamicOctree_print_node_details, sizeof(__pyx_k_DynamicOctree_print_node_details), 0, 0, 1, 1},
     {&__pyx_n_s_DynamicOctree_print_octree, __pyx_k_DynamicOctree_print_octree, sizeof(__pyx_k_DynamicOctree_print_octree), 0, 0, 1, 1},
-    {&__pyx_n_s_DynamicOctree_print_test, __pyx_k_DynamicOctree_print_test, sizeof(__pyx_k_DynamicOctree_print_test), 0, 0, 1, 1},
     {&__pyx_n_s_DynamicOctree_pull_up, __pyx_k_DynamicOctree_pull_up, sizeof(__pyx_k_DynamicOctree_pull_up), 0, 0, 1, 1},
     {&__pyx_n_s_DynamicOctree_push_down, __pyx_k_DynamicOctree_push_down, sizeof(__pyx_k_DynamicOctree_push_down), 0, 0, 1, 1},
     {&__pyx_n_s_DynamicOctree_reallocate_nodes, __pyx_k_DynamicOctree_reallocate_nodes, sizeof(__pyx_k_DynamicOctree_reallocate_nodes), 0, 0, 1, 1},
@@ -40841,56 +40861,55 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_DynamicOctree_traverse_and_print, __pyx_k_DynamicOctree_traverse_and_print, sizeof(__pyx_k_DynamicOctree_traverse_and_print), 0, 0, 1, 1},
     {&__pyx_n_s_DynamicOctree_traverse_octree, __pyx_k_DynamicOctree_traverse_octree, sizeof(__pyx_k_DynamicOctree_traverse_octree), 0, 0, 1, 1},
     {&__pyx_n_s_DynamicOctree_update_octree, __pyx_k_DynamicOctree_update_octree, sizeof(__pyx_k_DynamicOctree_update_octree), 0, 0, 1, 1},
-    {&__pyx_kp_s_ERROR_Could_not_create_free_node, __pyx_k_ERROR_Could_not_create_free_node, sizeof(__pyx_k_ERROR_Could_not_create_free_node), 0, 0, 1, 0},
-    {&__pyx_kp_s_ERROR_Could_not_get_next_node, __pyx_k_ERROR_Could_not_get_next_node, sizeof(__pyx_k_ERROR_Could_not_get_next_node), 0, 0, 1, 0},
-    {&__pyx_kp_s_Error_Invalid_child_pointer_inde, __pyx_k_Error_Invalid_child_pointer_inde, sizeof(__pyx_k_Error_Invalid_child_pointer_inde), 0, 0, 1, 0},
-    {&__pyx_kp_s_Failed_to_allocate_leaf_node_mem, __pyx_k_Failed_to_allocate_leaf_node_mem, sizeof(__pyx_k_Failed_to_allocate_leaf_node_mem), 0, 0, 1, 0},
-    {&__pyx_kp_s_Failed_to_allocate_temporary_sto, __pyx_k_Failed_to_allocate_temporary_sto, sizeof(__pyx_k_Failed_to_allocate_temporary_sto), 0, 0, 1, 0},
-    {&__pyx_kp_s_Failed_to_contract_leaf_storage, __pyx_k_Failed_to_contract_leaf_storage, sizeof(__pyx_k_Failed_to_contract_leaf_storage), 0, 0, 1, 0},
-    {&__pyx_kp_s_Failed_to_expand_leaf_storage_fo, __pyx_k_Failed_to_expand_leaf_storage_fo, sizeof(__pyx_k_Failed_to_expand_leaf_storage_fo), 0, 0, 1, 0},
+    {&__pyx_kp_u_ERROR_Could_not_create_free_node, __pyx_k_ERROR_Could_not_create_free_node, sizeof(__pyx_k_ERROR_Could_not_create_free_node), 0, 1, 0, 0},
+    {&__pyx_kp_u_ERROR_Could_not_get_next_node, __pyx_k_ERROR_Could_not_get_next_node, sizeof(__pyx_k_ERROR_Could_not_get_next_node), 0, 1, 0, 0},
+    {&__pyx_kp_u_Error_Invalid_child_pointer_inde, __pyx_k_Error_Invalid_child_pointer_inde, sizeof(__pyx_k_Error_Invalid_child_pointer_inde), 0, 1, 0, 0},
+    {&__pyx_kp_u_Failed_to_allocate_leaf_node_mem, __pyx_k_Failed_to_allocate_leaf_node_mem, sizeof(__pyx_k_Failed_to_allocate_leaf_node_mem), 0, 1, 0, 0},
+    {&__pyx_kp_u_Failed_to_allocate_temporary_sto, __pyx_k_Failed_to_allocate_temporary_sto, sizeof(__pyx_k_Failed_to_allocate_temporary_sto), 0, 1, 0, 0},
+    {&__pyx_kp_u_Failed_to_contract_leaf_storage, __pyx_k_Failed_to_contract_leaf_storage, sizeof(__pyx_k_Failed_to_contract_leaf_storage), 0, 1, 0, 0},
+    {&__pyx_kp_u_Failed_to_expand_leaf_storage_fo, __pyx_k_Failed_to_expand_leaf_storage_fo, sizeof(__pyx_k_Failed_to_expand_leaf_storage_fo), 0, 1, 0, 0},
     {&__pyx_n_u_False, __pyx_k_False, sizeof(__pyx_k_False), 0, 1, 0, 1},
-    {&__pyx_kp_s_In_DynamicOctree_addAtomToLeaf, __pyx_k_In_DynamicOctree_addAtomToLeaf, sizeof(__pyx_k_In_DynamicOctree_addAtomToLeaf), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_addAtomToNonLea, __pyx_k_In_DynamicOctree_addAtomToNonLea, sizeof(__pyx_k_In_DynamicOctree_addAtomToNonLea), 0, 0, 1, 0},
+    {&__pyx_kp_u_In_DynamicOctree_addAtomToLeaf, __pyx_k_In_DynamicOctree_addAtomToLeaf, sizeof(__pyx_k_In_DynamicOctree_addAtomToLeaf), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_addAtomToNonLea, __pyx_k_In_DynamicOctree_addAtomToNonLea, sizeof(__pyx_k_In_DynamicOctree_addAtomToNonLea), 0, 1, 0, 0},
     {&__pyx_kp_u_In_DynamicOctree_computeLeafAttr, __pyx_k_In_DynamicOctree_computeLeafAttr, sizeof(__pyx_k_In_DynamicOctree_computeLeafAttr), 0, 1, 0, 0},
     {&__pyx_kp_u_In_DynamicOctree_computeNonLeafA, __pyx_k_In_DynamicOctree_computeNonLeafA, sizeof(__pyx_k_In_DynamicOctree_computeNonLeafA), 0, 1, 0, 0},
     {&__pyx_kp_u_In_DynamicOctree_computeNonRootB, __pyx_k_In_DynamicOctree_computeNonRootB, sizeof(__pyx_k_In_DynamicOctree_computeNonRootB), 0, 1, 0, 0},
-    {&__pyx_kp_s_In_DynamicOctree_computeRootBoun, __pyx_k_In_DynamicOctree_computeRootBoun, sizeof(__pyx_k_In_DynamicOctree_computeRootBoun), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_contractOctreeN, __pyx_k_In_DynamicOctree_contractOctreeN, sizeof(__pyx_k_In_DynamicOctree_contractOctreeN), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_destroyOctree, __pyx_k_In_DynamicOctree_destroyOctree, sizeof(__pyx_k_In_DynamicOctree_destroyOctree), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_expandOctreeNod, __pyx_k_In_DynamicOctree_expandOctreeNod, sizeof(__pyx_k_In_DynamicOctree_expandOctreeNod), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_freeSubtreeNode, __pyx_k_In_DynamicOctree_freeSubtreeNode, sizeof(__pyx_k_In_DynamicOctree_freeSubtreeNode), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_getNextFreeNode, __pyx_k_In_DynamicOctree_getNextFreeNode, sizeof(__pyx_k_In_DynamicOctree_getNextFreeNode), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_getOctreeSize, __pyx_k_In_DynamicOctree_getOctreeSize, sizeof(__pyx_k_In_DynamicOctree_getOctreeSize), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_getSubtreeSize, __pyx_k_In_DynamicOctree_getSubtreeSize, sizeof(__pyx_k_In_DynamicOctree_getSubtreeSize), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_initFreeNodeSer, __pyx_k_In_DynamicOctree_initFreeNodeSer, sizeof(__pyx_k_In_DynamicOctree_initFreeNodeSer), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_print, __pyx_k_In_DynamicOctree_print, sizeof(__pyx_k_In_DynamicOctree_print), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_pullUp, __pyx_k_In_DynamicOctree_pullUp, sizeof(__pyx_k_In_DynamicOctree_pullUp), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_pushDown, __pyx_k_In_DynamicOctree_pushDown, sizeof(__pyx_k_In_DynamicOctree_pushDown), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_removeAtomFromL, __pyx_k_In_DynamicOctree_removeAtomFromL, sizeof(__pyx_k_In_DynamicOctree_removeAtomFromL), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_removeAtomFromN, __pyx_k_In_DynamicOctree_removeAtomFromN, sizeof(__pyx_k_In_DynamicOctree_removeAtomFromN), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_reorganizeOctre, __pyx_k_In_DynamicOctree_reorganizeOctre, sizeof(__pyx_k_In_DynamicOctree_reorganizeOctre), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_traverseOctree, __pyx_k_In_DynamicOctree_traverseOctree, sizeof(__pyx_k_In_DynamicOctree_traverseOctree), 0, 0, 1, 0},
-    {&__pyx_kp_s_In_DynamicOctree_updateOctree, __pyx_k_In_DynamicOctree_updateOctree, sizeof(__pyx_k_In_DynamicOctree_updateOctree), 0, 0, 1, 0},
+    {&__pyx_kp_u_In_DynamicOctree_computeRootBoun, __pyx_k_In_DynamicOctree_computeRootBoun, sizeof(__pyx_k_In_DynamicOctree_computeRootBoun), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_contractOctreeN, __pyx_k_In_DynamicOctree_contractOctreeN, sizeof(__pyx_k_In_DynamicOctree_contractOctreeN), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_destroyOctree, __pyx_k_In_DynamicOctree_destroyOctree, sizeof(__pyx_k_In_DynamicOctree_destroyOctree), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_expandOctreeNod, __pyx_k_In_DynamicOctree_expandOctreeNod, sizeof(__pyx_k_In_DynamicOctree_expandOctreeNod), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_freeSubtreeNode, __pyx_k_In_DynamicOctree_freeSubtreeNode, sizeof(__pyx_k_In_DynamicOctree_freeSubtreeNode), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_getNextFreeNode, __pyx_k_In_DynamicOctree_getNextFreeNode, sizeof(__pyx_k_In_DynamicOctree_getNextFreeNode), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_getOctreeSize, __pyx_k_In_DynamicOctree_getOctreeSize, sizeof(__pyx_k_In_DynamicOctree_getOctreeSize), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_getSubtreeSize, __pyx_k_In_DynamicOctree_getSubtreeSize, sizeof(__pyx_k_In_DynamicOctree_getSubtreeSize), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_initFreeNodeSer, __pyx_k_In_DynamicOctree_initFreeNodeSer, sizeof(__pyx_k_In_DynamicOctree_initFreeNodeSer), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_print, __pyx_k_In_DynamicOctree_print, sizeof(__pyx_k_In_DynamicOctree_print), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_pullUp, __pyx_k_In_DynamicOctree_pullUp, sizeof(__pyx_k_In_DynamicOctree_pullUp), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_pushDown, __pyx_k_In_DynamicOctree_pushDown, sizeof(__pyx_k_In_DynamicOctree_pushDown), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_removeAtomFromL, __pyx_k_In_DynamicOctree_removeAtomFromL, sizeof(__pyx_k_In_DynamicOctree_removeAtomFromL), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_removeAtomFromN, __pyx_k_In_DynamicOctree_removeAtomFromN, sizeof(__pyx_k_In_DynamicOctree_removeAtomFromN), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_reorganizeOctre, __pyx_k_In_DynamicOctree_reorganizeOctre, sizeof(__pyx_k_In_DynamicOctree_reorganizeOctre), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_traverseOctree, __pyx_k_In_DynamicOctree_traverseOctree, sizeof(__pyx_k_In_DynamicOctree_traverseOctree), 0, 1, 0, 0},
+    {&__pyx_kp_u_In_DynamicOctree_updateOctree, __pyx_k_In_DynamicOctree_updateOctree, sizeof(__pyx_k_In_DynamicOctree_updateOctree), 0, 1, 0, 0},
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0, __pyx_k_Incompatible_checksums_0x_x_vs_0, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0), 0, 0, 1, 0},
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_2, __pyx_k_Incompatible_checksums_0x_x_vs_0_2, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0_2), 0, 0, 1, 0},
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_3, __pyx_k_Incompatible_checksums_0x_x_vs_0_3, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0_3), 0, 0, 1, 0},
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_4, __pyx_k_Incompatible_checksums_0x_x_vs_0_4, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0_4), 0, 0, 1, 0},
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5, __pyx_k_Incompatible_checksums_0x_x_vs_0_5, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0_5), 0, 0, 1, 0},
-    {&__pyx_kp_s_Indices, __pyx_k_Indices, sizeof(__pyx_k_Indices), 0, 0, 1, 0},
+    {&__pyx_kp_u_Indices, __pyx_k_Indices, sizeof(__pyx_k_Indices), 0, 1, 0, 0},
     {&__pyx_kp_u_Inside_DynamicOctree_allocateNod, __pyx_k_Inside_DynamicOctree_allocateNod, sizeof(__pyx_k_Inside_DynamicOctree_allocateNod), 0, 1, 0, 0},
     {&__pyx_kp_u_Inside_DynamicOctree_reallocateN, __pyx_k_Inside_DynamicOctree_reallocateN, sizeof(__pyx_k_Inside_DynamicOctree_reallocateN), 0, 1, 0, 0},
     {&__pyx_kp_u_Is_Leaf, __pyx_k_Is_Leaf, sizeof(__pyx_k_Is_Leaf), 0, 1, 0, 0},
-    {&__pyx_kp_s_Leaf_Node, __pyx_k_Leaf_Node, sizeof(__pyx_k_Leaf_Node), 0, 0, 1, 0},
-    {&__pyx_kp_s_Location_index_must_be_non_negat, __pyx_k_Location_index_must_be_non_negat, sizeof(__pyx_k_Location_index_must_be_non_negat), 0, 0, 1, 0},
+    {&__pyx_kp_u_Leaf_Node, __pyx_k_Leaf_Node, sizeof(__pyx_k_Leaf_Node), 0, 1, 0, 0},
+    {&__pyx_kp_u_Location_index_must_be_non_negat, __pyx_k_Location_index_must_be_non_negat, sizeof(__pyx_k_Location_index_must_be_non_negat), 0, 1, 0, 0},
     {&__pyx_kp_u_Max_leaf_size, __pyx_k_Max_leaf_size, sizeof(__pyx_k_Max_leaf_size), 0, 1, 0, 0},
     {&__pyx_kp_u_Node_Attributes, __pyx_k_Node_Attributes, sizeof(__pyx_k_Node_Attributes), 0, 1, 0, 0},
-    {&__pyx_kp_s_Node_ID, __pyx_k_Node_ID, sizeof(__pyx_k_Node_ID), 0, 0, 1, 0},
     {&__pyx_kp_u_Node_ID, __pyx_k_Node_ID, sizeof(__pyx_k_Node_ID), 0, 1, 0, 0},
-    {&__pyx_kp_s_Node_id_is_out_of_bounds_in_free, __pyx_k_Node_id_is_out_of_bounds_in_free, sizeof(__pyx_k_Node_id_is_out_of_bounds_in_free), 0, 0, 1, 0},
-    {&__pyx_kp_s_Non_Leaf_Node, __pyx_k_Non_Leaf_Node, sizeof(__pyx_k_Non_Leaf_Node), 0, 0, 1, 0},
+    {&__pyx_kp_u_Node_id_is_out_of_bounds_in_free, __pyx_k_Node_id_is_out_of_bounds_in_free, sizeof(__pyx_k_Node_id_is_out_of_bounds_in_free), 0, 1, 0, 0},
+    {&__pyx_kp_u_Non_Leaf_Node, __pyx_k_Non_Leaf_Node, sizeof(__pyx_k_Non_Leaf_Node), 0, 1, 0, 0},
     {&__pyx_kp_u_Number_of_Atoms, __pyx_k_Number_of_Atoms, sizeof(__pyx_k_Number_of_Atoms), 0, 1, 0, 0},
     {&__pyx_kp_u_Number_of_Fixed_Atoms, __pyx_k_Number_of_Fixed_Atoms, sizeof(__pyx_k_Number_of_Fixed_Atoms), 0, 1, 0, 0},
-    {&__pyx_kp_s_Number_of_atoms, __pyx_k_Number_of_atoms, sizeof(__pyx_k_Number_of_atoms), 0, 0, 1, 0},
+    {&__pyx_kp_u_Number_of_atoms, __pyx_k_Number_of_atoms, sizeof(__pyx_k_Number_of_atoms), 0, 1, 0, 0},
     {&__pyx_n_s_OctreeConstructionParams, __pyx_k_OctreeConstructionParams, sizeof(__pyx_k_OctreeConstructionParams), 0, 0, 1, 1},
     {&__pyx_n_s_OctreeConstructionParams___reduc, __pyx_k_OctreeConstructionParams___reduc, sizeof(__pyx_k_OctreeConstructionParams___reduc), 0, 0, 1, 1},
     {&__pyx_n_s_OctreeConstructionParams___setst, __pyx_k_OctreeConstructionParams___setst, sizeof(__pyx_k_OctreeConstructionParams___setst), 0, 0, 1, 1},
@@ -40907,20 +40926,19 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_OctreeScore_get_score, __pyx_k_OctreeScore_get_score, sizeof(__pyx_k_OctreeScore_get_score), 0, 0, 1, 1},
     {&__pyx_n_s_OctreeScore_set_score, __pyx_k_OctreeScore_set_score, sizeof(__pyx_k_OctreeScore_set_score), 0, 0, 1, 1},
     {&__pyx_kp_u_Parent_Node_ID, __pyx_k_Parent_Node_ID, sizeof(__pyx_k_Parent_Node_ID), 0, 1, 0, 0},
-    {&__pyx_kp_s_Parent_Nodes, __pyx_k_Parent_Nodes, sizeof(__pyx_k_Parent_Nodes), 0, 0, 1, 0},
+    {&__pyx_kp_u_Parent_Nodes, __pyx_k_Parent_Nodes, sizeof(__pyx_k_Parent_Nodes), 0, 1, 0, 0},
     {&__pyx_kp_u_Parent_Pointer, __pyx_k_Parent_Pointer, sizeof(__pyx_k_Parent_Pointer), 0, 1, 0, 0},
     {&__pyx_n_s_PickleError, __pyx_k_PickleError, sizeof(__pyx_k_PickleError), 0, 0, 1, 1},
     {&__pyx_kp_u_Position, __pyx_k_Position, sizeof(__pyx_k_Position), 0, 1, 0, 0},
-    {&__pyx_kp_s_Starting_DynamicOctree_buildOctr, __pyx_k_Starting_DynamicOctree_buildOctr, sizeof(__pyx_k_Starting_DynamicOctree_buildOctr), 0, 0, 1, 0},
-    {&__pyx_n_s_Testing, __pyx_k_Testing, sizeof(__pyx_k_Testing), 0, 0, 1, 1},
+    {&__pyx_kp_u_Starting_DynamicOctree_buildOctr, __pyx_k_Starting_DynamicOctree_buildOctr, sizeof(__pyx_k_Starting_DynamicOctree_buildOctr), 0, 1, 0, 0},
     {&__pyx_n_u_True, __pyx_k_True, sizeof(__pyx_k_True), 0, 1, 0, 1},
     {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
-    {&__pyx_kp_s__15, __pyx_k__15, sizeof(__pyx_k__15), 0, 0, 1, 0},
+    {&__pyx_kp_u__15, __pyx_k__15, sizeof(__pyx_k__15), 0, 1, 0, 0},
     {&__pyx_n_s__168, __pyx_k__168, sizeof(__pyx_k__168), 0, 0, 1, 1},
-    {&__pyx_kp_s__17, __pyx_k__17, sizeof(__pyx_k__17), 0, 0, 1, 0},
-    {&__pyx_kp_s__18, __pyx_k__18, sizeof(__pyx_k__18), 0, 0, 1, 0},
+    {&__pyx_kp_u__17, __pyx_k__17, sizeof(__pyx_k__17), 0, 1, 0, 0},
+    {&__pyx_kp_u__18, __pyx_k__18, sizeof(__pyx_k__18), 0, 1, 0, 0},
     {&__pyx_kp_u__19, __pyx_k__19, sizeof(__pyx_k__19), 0, 1, 0, 0},
-    {&__pyx_n_s__46, __pyx_k__46, sizeof(__pyx_k__46), 0, 0, 1, 1},
+    {&__pyx_n_s__45, __pyx_k__45, sizeof(__pyx_k__45), 0, 0, 1, 1},
     {&__pyx_kp_u__7, __pyx_k__7, sizeof(__pyx_k__7), 0, 1, 0, 0},
     {&__pyx_n_s_a, __pyx_k_a, sizeof(__pyx_k_a), 0, 0, 1, 1},
     {&__pyx_n_s_add, __pyx_k_add, sizeof(__pyx_k_add), 0, 0, 1, 1},
@@ -40962,8 +40980,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_contract_octree_node, __pyx_k_contract_octree_node, sizeof(__pyx_k_contract_octree_node), 0, 0, 1, 1},
     {&__pyx_n_s_create_octree_ptr, __pyx_k_create_octree_ptr, sizeof(__pyx_k_create_octree_ptr), 0, 0, 1, 1},
     {&__pyx_n_s_d, __pyx_k_d, sizeof(__pyx_k_d), 0, 0, 1, 1},
-    {&__pyx_kp_s_d_2, __pyx_k_d_2, sizeof(__pyx_k_d_2), 0, 0, 1, 0},
-    {&__pyx_kp_s_d_d_lf, __pyx_k_d_d_lf, sizeof(__pyx_k_d_d_lf), 0, 0, 1, 0},
+    {&__pyx_kp_u_d_2, __pyx_k_d_2, sizeof(__pyx_k_d_2), 0, 1, 0, 0},
+    {&__pyx_kp_u_d_d_lf, __pyx_k_d_d_lf, sizeof(__pyx_k_d_d_lf), 0, 1, 0, 0},
     {&__pyx_n_s_depth, __pyx_k_depth, sizeof(__pyx_k_depth), 0, 0, 1, 1},
     {&__pyx_n_s_destroy_octree, __pyx_k_destroy_octree, sizeof(__pyx_k_destroy_octree), 0, 0, 1, 1},
     {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
@@ -41021,6 +41039,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_max_leaf_dim, __pyx_k_max_leaf_dim, sizeof(__pyx_k_max_leaf_dim), 0, 0, 1, 1},
     {&__pyx_n_s_max_leaf_size, __pyx_k_max_leaf_size, sizeof(__pyx_k_max_leaf_size), 0, 0, 1, 1},
     {&__pyx_n_s_max_nodes, __pyx_k_max_nodes, sizeof(__pyx_k_max_nodes), 0, 0, 1, 1},
+    {&__pyx_n_s_n, __pyx_k_n, sizeof(__pyx_k_n), 0, 0, 1, 1},
     {&__pyx_n_s_n_atoms, __pyx_k_n_atoms, sizeof(__pyx_k_n_atoms), 0, 0, 1, 1},
     {&__pyx_n_s_n_fixed, __pyx_k_n_fixed, sizeof(__pyx_k_n_fixed), 0, 0, 1, 1},
     {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
@@ -41037,13 +41056,13 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_obj, __pyx_k_obj, sizeof(__pyx_k_obj), 0, 0, 1, 1},
     {&__pyx_n_s_octree, __pyx_k_octree, sizeof(__pyx_k_octree), 0, 0, 1, 1},
     {&__pyx_kp_s_octree_pyx, __pyx_k_octree_pyx, sizeof(__pyx_k_octree_pyx), 0, 0, 1, 0},
+    {&__pyx_n_s_only_find_neighbors, __pyx_k_only_find_neighbors, sizeof(__pyx_k_only_find_neighbors), 0, 0, 1, 1},
     {&__pyx_n_s_parent_pointer, __pyx_k_parent_pointer, sizeof(__pyx_k_parent_pointer), 0, 0, 1, 1},
     {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
     {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
     {&__pyx_n_s_print_node_details, __pyx_k_print_node_details, sizeof(__pyx_k_print_node_details), 0, 0, 1, 1},
     {&__pyx_n_s_print_octree, __pyx_k_print_octree, sizeof(__pyx_k_print_octree), 0, 0, 1, 1},
     {&__pyx_n_s_print_params, __pyx_k_print_params, sizeof(__pyx_k_print_params), 0, 0, 1, 1},
-    {&__pyx_n_s_print_test, __pyx_k_print_test, sizeof(__pyx_k_print_test), 0, 0, 1, 1},
     {&__pyx_n_s_ptr, __pyx_k_ptr, sizeof(__pyx_k_ptr), 0, 0, 1, 1},
     {&__pyx_n_s_pull_up, __pyx_k_pull_up, sizeof(__pyx_k_pull_up), 0, 0, 1, 1},
     {&__pyx_n_s_push_down, __pyx_k_push_down, sizeof(__pyx_k_push_down), 0, 0, 1, 1},
@@ -41138,7 +41157,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *     cpdef void set_parent_pointer(self, int i):
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_Error_Invalid_child_pointer_inde); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_Error_Invalid_child_pointer_inde); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
@@ -41149,7 +41168,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         while loc >= len(self.atom_indices):
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_Location_index_must_be_non_negat); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 177, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_u_Location_index_must_be_non_negat); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 177, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
@@ -41160,7 +41179,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         cdef int i, j, k
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_Starting_DynamicOctree_buildOctr); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_u_Starting_DynamicOctree_buildOctr); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
@@ -41171,7 +41190,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 return False
  * 
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_ERROR_Could_not_create_free_node); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_u_ERROR_Could_not_create_free_node); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
@@ -41182,7 +41201,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 return False
  * 
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_ERROR_Could_not_get_next_node); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_u_ERROR_Could_not_get_next_node); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
@@ -41193,7 +41212,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         self.num_nodes = 0
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_initFreeNodeSer); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_initFreeNodeSer); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
@@ -41204,7 +41223,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         for i in range(self.num_nodes):
  *             parent_node_id = self.nodes[i].get_parent_pointer()
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_Parent_Nodes); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 317, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_u_Parent_Nodes); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
@@ -41215,7 +41234,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if self.next_free_node == -1:
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_getNextFreeNode); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_getNextFreeNode); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 330, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
 
@@ -41226,7 +41245,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         cdef DynamicOctreeNode node = self.nodes[node_id]
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_computeRootBoun); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 360, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_computeRootBoun); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
 
@@ -41237,7 +41256,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         node = self.nodes[node_id]
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_expandOctreeNod); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 403, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_expandOctreeNod); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 403, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
@@ -41248,7 +41267,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 return False
  * 
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_Failed_to_allocate_leaf_node_mem); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_u_Failed_to_allocate_leaf_node_mem); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 417, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
@@ -41259,7 +41278,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         print("\n")
  *         self.print_node_details(0)
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_print); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 506, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_print); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 506, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
 
@@ -41270,7 +41289,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.print_node_details(0)
  *         print("\n")
  */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s__15); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 507, __pyx_L1_error)
+  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_u__15); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 507, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
 
@@ -41281,7 +41300,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         cdef DynamicOctreeNode node = self.nodes[node_id]
  */
-  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_contractOctreeN); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 729, __pyx_L1_error)
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_contractOctreeN); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 729, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
 
@@ -41292,7 +41311,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         cdef DynamicOctreeNode node = self.nodes[node_id]
  */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_traverseOctree); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 769, __pyx_L1_error)
+  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_traverseOctree); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 769, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_GIVEREF(__pyx_tuple__21);
 
@@ -41303,7 +41322,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         cdef DynamicOctreeNode node = self.nodes[node_id]
  */
-  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_getSubtreeSize); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 798, __pyx_L1_error)
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_getSubtreeSize); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 798, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
 
@@ -41314,7 +41333,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return self.get_subtree_size(0)
  */
-  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_getOctreeSize); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 821, __pyx_L1_error)
+  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_getOctreeSize); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 821, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__23);
   __Pyx_GIVEREF(__pyx_tuple__23);
 
@@ -41325,7 +41344,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         cdef Object atom = self.atoms[atom_id]
  *         cdef int j = self.get_index_in_node(atom.id)
  */
-  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_removeAtomFromL); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 834, __pyx_L1_error)
+  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_removeAtomFromL); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 834, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
 
@@ -41336,7 +41355,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                     return False
  * 
  */
-  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_Failed_to_contract_leaf_storage); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 866, __pyx_L1_error)
+  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_u_Failed_to_contract_leaf_storage); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 866, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__25);
   __Pyx_GIVEREF(__pyx_tuple__25);
 
@@ -41347,7 +41366,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         cdef DynamicOctreeNode node = self.nodes[node_id]
  */
-  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_removeAtomFromN); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 889, __pyx_L1_error)
+  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_removeAtomFromN); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 889, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__26);
   __Pyx_GIVEREF(__pyx_tuple__26);
 
@@ -41358,7 +41377,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         # Ensure nodes and atoms lists have sufficient capacity
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_addAtomToNonLea); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 923, __pyx_L1_error)
+  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_addAtomToNonLea); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 923, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__27);
   __Pyx_GIVEREF(__pyx_tuple__27);
 
@@ -41380,7 +41399,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         # Ensure nodes and atoms lists have sufficient capacity
  */
-  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_addAtomToLeaf); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 963, __pyx_L1_error)
+  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_addAtomToLeaf); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 963, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__29);
   __Pyx_GIVEREF(__pyx_tuple__29);
 
@@ -41391,7 +41410,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 return False
  * 
  */
-  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_Failed_to_expand_leaf_storage_fo); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 985, __pyx_L1_error)
+  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_u_Failed_to_expand_leaf_storage_fo); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 985, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__30);
   __Pyx_GIVEREF(__pyx_tuple__30);
 
@@ -41402,7 +41421,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 return False
  * 
  */
-  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_Failed_to_allocate_temporary_sto); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 1028, __pyx_L1_error)
+  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_u_Failed_to_allocate_temporary_sto); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 1028, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__31);
   __Pyx_GIVEREF(__pyx_tuple__31);
 
@@ -41413,7 +41432,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         cdef DynamicOctreeNode node = self.nodes[node_id]
  */
-  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_pullUp); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(0, 1052, __pyx_L1_error)
+  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_pullUp); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(0, 1052, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__32);
   __Pyx_GIVEREF(__pyx_tuple__32);
 
@@ -41424,7 +41443,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 return False
  * 
  */
-  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_Atom_has_moved_outside_the_root); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 1059, __pyx_L1_error)
+  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_u_Atom_has_moved_outside_the_root); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 1059, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__33);
   __Pyx_GIVEREF(__pyx_tuple__33);
 
@@ -41435,7 +41454,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         cdef DynamicOctreeNode node = self.nodes[node_id]
  */
-  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_pushDown); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 1083, __pyx_L1_error)
+  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_pushDown); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 1083, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__34);
   __Pyx_GIVEREF(__pyx_tuple__34);
 
@@ -41446,7 +41465,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if self.octree_built:
  */
-  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_destroyOctree); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 1135, __pyx_L1_error)
+  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_destroyOctree); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 1135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__35);
   __Pyx_GIVEREF(__pyx_tuple__35);
 
@@ -41457,7 +41476,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if node_id >= self.num_nodes or node_id < 0:
  */
-  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_freeSubtreeNode); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(0, 1150, __pyx_L1_error)
+  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_freeSubtreeNode); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(0, 1150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__36);
   __Pyx_GIVEREF(__pyx_tuple__36);
 
@@ -41468,7 +41487,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             return
  * 
  */
-  __pyx_tuple__37 = PyTuple_Pack(1, __pyx_kp_s_Node_id_is_out_of_bounds_in_free); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 1153, __pyx_L1_error)
+  __pyx_tuple__37 = PyTuple_Pack(1, __pyx_kp_u_Node_id_is_out_of_bounds_in_free); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 1153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__37);
   __Pyx_GIVEREF(__pyx_tuple__37);
 
@@ -41479,7 +41498,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if batch_update:
  */
-  __pyx_tuple__38 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_reorganizeOctre); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(0, 1178, __pyx_L1_error)
+  __pyx_tuple__38 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_reorganizeOctre); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(0, 1178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__38);
   __Pyx_GIVEREF(__pyx_tuple__38);
 
@@ -41490,18 +41509,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         cdef int node_id = self.get_node_id(obj)  # Modify the function call here
  */
-  __pyx_tuple__39 = PyTuple_Pack(1, __pyx_kp_s_In_DynamicOctree_updateOctree); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(0, 1202, __pyx_L1_error)
+  __pyx_tuple__39 = PyTuple_Pack(1, __pyx_kp_u_In_DynamicOctree_updateOctree); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(0, 1202, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__39);
   __Pyx_GIVEREF(__pyx_tuple__39);
-
-  /* "octree.pyx":1221
- * 
- *     cpdef print_test(self):
- *         print("Testing")             # <<<<<<<<<<<<<<
- */
-  __pyx_tuple__40 = PyTuple_Pack(1, __pyx_n_s_Testing); if (unlikely(!__pyx_tuple__40)) __PYX_ERR(0, 1221, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__40);
-  __Pyx_GIVEREF(__pyx_tuple__40);
 
   /* "(tree fragment)":4
  *     cdef object __pyx_PickleError
@@ -41510,21 +41520,21 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         from pickle import PickleError as __pyx_PickleError
  *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xa575b79, 0x75ebcb3, 0xca1cd3c) = (score))" % __pyx_checksum
  */
-  __pyx_tuple__41 = PyTuple_Pack(3, __pyx_int_173497209, __pyx_int_123649203, __pyx_int_211930428); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_tuple__40 = PyTuple_Pack(3, __pyx_int_173497209, __pyx_int_123649203, __pyx_int_211930428); if (unlikely(!__pyx_tuple__40)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__40);
+  __Pyx_GIVEREF(__pyx_tuple__40);
+  __pyx_tuple__41 = PyTuple_Pack(3, __pyx_int_203529267, __pyx_int_232957614, __pyx_int_206099161); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__41);
   __Pyx_GIVEREF(__pyx_tuple__41);
-  __pyx_tuple__42 = PyTuple_Pack(3, __pyx_int_203529267, __pyx_int_232957614, __pyx_int_206099161); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_tuple__42 = PyTuple_Pack(3, __pyx_int_157650929, __pyx_int_5191728, __pyx_int_230734921); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__42);
   __Pyx_GIVEREF(__pyx_tuple__42);
-  __pyx_tuple__43 = PyTuple_Pack(3, __pyx_int_157650929, __pyx_int_5191728, __pyx_int_230734921); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_tuple__43 = PyTuple_Pack(3, __pyx_int_87549657, __pyx_int_9675660, __pyx_int_125056448); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__43);
   __Pyx_GIVEREF(__pyx_tuple__43);
-  __pyx_tuple__44 = PyTuple_Pack(3, __pyx_int_87549657, __pyx_int_9675660, __pyx_int_125056448); if (unlikely(!__pyx_tuple__44)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_tuple__44 = PyTuple_Pack(3, __pyx_int_35767607, __pyx_int_45868243, __pyx_int_133447814); if (unlikely(!__pyx_tuple__44)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__44);
   __Pyx_GIVEREF(__pyx_tuple__44);
-  __pyx_tuple__45 = PyTuple_Pack(3, __pyx_int_35767607, __pyx_int_45868243, __pyx_int_133447814); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__45);
-  __Pyx_GIVEREF(__pyx_tuple__45);
 
   /* "octree.pyx":17
  *         self.score = 0.0
@@ -41533,10 +41543,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.score = d
  * 
  */
-  __pyx_tuple__47 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_d); if (unlikely(!__pyx_tuple__47)) __PYX_ERR(0, 17, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__47);
-  __Pyx_GIVEREF(__pyx_tuple__47);
-  __pyx_codeobj__48 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__47, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_score, 17, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__48)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_tuple__46 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_d); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__46);
+  __Pyx_GIVEREF(__pyx_tuple__46);
+  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__46, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_score, 17, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(0, 17, __pyx_L1_error)
 
   /* "octree.pyx":20
  *         self.score = d
@@ -41545,20 +41555,20 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return self.score
  * 
  */
-  __pyx_tuple__49 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(0, 20, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__49);
-  __Pyx_GIVEREF(__pyx_tuple__49);
-  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_score, 20, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_tuple__48 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__48)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__48);
+  __Pyx_GIVEREF(__pyx_tuple__48);
+  __pyx_codeobj__49 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_score, 20, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__49)) __PYX_ERR(0, 20, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_tuple__51 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_state, __pyx_n_s_dict_2, __pyx_n_s_use_setstate); if (unlikely(!__pyx_tuple__51)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__51);
-  __Pyx_GIVEREF(__pyx_tuple__51);
-  __pyx_codeobj__52 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__51, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__52)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__50 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_state, __pyx_n_s_dict_2, __pyx_n_s_use_setstate); if (unlikely(!__pyx_tuple__50)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__50);
+  __Pyx_GIVEREF(__pyx_tuple__50);
+  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -41566,10 +41576,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_OctreeScore__set_state(self, __pyx_state)
  */
-  __pyx_tuple__53 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_pyx_state); if (unlikely(!__pyx_tuple__53)) __PYX_ERR(1, 16, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__53);
-  __Pyx_GIVEREF(__pyx_tuple__53);
-  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_tuple__52 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_pyx_state); if (unlikely(!__pyx_tuple__52)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__52);
+  __Pyx_GIVEREF(__pyx_tuple__52);
+  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "octree.pyx":33
  *         self.slack_factor = slack_factor
@@ -41578,10 +41588,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.max_leaf_size = max_leaf_size
  * 
  */
-  __pyx_tuple__55 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_max_leaf_size); if (unlikely(!__pyx_tuple__55)) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__55);
-  __Pyx_GIVEREF(__pyx_tuple__55);
-  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_max_leaf_size, 33, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_tuple__54 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_max_leaf_size); if (unlikely(!__pyx_tuple__54)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__54);
+  __Pyx_GIVEREF(__pyx_tuple__54);
+  __pyx_codeobj__55 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_max_leaf_size, 33, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__55)) __PYX_ERR(0, 33, __pyx_L1_error)
 
   /* "octree.pyx":36
  *         self.max_leaf_size = max_leaf_size
@@ -41590,10 +41600,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.max_leaf_dim = max_leaf_dim
  * 
  */
-  __pyx_tuple__57 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_max_leaf_dim); if (unlikely(!__pyx_tuple__57)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__57);
-  __Pyx_GIVEREF(__pyx_tuple__57);
-  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__57, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_max_leaf_dim, 36, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_tuple__56 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_max_leaf_dim); if (unlikely(!__pyx_tuple__56)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__56);
+  __Pyx_GIVEREF(__pyx_tuple__56);
+  __pyx_codeobj__57 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__56, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_max_leaf_dim, 36, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__57)) __PYX_ERR(0, 36, __pyx_L1_error)
 
   /* "octree.pyx":39
  *         self.max_leaf_dim = max_leaf_dim
@@ -41602,10 +41612,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.slack_factor = slack_factor
  * 
  */
-  __pyx_tuple__59 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_slack_factor); if (unlikely(!__pyx_tuple__59)) __PYX_ERR(0, 39, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__59);
-  __Pyx_GIVEREF(__pyx_tuple__59);
-  __pyx_codeobj__60 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__59, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_slack_factor, 39, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__60)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_tuple__58 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_slack_factor); if (unlikely(!__pyx_tuple__58)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__58);
+  __Pyx_GIVEREF(__pyx_tuple__58);
+  __pyx_codeobj__59 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_slack_factor, 39, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__59)) __PYX_ERR(0, 39, __pyx_L1_error)
 
   /* "octree.pyx":42
  *         self.slack_factor = slack_factor
@@ -41614,7 +41624,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return self.max_leaf_size
  * 
  */
-  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_max_leaf_size, 42, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_codeobj__60 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_max_leaf_size, 42, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__60)) __PYX_ERR(0, 42, __pyx_L1_error)
 
   /* "octree.pyx":45
  *         return self.max_leaf_size
@@ -41623,7 +41633,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return self.max_leaf_dim
  * 
  */
-  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_max_leaf_dim, 45, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_max_leaf_dim, 45, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(0, 45, __pyx_L1_error)
 
   /* "octree.pyx":48
  *         return self.max_leaf_dim
@@ -41632,7 +41642,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return self.slack_factor
  * 
  */
-  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_slack_factor, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_slack_factor, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) __PYX_ERR(0, 48, __pyx_L1_error)
 
   /* "octree.pyx":51
  *         return self.slack_factor
@@ -41641,14 +41651,14 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         print(f"Max leaf size: {self.max_leaf_size}, and max leaf dim: {self.max_leaf_dim}.")
  * 
  */
-  __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_print_params, 51, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_print_params, 51, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 51, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__51, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -41656,7 +41666,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_OctreeConstructionParams__set_state(self, __pyx_state)
  */
-  __pyx_codeobj__66 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__66)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "octree.pyx":62
  *         self.sz = z
@@ -41665,10 +41675,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         cdef DynamicOctreeNodeAttr attr
  *         for attr in all_attribs:
  */
-  __pyx_tuple__67 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_all_attribs); if (unlikely(!__pyx_tuple__67)) __PYX_ERR(0, 62, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__67);
-  __Pyx_GIVEREF(__pyx_tuple__67);
-  __pyx_codeobj__68 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__67, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_combine_s, 62, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__68)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_tuple__66 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_all_attribs); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__66);
+  __Pyx_GIVEREF(__pyx_tuple__66);
+  __pyx_codeobj__67 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__66, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_combine_s, 62, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__67)) __PYX_ERR(0, 62, __pyx_L1_error)
 
   /* "octree.pyx":69
  *             self.sz += attr.sz
@@ -41677,10 +41687,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         cdef Object atom
  *         for atom in atoms:
  */
-  __pyx_tuple__69 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_atoms); if (unlikely(!__pyx_tuple__69)) __PYX_ERR(0, 69, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__69);
-  __Pyx_GIVEREF(__pyx_tuple__69);
-  __pyx_codeobj__70 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__69, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_s, 69, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__70)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_tuple__68 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_atoms); if (unlikely(!__pyx_tuple__68)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__68);
+  __Pyx_GIVEREF(__pyx_tuple__68);
+  __pyx_codeobj__69 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__68, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_s, 69, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__69)) __PYX_ERR(0, 69, __pyx_L1_error)
 
   /* "octree.pyx":76
  *             self.sz += atom.z
@@ -41689,17 +41699,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if add:
  *             self.sx += atm.x
  */
-  __pyx_tuple__71 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_atm, __pyx_n_s_add); if (unlikely(!__pyx_tuple__71)) __PYX_ERR(0, 76, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__71);
-  __Pyx_GIVEREF(__pyx_tuple__71);
-  __pyx_codeobj__72 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__71, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_update_s, 76, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__72)) __PYX_ERR(0, 76, __pyx_L1_error)
+  __pyx_tuple__70 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_atm, __pyx_n_s_add); if (unlikely(!__pyx_tuple__70)) __PYX_ERR(0, 76, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__70);
+  __Pyx_GIVEREF(__pyx_tuple__70);
+  __pyx_codeobj__71 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__70, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_update_s, 76, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__71)) __PYX_ERR(0, 76, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_codeobj__73 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__51, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__73)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__72 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__72)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -41707,7 +41717,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_DynamicOctreeNodeAttr__set_state(self, __pyx_state)
  */
-  __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__73 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__73)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "octree.pyx":110
  *         self.attribs = DynamicOctreeNodeAttr()
@@ -41716,7 +41726,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.lx = self.ly = self.lz = 0.0
  *         self.dim = 0.0
  */
-  __pyx_codeobj__75 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_init_node, 110, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__75)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_init_node, 110, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(0, 110, __pyx_L1_error)
 
   /* "octree.pyx":124
  *         self.attribs = DynamicOctreeNodeAttr()
@@ -41725,7 +41735,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Check if the node is a leaf node.
  */
-  __pyx_codeobj__76 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_is_leaf, 124, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__76)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_codeobj__75 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_is_leaf, 124, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__75)) __PYX_ERR(0, 124, __pyx_L1_error)
 
   /* "octree.pyx":133
  *         return self.leaf
@@ -41734,10 +41744,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if 0 <= loc < 8:
  *             self.child_pointer[loc] = ptr
  */
-  __pyx_tuple__77 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_loc, __pyx_n_s_ptr); if (unlikely(!__pyx_tuple__77)) __PYX_ERR(0, 133, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__77);
-  __Pyx_GIVEREF(__pyx_tuple__77);
-  __pyx_codeobj__78 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__77, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_child_pointer, 133, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__78)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __pyx_tuple__76 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_loc, __pyx_n_s_ptr); if (unlikely(!__pyx_tuple__76)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__76);
+  __Pyx_GIVEREF(__pyx_tuple__76);
+  __pyx_codeobj__77 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__76, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_child_pointer, 133, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__77)) __PYX_ERR(0, 133, __pyx_L1_error)
 
   /* "octree.pyx":139
  *             print("Error: Invalid child pointer index")
@@ -41746,10 +41756,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.parent_pointer = i
  * 
  */
-  __pyx_tuple__79 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_i); if (unlikely(!__pyx_tuple__79)) __PYX_ERR(0, 139, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__79);
-  __Pyx_GIVEREF(__pyx_tuple__79);
-  __pyx_codeobj__80 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__79, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_parent_pointer, 139, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__80)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_tuple__78 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_i); if (unlikely(!__pyx_tuple__78)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__78);
+  __Pyx_GIVEREF(__pyx_tuple__78);
+  __pyx_codeobj__79 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__78, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_parent_pointer, 139, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__79)) __PYX_ERR(0, 139, __pyx_L1_error)
 
   /* "octree.pyx":142
  *         self.parent_pointer = i
@@ -41758,7 +41768,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return self.parent_pointer
  * 
  */
-  __pyx_codeobj__81 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_parent_pointer, 142, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__81)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_codeobj__80 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_parent_pointer, 142, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__80)) __PYX_ERR(0, 142, __pyx_L1_error)
 
   /* "octree.pyx":145
  *         return self.parent_pointer
@@ -41767,10 +41777,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.id = node_id
  * 
  */
-  __pyx_tuple__82 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_node_id); if (unlikely(!__pyx_tuple__82)) __PYX_ERR(0, 145, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__82);
-  __Pyx_GIVEREF(__pyx_tuple__82);
-  __pyx_codeobj__83 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__82, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_id, 145, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__83)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_tuple__81 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_node_id); if (unlikely(!__pyx_tuple__81)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__81);
+  __Pyx_GIVEREF(__pyx_tuple__81);
+  __pyx_codeobj__82 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__81, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_id, 145, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__82)) __PYX_ERR(0, 145, __pyx_L1_error)
 
   /* "octree.pyx":148
  *         self.id = node_id
@@ -41779,10 +41789,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.lx = value
  * 
  */
-  __pyx_tuple__84 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_value); if (unlikely(!__pyx_tuple__84)) __PYX_ERR(0, 148, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__84);
-  __Pyx_GIVEREF(__pyx_tuple__84);
-  __pyx_codeobj__85 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__84, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_lx, 148, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__85)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_tuple__83 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_value); if (unlikely(!__pyx_tuple__83)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__83);
+  __Pyx_GIVEREF(__pyx_tuple__83);
+  __pyx_codeobj__84 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__83, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_lx, 148, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__84)) __PYX_ERR(0, 148, __pyx_L1_error)
 
   /* "octree.pyx":151
  *         self.lx = value
@@ -41791,7 +41801,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.ly = value
  * 
  */
-  __pyx_codeobj__86 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__84, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_ly, 151, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__86)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_codeobj__85 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__83, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_ly, 151, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__85)) __PYX_ERR(0, 151, __pyx_L1_error)
 
   /* "octree.pyx":154
  *         self.ly = value
@@ -41800,7 +41810,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.lz = value
  * 
  */
-  __pyx_codeobj__87 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__84, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_lz, 154, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__87)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_codeobj__86 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__83, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_lz, 154, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__86)) __PYX_ERR(0, 154, __pyx_L1_error)
 
   /* "octree.pyx":157
  *         self.lz = value
@@ -41809,7 +41819,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.dim = value
  * 
  */
-  __pyx_codeobj__88 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__84, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_dim, 157, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__88)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_codeobj__87 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__83, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_dim, 157, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__87)) __PYX_ERR(0, 157, __pyx_L1_error)
 
   /* "octree.pyx":160
  *         self.dim = value
@@ -41818,7 +41828,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.num_atoms = i
  * 
  */
-  __pyx_codeobj__89 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__79, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_num_atoms, 160, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__89)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_codeobj__88 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__78, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_num_atoms, 160, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__88)) __PYX_ERR(0, 160, __pyx_L1_error)
 
   /* "octree.pyx":163
  *         self.num_atoms = i
@@ -41827,7 +41837,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.atom_indices = i
  * 
  */
-  __pyx_codeobj__90 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__79, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_atom_indices, 163, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__90)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_codeobj__89 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__78, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_atom_indices, 163, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__89)) __PYX_ERR(0, 163, __pyx_L1_error)
 
   /* "octree.pyx":166
  *         self.atom_indices = i
@@ -41836,7 +41846,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.leaf = i
  * 
  */
-  __pyx_codeobj__91 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__79, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_leaf, 166, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__91)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_codeobj__90 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__78, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_leaf, 166, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__90)) __PYX_ERR(0, 166, __pyx_L1_error)
 
   /* "octree.pyx":169
  *         self.leaf = i
@@ -41845,7 +41855,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.id_cap = i
  * 
  */
-  __pyx_codeobj__92 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__79, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_IdCap, 169, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__92)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_codeobj__91 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__78, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_IdCap, 169, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__91)) __PYX_ERR(0, 169, __pyx_L1_error)
 
   /* "octree.pyx":172
  *         self.id_cap = i
@@ -41854,7 +41864,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.n_fixed = i
  * 
  */
-  __pyx_codeobj__93 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__79, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_num_fixed, 172, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__93)) __PYX_ERR(0, 172, __pyx_L1_error)
+  __pyx_codeobj__92 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__78, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_num_fixed, 172, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__92)) __PYX_ERR(0, 172, __pyx_L1_error)
 
   /* "octree.pyx":175
  *         self.n_fixed = i
@@ -41863,10 +41873,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if loc < 0:
  *             raise ValueError("Location index must be non-negative")
  */
-  __pyx_tuple__94 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_loc, __pyx_n_s_index); if (unlikely(!__pyx_tuple__94)) __PYX_ERR(0, 175, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__94);
-  __Pyx_GIVEREF(__pyx_tuple__94);
-  __pyx_codeobj__95 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__94, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_atom_index, 175, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__95)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __pyx_tuple__93 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_loc, __pyx_n_s_index); if (unlikely(!__pyx_tuple__93)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__93);
+  __Pyx_GIVEREF(__pyx_tuple__93);
+  __pyx_codeobj__94 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__93, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_atom_index, 175, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__94)) __PYX_ERR(0, 175, __pyx_L1_error)
 
   /* "octree.pyx":184
  *         self.atom_indices[loc] = index
@@ -41875,7 +41885,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return self.dim
  * 
  */
-  __pyx_codeobj__96 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_dim, 184, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__96)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_codeobj__95 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_dim, 184, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__95)) __PYX_ERR(0, 184, __pyx_L1_error)
 
   /* "octree.pyx":187
  *         return self.dim
@@ -41884,10 +41894,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.attribs.combine_s(all_child_attribs)
  * 
  */
-  __pyx_tuple__97 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_all_child_attribs); if (unlikely(!__pyx_tuple__97)) __PYX_ERR(0, 187, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__97);
-  __Pyx_GIVEREF(__pyx_tuple__97);
-  __pyx_codeobj__98 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__97, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_combine_and_set_attribs, 187, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__98)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __pyx_tuple__96 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_all_child_attribs); if (unlikely(!__pyx_tuple__96)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__96);
+  __Pyx_GIVEREF(__pyx_tuple__96);
+  __pyx_codeobj__97 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__96, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_combine_and_set_attribs, 187, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__97)) __PYX_ERR(0, 187, __pyx_L1_error)
 
   /* "octree.pyx":190
  *         self.attribs.combine_s(all_child_attribs)
@@ -41896,7 +41906,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.attribs.compute_s(atoms)
  * 
  */
-  __pyx_codeobj__99 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__69, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_own_attribs, 190, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__99)) __PYX_ERR(0, 190, __pyx_L1_error)
+  __pyx_codeobj__98 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__68, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_own_attribs, 190, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__98)) __PYX_ERR(0, 190, __pyx_L1_error)
 
   /* "octree.pyx":193
  *         self.attribs.compute_s(atoms)
@@ -41905,17 +41915,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if add:
  *             self.attribs.update_s(obj, True)
  */
-  __pyx_tuple__100 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_obj, __pyx_n_s_add); if (unlikely(!__pyx_tuple__100)) __PYX_ERR(0, 193, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__100);
-  __Pyx_GIVEREF(__pyx_tuple__100);
-  __pyx_codeobj__101 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__100, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_update_attribs, 193, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__101)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_tuple__99 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_obj, __pyx_n_s_add); if (unlikely(!__pyx_tuple__99)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__99);
+  __Pyx_GIVEREF(__pyx_tuple__99);
+  __pyx_codeobj__100 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__99, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_update_attribs, 193, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__100)) __PYX_ERR(0, 193, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_codeobj__102 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__51, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__102)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__101 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__101)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -41923,7 +41933,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_DynamicOctreeNode__set_state(self, __pyx_state)
  */
-  __pyx_codeobj__103 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__103)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__102 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__102)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "octree.pyx":224
  *         self.object_to_node_map = {}
@@ -41932,10 +41942,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.object_to_node_map[obj] = node_id
  * 
  */
-  __pyx_tuple__104 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_obj, __pyx_n_s_node_id); if (unlikely(!__pyx_tuple__104)) __PYX_ERR(0, 224, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__104);
-  __Pyx_GIVEREF(__pyx_tuple__104);
-  __pyx_codeobj__105 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__104, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_node_id, 224, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__105)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_tuple__103 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_obj, __pyx_n_s_node_id); if (unlikely(!__pyx_tuple__103)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__103);
+  __Pyx_GIVEREF(__pyx_tuple__103);
+  __pyx_codeobj__104 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__103, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_set_node_id, 224, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__104)) __PYX_ERR(0, 224, __pyx_L1_error)
 
   /* "octree.pyx":227
  *         self.object_to_node_map[obj] = node_id
@@ -41944,10 +41954,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return self.object_to_node_map.get(obj)
  * 
  */
-  __pyx_tuple__106 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_obj); if (unlikely(!__pyx_tuple__106)) __PYX_ERR(0, 227, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__106);
-  __Pyx_GIVEREF(__pyx_tuple__106);
-  __pyx_codeobj__107 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__106, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_node_id, 227, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__107)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_tuple__105 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_obj); if (unlikely(!__pyx_tuple__105)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__105);
+  __Pyx_GIVEREF(__pyx_tuple__105);
+  __pyx_codeobj__106 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__105, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_node_id, 227, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__106)) __PYX_ERR(0, 227, __pyx_L1_error)
 
   /* "octree.pyx":230
  *         return self.object_to_node_map.get(obj)
@@ -41956,7 +41966,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if self.verbose:
  *             print("Starting DynamicOctree::buildOctree")
  */
-  __pyx_codeobj__108 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_build_octree, 230, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__108)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_codeobj__107 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_build_octree, 230, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__107)) __PYX_ERR(0, 230, __pyx_L1_error)
 
   /* "octree.pyx":260
  *         return self.octree_built
@@ -41965,10 +41975,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return (a << LOW_BITS) + b
  * 
  */
-  __pyx_tuple__109 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_a, __pyx_n_s_b); if (unlikely(!__pyx_tuple__109)) __PYX_ERR(0, 260, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__109);
-  __Pyx_GIVEREF(__pyx_tuple__109);
-  __pyx_codeobj__110 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__109, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_create_octree_ptr, 260, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__110)) __PYX_ERR(0, 260, __pyx_L1_error)
+  __pyx_tuple__108 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_a, __pyx_n_s_b); if (unlikely(!__pyx_tuple__108)) __PYX_ERR(0, 260, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__108);
+  __Pyx_GIVEREF(__pyx_tuple__108);
+  __pyx_codeobj__109 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__108, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_create_octree_ptr, 260, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__109)) __PYX_ERR(0, 260, __pyx_L1_error)
 
   /* "octree.pyx":263
  *         return (a << LOW_BITS) + b
@@ -41977,10 +41987,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return c & 0x3FFF
  * 
  */
-  __pyx_tuple__111 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_c); if (unlikely(!__pyx_tuple__111)) __PYX_ERR(0, 263, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__111);
-  __Pyx_GIVEREF(__pyx_tuple__111);
-  __pyx_codeobj__112 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__111, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_index_in_node, 263, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__112)) __PYX_ERR(0, 263, __pyx_L1_error)
+  __pyx_tuple__110 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_c); if (unlikely(!__pyx_tuple__110)) __PYX_ERR(0, 263, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__110);
+  __Pyx_GIVEREF(__pyx_tuple__110);
+  __pyx_codeobj__111 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__110, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_index_in_node, 263, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__111)) __PYX_ERR(0, 263, __pyx_L1_error)
 
   /* "octree.pyx":266
  *         return c & 0x3FFF
@@ -41989,10 +41999,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return node.num_atoms > (self.construction_params.max_leaf_size << 1)
  * 
  */
-  __pyx_tuple__113 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_node); if (unlikely(!__pyx_tuple__113)) __PYX_ERR(0, 266, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__113);
-  __Pyx_GIVEREF(__pyx_tuple__113);
-  __pyx_codeobj__114 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__113, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_needs_dynamic_expansion, 266, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__114)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_tuple__112 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_node); if (unlikely(!__pyx_tuple__112)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__112);
+  __Pyx_GIVEREF(__pyx_tuple__112);
+  __pyx_codeobj__113 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__112, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_needs_dynamic_expansion, 266, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__113)) __PYX_ERR(0, 266, __pyx_L1_error)
 
   /* "octree.pyx":269
  *         return node.num_atoms > (self.construction_params.max_leaf_size << 1)
@@ -42001,7 +42011,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return node.num_atoms < (self.construction_params.max_leaf_size >> 1)
  * 
  */
-  __pyx_codeobj__115 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__113, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_needs_dynamic_contraction, 269, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__115)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_codeobj__114 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__112, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_needs_dynamic_contraction, 269, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__114)) __PYX_ERR(0, 269, __pyx_L1_error)
 
   /* "octree.pyx":272
  *         return node.num_atoms < (self.construction_params.max_leaf_size >> 1)
@@ -42010,10 +42020,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if self.verbose:
  *             print(f"Inside DynamicOctree::allocateNodes({new_num_nodes})")
  */
-  __pyx_tuple__116 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_new_num_nodes); if (unlikely(!__pyx_tuple__116)) __PYX_ERR(0, 272, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__116);
-  __Pyx_GIVEREF(__pyx_tuple__116);
-  __pyx_codeobj__117 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__116, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_allocate_nodes, 272, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__117)) __PYX_ERR(0, 272, __pyx_L1_error)
+  __pyx_tuple__115 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_new_num_nodes); if (unlikely(!__pyx_tuple__115)) __PYX_ERR(0, 272, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__115);
+  __Pyx_GIVEREF(__pyx_tuple__115);
+  __pyx_codeobj__116 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__115, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_allocate_nodes, 272, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__116)) __PYX_ERR(0, 272, __pyx_L1_error)
 
   /* "octree.pyx":289
  *         return True
@@ -42022,7 +42032,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if self.verbose:
  *             print(f"Inside DynamicOctree::reallocateNodes({new_num_nodes})")
  */
-  __pyx_codeobj__118 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__116, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_reallocate_nodes, 289, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__118)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_codeobj__117 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__115, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_reallocate_nodes, 289, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__117)) __PYX_ERR(0, 289, __pyx_L1_error)
 
   /* "octree.pyx":297
  *         return True
@@ -42031,7 +42041,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if self.verbose:
  *             print("In DynamicOctree::initFreeNodeServer")
  */
-  __pyx_codeobj__119 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_init_free_node_server, 297, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__119)) __PYX_ERR(0, 297, __pyx_L1_error)
+  __pyx_codeobj__118 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_init_free_node_server, 297, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__118)) __PYX_ERR(0, 297, __pyx_L1_error)
 
   /* "octree.pyx":325
  *         return True
@@ -42040,7 +42050,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         cdef int new_num_nodes, i, next_node
  *         cdef DynamicOctreeNode node
  */
-  __pyx_codeobj__120 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_next_free_node, 325, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__120)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_codeobj__119 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_next_free_node, 325, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__119)) __PYX_ERR(0, 325, __pyx_L1_error)
 
   /* "octree.pyx":358
  *         return next_node
@@ -42049,10 +42059,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if self.verbose:
  *             print("In DynamicOctree::computeRootBoundingBox")
  */
-  __pyx_tuple__121 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_slack_factor, __pyx_n_s_indices, __pyx_n_s_start_id, __pyx_n_s_end_id); if (unlikely(!__pyx_tuple__121)) __PYX_ERR(0, 358, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__121);
-  __Pyx_GIVEREF(__pyx_tuple__121);
-  __pyx_codeobj__122 = (PyObject*)__Pyx_PyCode_New(6, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__121, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_root_bounding_box, 358, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__122)) __PYX_ERR(0, 358, __pyx_L1_error)
+  __pyx_tuple__120 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_slack_factor, __pyx_n_s_indices, __pyx_n_s_start_id, __pyx_n_s_end_id); if (unlikely(!__pyx_tuple__120)) __PYX_ERR(0, 358, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__120);
+  __Pyx_GIVEREF(__pyx_tuple__120);
+  __pyx_codeobj__121 = (PyObject*)__Pyx_PyCode_New(6, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__120, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_root_bounding_box, 358, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__121)) __PYX_ERR(0, 358, __pyx_L1_error)
 
   /* "octree.pyx":392
  *         node.set_dim(dim)
@@ -42061,7 +42071,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return not (node.num_atoms <= self.construction_params.get_max_leaf_size() or node.dim <= self.construction_params.get_max_leaf_dim())
  * 
  */
-  __pyx_codeobj__123 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__113, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_needs_expansion, 392, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__123)) __PYX_ERR(0, 392, __pyx_L1_error)
+  __pyx_codeobj__122 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__112, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_needs_expansion, 392, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__122)) __PYX_ERR(0, 392, __pyx_L1_error)
 
   /* "octree.pyx":395
  *         return not (node.num_atoms <= self.construction_params.get_max_leaf_size() or node.dim <= self.construction_params.get_max_leaf_dim())
@@ -42070,10 +42080,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         cdef DynamicOctreeNode node
  *         cdef int nAtoms, nfixed, i, j, k
  */
-  __pyx_tuple__124 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_indices, __pyx_n_s_indices_temp, __pyx_n_s_start_id, __pyx_n_s_end_id); if (unlikely(!__pyx_tuple__124)) __PYX_ERR(0, 395, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__124);
-  __Pyx_GIVEREF(__pyx_tuple__124);
-  __pyx_codeobj__125 = (PyObject*)__Pyx_PyCode_New(6, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__124, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_expand_octree_node, 395, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__125)) __PYX_ERR(0, 395, __pyx_L1_error)
+  __pyx_tuple__123 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_indices, __pyx_n_s_indices_temp, __pyx_n_s_start_id, __pyx_n_s_end_id); if (unlikely(!__pyx_tuple__123)) __PYX_ERR(0, 395, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__123);
+  __Pyx_GIVEREF(__pyx_tuple__123);
+  __pyx_codeobj__124 = (PyObject*)__Pyx_PyCode_New(6, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__123, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_expand_octree_node, 395, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__124)) __PYX_ERR(0, 395, __pyx_L1_error)
 
   /* "octree.pyx":499
  *         return True
@@ -42082,7 +42092,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Print the octree.
  */
-  __pyx_codeobj__126 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_print_octree, 499, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__126)) __PYX_ERR(0, 499, __pyx_L1_error)
+  __pyx_codeobj__125 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_print_octree, 499, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__125)) __PYX_ERR(0, 499, __pyx_L1_error)
 
   /* "octree.pyx":511
  *         print("\n")
@@ -42091,13 +42101,13 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Print details of a node and its children recursively.
  */
-  __pyx_tuple__127 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_indent); if (unlikely(!__pyx_tuple__127)) __PYX_ERR(0, 511, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__127);
-  __Pyx_GIVEREF(__pyx_tuple__127);
-  __pyx_codeobj__128 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__127, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_print_node_details, 511, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__128)) __PYX_ERR(0, 511, __pyx_L1_error)
-  __pyx_tuple__129 = PyTuple_Pack(1, __pyx_kp_s__17); if (unlikely(!__pyx_tuple__129)) __PYX_ERR(0, 511, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__129);
-  __Pyx_GIVEREF(__pyx_tuple__129);
+  __pyx_tuple__126 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_indent); if (unlikely(!__pyx_tuple__126)) __PYX_ERR(0, 511, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__126);
+  __Pyx_GIVEREF(__pyx_tuple__126);
+  __pyx_codeobj__127 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__126, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_print_node_details, 511, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__127)) __PYX_ERR(0, 511, __pyx_L1_error)
+  __pyx_tuple__128 = PyTuple_Pack(1, __pyx_kp_u__17); if (unlikely(!__pyx_tuple__128)) __PYX_ERR(0, 511, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__128);
+  __Pyx_GIVEREF(__pyx_tuple__128);
 
   /* "octree.pyx":536
  *                     self.print_node_details(child_id, indent + "  ")
@@ -42106,10 +42116,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Traverse the octree and print the contents of each node.
  */
-  __pyx_tuple__130 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_depth); if (unlikely(!__pyx_tuple__130)) __PYX_ERR(0, 536, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__130);
-  __Pyx_GIVEREF(__pyx_tuple__130);
-  __pyx_codeobj__131 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__130, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_traverse_and_print, 536, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__131)) __PYX_ERR(0, 536, __pyx_L1_error)
+  __pyx_tuple__129 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_depth); if (unlikely(!__pyx_tuple__129)) __PYX_ERR(0, 536, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__129);
+  __Pyx_GIVEREF(__pyx_tuple__129);
+  __pyx_codeobj__130 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__129, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_traverse_and_print, 536, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__130)) __PYX_ERR(0, 536, __pyx_L1_error)
 
   /* "octree.pyx":567
  *         print("\n")
@@ -42118,13 +42128,13 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the bounding box for a non-root node.
  */
-  __pyx_tuple__132 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_child_id_2); if (unlikely(!__pyx_tuple__132)) __PYX_ERR(0, 567, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__132);
-  __Pyx_GIVEREF(__pyx_tuple__132);
-  __pyx_codeobj__133 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__132, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_non_root_bounding_box, 567, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__133)) __PYX_ERR(0, 567, __pyx_L1_error)
-  __pyx_tuple__134 = PyTuple_Pack(1, __pyx_int_neg_1); if (unlikely(!__pyx_tuple__134)) __PYX_ERR(0, 567, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__134);
-  __Pyx_GIVEREF(__pyx_tuple__134);
+  __pyx_tuple__131 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_child_id_2); if (unlikely(!__pyx_tuple__131)) __PYX_ERR(0, 567, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__131);
+  __Pyx_GIVEREF(__pyx_tuple__131);
+  __pyx_codeobj__132 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__131, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_non_root_bounding_box, 567, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__132)) __PYX_ERR(0, 567, __pyx_L1_error)
+  __pyx_tuple__133 = PyTuple_Pack(1, __pyx_int_neg_1); if (unlikely(!__pyx_tuple__133)) __PYX_ERR(0, 567, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__133);
+  __Pyx_GIVEREF(__pyx_tuple__133);
 
   /* "octree.pyx":621
  *         #     print(f"nonroot dim = {dim}")
@@ -42133,7 +42143,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the attributes for a non-leaf node.
  */
-  __pyx_codeobj__135 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__82, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_non_leaf_attributes, 621, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__135)) __PYX_ERR(0, 621, __pyx_L1_error)
+  __pyx_codeobj__134 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__81, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_non_leaf_attributes, 621, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__134)) __PYX_ERR(0, 621, __pyx_L1_error)
 
   /* "octree.pyx":647
  *         self.nodes[node_id].combine_and_set_attribs(child_attribs)
@@ -42142,10 +42152,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Compute the attributes for a leaf node.
  */
-  __pyx_tuple__136 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_indices, __pyx_n_s_start_id, __pyx_n_s_end_id); if (unlikely(!__pyx_tuple__136)) __PYX_ERR(0, 647, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__136);
-  __Pyx_GIVEREF(__pyx_tuple__136);
-  __pyx_codeobj__137 = (PyObject*)__Pyx_PyCode_New(5, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__136, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_leaf_attributes, 647, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__137)) __PYX_ERR(0, 647, __pyx_L1_error)
+  __pyx_tuple__135 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_indices, __pyx_n_s_start_id, __pyx_n_s_end_id); if (unlikely(!__pyx_tuple__135)) __PYX_ERR(0, 647, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__135);
+  __Pyx_GIVEREF(__pyx_tuple__135);
+  __pyx_codeobj__136 = (PyObject*)__Pyx_PyCode_New(5, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__135, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_compute_leaf_attributes, 647, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__136)) __PYX_ERR(0, 647, __pyx_L1_error)
 
   /* "octree.pyx":674
  *         # print("computed attributes")
@@ -42154,10 +42164,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Get the child ID of a node based on the position of an object.
  */
-  __pyx_tuple__138 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_node, __pyx_n_s_atom); if (unlikely(!__pyx_tuple__138)) __PYX_ERR(0, 674, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__138);
-  __Pyx_GIVEREF(__pyx_tuple__138);
-  __pyx_codeobj__139 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__138, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_child_id, 674, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__139)) __PYX_ERR(0, 674, __pyx_L1_error)
+  __pyx_tuple__137 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_node, __pyx_n_s_atom); if (unlikely(!__pyx_tuple__137)) __PYX_ERR(0, 674, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__137);
+  __Pyx_GIVEREF(__pyx_tuple__137);
+  __pyx_codeobj__138 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__137, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_child_id, 674, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__138)) __PYX_ERR(0, 674, __pyx_L1_error)
 
   /* "octree.pyx":696
  *         return k
@@ -42166,10 +42176,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Recursively collects atoms from leaf nodes.
  */
-  __pyx_tuple__140 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_indices, __pyx_n_s_start_id); if (unlikely(!__pyx_tuple__140)) __PYX_ERR(0, 696, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__140);
-  __Pyx_GIVEREF(__pyx_tuple__140);
-  __pyx_codeobj__141 = (PyObject*)__Pyx_PyCode_New(4, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__140, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_collect_atoms_from_leaves, 696, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__141)) __PYX_ERR(0, 696, __pyx_L1_error)
+  __pyx_tuple__139 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_indices, __pyx_n_s_start_id); if (unlikely(!__pyx_tuple__139)) __PYX_ERR(0, 696, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__139);
+  __Pyx_GIVEREF(__pyx_tuple__139);
+  __pyx_codeobj__140 = (PyObject*)__Pyx_PyCode_New(4, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__139, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_collect_atoms_from_leaves, 696, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__140)) __PYX_ERR(0, 696, __pyx_L1_error)
 
   /* "octree.pyx":718
  *                     self.free_node(child_id)
@@ -42178,7 +42188,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Contracts the octree node if necessary.
  */
-  __pyx_codeobj__142 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__82, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_contract_octree_node, 718, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__142)) __PYX_ERR(0, 718, __pyx_L1_error)
+  __pyx_codeobj__141 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__81, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_contract_octree_node, 718, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__141)) __PYX_ERR(0, 718, __pyx_L1_error)
 
   /* "octree.pyx":761
  *         return True
@@ -42187,7 +42197,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Traverses the octree recursively and prints information about each node.
  */
-  __pyx_codeobj__143 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__82, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_traverse_octree, 761, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__143)) __PYX_ERR(0, 761, __pyx_L1_error)
+  __pyx_codeobj__142 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__81, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_traverse_octree, 761, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__142)) __PYX_ERR(0, 761, __pyx_L1_error)
 
   /* "octree.pyx":787
  *                     self.traverse_octree(node.child_pointers[i])
@@ -42196,7 +42206,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Calculates the size of the subtree rooted at the given node.
  */
-  __pyx_codeobj__144 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__82, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_subtree_size, 787, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__144)) __PYX_ERR(0, 787, __pyx_L1_error)
+  __pyx_codeobj__143 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__81, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_subtree_size, 787, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__143)) __PYX_ERR(0, 787, __pyx_L1_error)
 
   /* "octree.pyx":813
  *         return s
@@ -42205,7 +42215,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Calculates the size of the entire octree.
  */
-  __pyx_codeobj__145 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_octree_size, 813, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__145)) __PYX_ERR(0, 813, __pyx_L1_error)
+  __pyx_codeobj__144 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_get_octree_size, 813, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__144)) __PYX_ERR(0, 813, __pyx_L1_error)
 
   /* "octree.pyx":825
  *         return self.get_subtree_size(0)
@@ -42214,10 +42224,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """ Removes an atom from a leaf node.
  *         Args:
  */
-  __pyx_tuple__146 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_atom_id); if (unlikely(!__pyx_tuple__146)) __PYX_ERR(0, 825, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__146);
-  __Pyx_GIVEREF(__pyx_tuple__146);
-  __pyx_codeobj__147 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__146, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_remove_atom_from_leaf, 825, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__147)) __PYX_ERR(0, 825, __pyx_L1_error)
+  __pyx_tuple__145 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_node_id, __pyx_n_s_atom_id); if (unlikely(!__pyx_tuple__145)) __PYX_ERR(0, 825, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__145);
+  __Pyx_GIVEREF(__pyx_tuple__145);
+  __pyx_codeobj__146 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__145, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_remove_atom_from_leaf, 825, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__146)) __PYX_ERR(0, 825, __pyx_L1_error)
 
   /* "octree.pyx":877
  *             return True
@@ -42226,7 +42236,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Removes an atom from a non-leaf node.
  */
-  __pyx_codeobj__148 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__146, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_remove_atom_from_non_leaf, 877, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__148)) __PYX_ERR(0, 877, __pyx_L1_error)
+  __pyx_codeobj__147 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__145, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_remove_atom_from_non_leaf, 877, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__147)) __PYX_ERR(0, 877, __pyx_L1_error)
 
   /* "octree.pyx":914
  *         return True
@@ -42235,7 +42245,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Adds an atom to a non-leaf node.
  */
-  __pyx_codeobj__149 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__146, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_add_atom_to_non_leaf, 914, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__149)) __PYX_ERR(0, 914, __pyx_L1_error)
+  __pyx_codeobj__148 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__145, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_add_atom_to_non_leaf, 914, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__148)) __PYX_ERR(0, 914, __pyx_L1_error)
 
   /* "octree.pyx":951
  *         atom.setNodeID(node_id)
@@ -42244,7 +42254,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Adds an atom to a leaf node.
  */
-  __pyx_codeobj__150 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__146, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_add_atom_to_leaf, 951, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__150)) __PYX_ERR(0, 951, __pyx_L1_error)
+  __pyx_codeobj__149 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__145, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_add_atom_to_leaf, 951, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__149)) __PYX_ERR(0, 951, __pyx_L1_error)
 
   /* "octree.pyx":1040
  *             return True
@@ -42253,7 +42263,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Pulls up an atom in the octree.
  */
-  __pyx_codeobj__151 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__146, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_pull_up, 1040, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__151)) __PYX_ERR(0, 1040, __pyx_L1_error)
+  __pyx_codeobj__150 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__145, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_pull_up, 1040, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__150)) __PYX_ERR(0, 1040, __pyx_L1_error)
 
   /* "octree.pyx":1071
  *             return self.push_down(node_id, atom_id)
@@ -42262,7 +42272,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Pushes down an atom in the octree.
  */
-  __pyx_codeobj__152 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__146, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_push_down, 1071, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__152)) __PYX_ERR(0, 1071, __pyx_L1_error)
+  __pyx_codeobj__151 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__145, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_push_down, 1071, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__151)) __PYX_ERR(0, 1071, __pyx_L1_error)
 
   /* "octree.pyx":1130
  *             return False
@@ -42271,7 +42281,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Destroys the octree, freeing memory.
  */
-  __pyx_codeobj__153 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_destroy_octree, 1130, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__153)) __PYX_ERR(0, 1130, __pyx_L1_error)
+  __pyx_codeobj__152 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_destroy_octree, 1130, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__152)) __PYX_ERR(0, 1130, __pyx_L1_error)
 
   /* "octree.pyx":1142
  *         self.free_mem(self.nodes)
@@ -42280,7 +42290,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Frees the memory occupied by the subtree rooted at the given node.
  */
-  __pyx_codeobj__154 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__82, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_free_subtree_nodes, 1142, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__154)) __PYX_ERR(0, 1142, __pyx_L1_error)
+  __pyx_codeobj__153 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__81, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_free_subtree_nodes, 1142, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__153)) __PYX_ERR(0, 1142, __pyx_L1_error)
 
   /* "octree.pyx":1165
  *         self.free_node(node_id)
@@ -42289,10 +42299,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Reorganizes the octree by updating its structure.
  */
-  __pyx_tuple__155 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_batch_update); if (unlikely(!__pyx_tuple__155)) __PYX_ERR(0, 1165, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__155);
-  __Pyx_GIVEREF(__pyx_tuple__155);
-  __pyx_codeobj__156 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__155, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_reorganize_octree, 1165, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__156)) __PYX_ERR(0, 1165, __pyx_L1_error)
+  __pyx_tuple__154 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_batch_update); if (unlikely(!__pyx_tuple__154)) __PYX_ERR(0, 1165, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__154);
+  __Pyx_GIVEREF(__pyx_tuple__154);
+  __pyx_codeobj__155 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__154, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_reorganize_octree, 1165, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__155)) __PYX_ERR(0, 1165, __pyx_L1_error)
 
   /* "octree.pyx":1194
  *         return True
@@ -42301,7 +42311,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         Updates the octree structure with the given object.
  */
-  __pyx_codeobj__157 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__106, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_update_octree, 1194, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__157)) __PYX_ERR(0, 1194, __pyx_L1_error)
+  __pyx_codeobj__156 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__105, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_update_octree, 1194, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__156)) __PYX_ERR(0, 1194, __pyx_L1_error)
 
   /* "octree.pyx":1210
  *             self.pull_up(node_id, obj.id)
@@ -42310,22 +42320,26 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         return (
  *             (atom.x - node.lx >= 0) and
  */
-  __pyx_codeobj__158 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__138, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_inside_node, 1210, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__158)) __PYX_ERR(0, 1210, __pyx_L1_error)
+  __pyx_codeobj__157 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__137, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_inside_node, 1210, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__157)) __PYX_ERR(0, 1210, __pyx_L1_error)
 
   /* "octree.pyx":1220
  *         )
  * 
- *     cpdef print_test(self):             # <<<<<<<<<<<<<<
- *         print("Testing")
+ *     cpdef void only_find_neighbors(self, int n, ):             # <<<<<<<<<<<<<<
+ *         """
+ *         * n: total dimensions of atom positions (3 * num atoms)
  */
-  __pyx_codeobj__159 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_print_test, 1220, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__159)) __PYX_ERR(0, 1220, __pyx_L1_error)
+  __pyx_tuple__158 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_n); if (unlikely(!__pyx_tuple__158)) __PYX_ERR(0, 1220, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__158);
+  __Pyx_GIVEREF(__pyx_tuple__158);
+  __pyx_codeobj__159 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__158, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_octree_pyx, __pyx_n_s_only_find_neighbors, 1220, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__159)) __PYX_ERR(0, 1220, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_codeobj__160 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__51, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__160)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__160 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__160)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -42333,7 +42347,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_DynamicOctree__set_state(self, __pyx_state)
  */
-  __pyx_codeobj__161 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__161)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__161 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__161)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_OctreeScore(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
@@ -42608,7 +42622,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_6octree_DynamicOctree.reorganize_octree = (int (*)(struct __pyx_obj_6octree_DynamicOctree *, int, int __pyx_skip_dispatch))__pyx_f_6octree_13DynamicOctree_reorganize_octree;
   __pyx_vtable_6octree_DynamicOctree.update_octree = (void (*)(struct __pyx_obj_6octree_DynamicOctree *, struct __pyx_obj_7objects_Object *, int __pyx_skip_dispatch))__pyx_f_6octree_13DynamicOctree_update_octree;
   __pyx_vtable_6octree_DynamicOctree.inside_node = (int (*)(struct __pyx_obj_6octree_DynamicOctree *, struct __pyx_obj_6octree_DynamicOctreeNode *, struct __pyx_obj_7objects_Object *, int __pyx_skip_dispatch))__pyx_f_6octree_13DynamicOctree_inside_node;
-  __pyx_vtable_6octree_DynamicOctree.print_test = (PyObject *(*)(struct __pyx_obj_6octree_DynamicOctree *, int __pyx_skip_dispatch))__pyx_f_6octree_13DynamicOctree_print_test;
+  __pyx_vtable_6octree_DynamicOctree.only_find_neighbors = (void (*)(struct __pyx_obj_6octree_DynamicOctree *, int, int __pyx_skip_dispatch))__pyx_f_6octree_13DynamicOctree_only_find_neighbors;
   #if CYTHON_USE_TYPE_SPECS
   __pyx_ptype_6octree_DynamicOctree = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_6octree_DynamicOctree_spec, NULL); if (unlikely(!__pyx_ptype_6octree_DynamicOctree)) __PYX_ERR(0, 201, __pyx_L1_error)
   if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_6octree_DynamicOctree_spec, __pyx_ptype_6octree_DynamicOctree) < 0) __PYX_ERR(0, 201, __pyx_L1_error)
@@ -43007,7 +43021,7 @@ if (!__Pyx_RefNanny) {
  *         self.score = d
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_11OctreeScore_3set_score, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeScore_set_score, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__48)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_11OctreeScore_3set_score, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeScore_set_score, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__47)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeScore, __pyx_n_s_set_score, __pyx_t_2) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43020,7 +43034,7 @@ if (!__Pyx_RefNanny) {
  *         return self.score
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_11OctreeScore_5get_score, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeScore_get_score, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__50)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_11OctreeScore_5get_score, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeScore_get_score, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__49)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeScore, __pyx_n_s_get_score, __pyx_t_2) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43031,7 +43045,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_11OctreeScore_7__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeScore___reduce_cython, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__52)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_11OctreeScore_7__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeScore___reduce_cython, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeScore, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43043,7 +43057,7 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_OctreeScore__set_state(self, __pyx_state)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_11OctreeScore_9__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeScore___setstate_cython, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__54)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_11OctreeScore_9__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeScore___setstate_cython, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeScore, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43056,7 +43070,7 @@ if (!__Pyx_RefNanny) {
  *         self.max_leaf_size = max_leaf_size
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_3set_max_leaf_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_set_max, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_3set_max_leaf_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_set_max, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__55)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeConstructionParams, __pyx_n_s_set_max_leaf_size, __pyx_t_2) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43069,7 +43083,7 @@ if (!__Pyx_RefNanny) {
  *         self.max_leaf_dim = max_leaf_dim
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_5set_max_leaf_dim, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_set_max_2, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_5set_max_leaf_dim, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_set_max_2, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__57)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeConstructionParams, __pyx_n_s_set_max_leaf_dim, __pyx_t_2) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43082,7 +43096,7 @@ if (!__Pyx_RefNanny) {
  *         self.slack_factor = slack_factor
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_7set_slack_factor, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_set_sla, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__60)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_7set_slack_factor, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_set_sla, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__59)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeConstructionParams, __pyx_n_s_set_slack_factor, __pyx_t_2) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43095,7 +43109,7 @@ if (!__Pyx_RefNanny) {
  *         return self.max_leaf_size
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_9get_max_leaf_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_get_max, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_9get_max_leaf_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_get_max, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__60)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeConstructionParams, __pyx_n_s_get_max_leaf_size, __pyx_t_2) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43108,7 +43122,7 @@ if (!__Pyx_RefNanny) {
  *         return self.max_leaf_dim
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_11get_max_leaf_dim, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_get_max_2, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_11get_max_leaf_dim, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_get_max_2, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeConstructionParams, __pyx_n_s_get_max_leaf_dim, __pyx_t_2) < 0) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43121,7 +43135,7 @@ if (!__Pyx_RefNanny) {
  *         return self.slack_factor
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_13get_slack_factor, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_get_sla, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_13get_slack_factor, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_get_sla, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeConstructionParams, __pyx_n_s_get_slack_factor, __pyx_t_2) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43134,7 +43148,7 @@ if (!__Pyx_RefNanny) {
  *         print(f"Max leaf size: {self.max_leaf_size}, and max leaf dim: {self.max_leaf_dim}.")
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_15print_params, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_print_p, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_15print_params, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams_print_p, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeConstructionParams, __pyx_n_s_print_params, __pyx_t_2) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43145,7 +43159,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_17__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams___reduc, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__65)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_17__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams___reduc, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeConstructionParams, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43157,7 +43171,7 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_OctreeConstructionParams__set_state(self, __pyx_state)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_19__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams___setst, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__66)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_24OctreeConstructionParams_19__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OctreeConstructionParams___setst, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__65)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_OctreeConstructionParams, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43170,7 +43184,7 @@ if (!__Pyx_RefNanny) {
  *         cdef DynamicOctreeNodeAttr attr
  *         for attr in all_attribs:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_21DynamicOctreeNodeAttr_3combine_s, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNodeAttr_combine_s, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__68)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_21DynamicOctreeNodeAttr_3combine_s, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNodeAttr_combine_s, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__67)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNodeAttr, __pyx_n_s_combine_s, __pyx_t_2) < 0) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43183,7 +43197,7 @@ if (!__Pyx_RefNanny) {
  *         cdef Object atom
  *         for atom in atoms:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_21DynamicOctreeNodeAttr_5compute_s, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNodeAttr_compute_s, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__70)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_21DynamicOctreeNodeAttr_5compute_s, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNodeAttr_compute_s, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__69)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNodeAttr, __pyx_n_s_compute_s, __pyx_t_2) < 0) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43196,7 +43210,7 @@ if (!__Pyx_RefNanny) {
  *         if add:
  *             self.sx += atm.x
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_21DynamicOctreeNodeAttr_7update_s, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNodeAttr_update_s, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__72)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_21DynamicOctreeNodeAttr_7update_s, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNodeAttr_update_s, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__71)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNodeAttr, __pyx_n_s_update_s, __pyx_t_2) < 0) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43207,7 +43221,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_21DynamicOctreeNodeAttr_9__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNodeAttr___reduce_c, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__73)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_21DynamicOctreeNodeAttr_9__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNodeAttr___reduce_c, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__72)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNodeAttr, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43219,7 +43233,7 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_DynamicOctreeNodeAttr__set_state(self, __pyx_state)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_21DynamicOctreeNodeAttr_11__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNodeAttr___setstate, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_21DynamicOctreeNodeAttr_11__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNodeAttr___setstate, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__73)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNodeAttr, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43232,7 +43246,7 @@ if (!__Pyx_RefNanny) {
  *         self.lx = self.ly = self.lz = 0.0
  *         self.dim = 0.0
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_3init_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_init_node, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__75)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_3init_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_init_node, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_init_node, __pyx_t_2) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43245,7 +43259,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Check if the node is a leaf node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_5is_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_is_leaf, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__76)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_5is_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_is_leaf, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__75)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_is_leaf, __pyx_t_2) < 0) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43258,7 +43272,7 @@ if (!__Pyx_RefNanny) {
  *         if 0 <= loc < 8:
  *             self.child_pointer[loc] = ptr
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_7set_child_pointer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_child_poin, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__78)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_7set_child_pointer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_child_poin, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__77)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_child_pointer, __pyx_t_2) < 0) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43271,7 +43285,7 @@ if (!__Pyx_RefNanny) {
  *         self.parent_pointer = i
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_9set_parent_pointer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_parent_poi, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__80)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_9set_parent_pointer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_parent_poi, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__79)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_parent_pointer, __pyx_t_2) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43284,7 +43298,7 @@ if (!__Pyx_RefNanny) {
  *         return self.parent_pointer
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_11get_parent_pointer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_get_parent_poi, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__81)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_11get_parent_pointer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_get_parent_poi, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__80)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_get_parent_pointer, __pyx_t_2) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43297,7 +43311,7 @@ if (!__Pyx_RefNanny) {
  *         self.id = node_id
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_13set_id, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_id, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__83)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_13set_id, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_id, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__82)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_id, __pyx_t_2) < 0) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43310,7 +43324,7 @@ if (!__Pyx_RefNanny) {
  *         self.lx = value
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_15set_lx, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_lx, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__85)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_15set_lx, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_lx, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__84)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_lx, __pyx_t_2) < 0) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43323,7 +43337,7 @@ if (!__Pyx_RefNanny) {
  *         self.ly = value
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_17set_ly, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_ly, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__86)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_17set_ly, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_ly, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__85)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 151, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_ly, __pyx_t_2) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43336,7 +43350,7 @@ if (!__Pyx_RefNanny) {
  *         self.lz = value
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_19set_lz, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_lz, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__87)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_19set_lz, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_lz, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__86)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_lz, __pyx_t_2) < 0) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43349,7 +43363,7 @@ if (!__Pyx_RefNanny) {
  *         self.dim = value
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_21set_dim, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_dim, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__88)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_21set_dim, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_dim, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__87)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_dim, __pyx_t_2) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43362,7 +43376,7 @@ if (!__Pyx_RefNanny) {
  *         self.num_atoms = i
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_23set_num_atoms, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_num_atoms, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__89)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_23set_num_atoms, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_num_atoms, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__88)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_num_atoms, __pyx_t_2) < 0) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43375,7 +43389,7 @@ if (!__Pyx_RefNanny) {
  *         self.atom_indices = i
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_25set_atom_indices, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_atom_indic, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__90)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_25set_atom_indices, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_atom_indic, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__89)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_atom_indices, __pyx_t_2) < 0) __PYX_ERR(0, 163, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43388,7 +43402,7 @@ if (!__Pyx_RefNanny) {
  *         self.leaf = i
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_27set_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_leaf, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__91)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_27set_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_leaf, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__90)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_leaf, __pyx_t_2) < 0) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43401,7 +43415,7 @@ if (!__Pyx_RefNanny) {
  *         self.id_cap = i
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_29set_IdCap, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_IdCap, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__92)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_29set_IdCap, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_IdCap, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__91)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_IdCap, __pyx_t_2) < 0) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43414,7 +43428,7 @@ if (!__Pyx_RefNanny) {
  *         self.n_fixed = i
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_31set_num_fixed, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_num_fixed, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__93)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_31set_num_fixed, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_num_fixed, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__92)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_num_fixed, __pyx_t_2) < 0) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43427,7 +43441,7 @@ if (!__Pyx_RefNanny) {
  *         if loc < 0:
  *             raise ValueError("Location index must be non-negative")
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_33set_atom_index, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_atom_index, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__95)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_33set_atom_index, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_set_atom_index, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__94)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_set_atom_index, __pyx_t_2) < 0) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43440,7 +43454,7 @@ if (!__Pyx_RefNanny) {
  *         return self.dim
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_35get_dim, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_get_dim, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__96)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_35get_dim, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_get_dim, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__95)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_get_dim, __pyx_t_2) < 0) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43453,7 +43467,7 @@ if (!__Pyx_RefNanny) {
  *         self.attribs.combine_s(all_child_attribs)
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_37combine_and_set_attribs, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_combine_and_se, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__98)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_37combine_and_set_attribs, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_combine_and_se, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__97)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 187, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_combine_and_set_attribs, __pyx_t_2) < 0) __PYX_ERR(0, 187, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43466,7 +43480,7 @@ if (!__Pyx_RefNanny) {
  *         self.attribs.compute_s(atoms)
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_39compute_own_attribs, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_compute_own_at, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__99)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 190, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_39compute_own_attribs, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_compute_own_at, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__98)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_compute_own_attribs, __pyx_t_2) < 0) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43479,7 +43493,7 @@ if (!__Pyx_RefNanny) {
  *         if add:
  *             self.attribs.update_s(obj, True)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_41update_attribs, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_update_attribs, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__101)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_41update_attribs, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode_update_attribs, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__100)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_update_attribs, __pyx_t_2) < 0) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43490,7 +43504,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_43__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode___reduce_cytho, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__102)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_43__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode___reduce_cytho, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__101)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43502,7 +43516,7 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_DynamicOctreeNode__set_state(self, __pyx_state)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_45__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode___setstate_cyt, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__103)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_17DynamicOctreeNode_45__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctreeNode___setstate_cyt, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__102)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctreeNode, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43515,7 +43529,7 @@ if (!__Pyx_RefNanny) {
  *         self.object_to_node_map[obj] = node_id
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_3set_node_id, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_set_node_id, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__105)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 224, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_3set_node_id, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_set_node_id, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__104)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_set_node_id, __pyx_t_2) < 0) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43528,7 +43542,7 @@ if (!__Pyx_RefNanny) {
  *         return self.object_to_node_map.get(obj)
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_5get_node_id, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_node_id, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__107)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_5get_node_id, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_node_id, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__106)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_get_node_id, __pyx_t_2) < 0) __PYX_ERR(0, 227, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43541,7 +43555,7 @@ if (!__Pyx_RefNanny) {
  *         if self.verbose:
  *             print("Starting DynamicOctree::buildOctree")
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_7build_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_build_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__108)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_7build_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_build_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__107)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_build_octree, __pyx_t_2) < 0) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43554,7 +43568,7 @@ if (!__Pyx_RefNanny) {
  *         return (a << LOW_BITS) + b
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_9create_octree_ptr, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_create_octree_ptr, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__110)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 260, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_9create_octree_ptr, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_create_octree_ptr, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__109)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 260, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_create_octree_ptr, __pyx_t_2) < 0) __PYX_ERR(0, 260, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43567,7 +43581,7 @@ if (!__Pyx_RefNanny) {
  *         return c & 0x3FFF
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_11get_index_in_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_index_in_node, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__112)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 263, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_11get_index_in_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_index_in_node, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__111)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 263, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_get_index_in_node, __pyx_t_2) < 0) __PYX_ERR(0, 263, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43580,7 +43594,7 @@ if (!__Pyx_RefNanny) {
  *         return node.num_atoms > (self.construction_params.max_leaf_size << 1)
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_13needs_dynamic_expansion, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_needs_dynamic_expa, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__114)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_13needs_dynamic_expansion, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_needs_dynamic_expa, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__113)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_needs_dynamic_expansion, __pyx_t_2) < 0) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43593,7 +43607,7 @@ if (!__Pyx_RefNanny) {
  *         return node.num_atoms < (self.construction_params.max_leaf_size >> 1)
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_15needs_dynamic_contraction, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_needs_dynamic_cont, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__115)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_15needs_dynamic_contraction, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_needs_dynamic_cont, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__114)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_needs_dynamic_contraction, __pyx_t_2) < 0) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43606,7 +43620,7 @@ if (!__Pyx_RefNanny) {
  *         if self.verbose:
  *             print(f"Inside DynamicOctree::allocateNodes({new_num_nodes})")
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_17allocate_nodes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_allocate_nodes, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__117)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 272, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_17allocate_nodes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_allocate_nodes, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__116)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_allocate_nodes, __pyx_t_2) < 0) __PYX_ERR(0, 272, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43619,7 +43633,7 @@ if (!__Pyx_RefNanny) {
  *         if self.verbose:
  *             print(f"Inside DynamicOctree::reallocateNodes({new_num_nodes})")
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_19reallocate_nodes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_reallocate_nodes, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__118)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_19reallocate_nodes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_reallocate_nodes, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__117)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_reallocate_nodes, __pyx_t_2) < 0) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43632,7 +43646,7 @@ if (!__Pyx_RefNanny) {
  *         if self.verbose:
  *             print("In DynamicOctree::initFreeNodeServer")
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_21init_free_node_server, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_init_free_node_ser, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__119)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 297, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_21init_free_node_server, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_init_free_node_ser, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__118)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 297, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_init_free_node_server, __pyx_t_2) < 0) __PYX_ERR(0, 297, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43645,7 +43659,7 @@ if (!__Pyx_RefNanny) {
  *         cdef int new_num_nodes, i, next_node
  *         cdef DynamicOctreeNode node
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_23get_next_free_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_next_free_node, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__120)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_23get_next_free_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_next_free_node, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__119)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 325, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_get_next_free_node, __pyx_t_2) < 0) __PYX_ERR(0, 325, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43658,7 +43672,7 @@ if (!__Pyx_RefNanny) {
  *         if self.verbose:
  *             print("In DynamicOctree::computeRootBoundingBox")
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_25compute_root_bounding_box, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_compute_root_bound, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__122)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 358, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_25compute_root_bounding_box, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_compute_root_bound, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__121)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 358, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_compute_root_bounding_box, __pyx_t_2) < 0) __PYX_ERR(0, 358, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43671,7 +43685,7 @@ if (!__Pyx_RefNanny) {
  *         return not (node.num_atoms <= self.construction_params.get_max_leaf_size() or node.dim <= self.construction_params.get_max_leaf_dim())
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_27needs_expansion, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_needs_expansion, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__123)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 392, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_27needs_expansion, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_needs_expansion, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__122)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 392, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_needs_expansion, __pyx_t_2) < 0) __PYX_ERR(0, 392, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43684,7 +43698,7 @@ if (!__Pyx_RefNanny) {
  *         cdef DynamicOctreeNode node
  *         cdef int nAtoms, nfixed, i, j, k
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_29expand_octree_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_expand_octree_node, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__125)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_29expand_octree_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_expand_octree_node, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__124)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_expand_octree_node, __pyx_t_2) < 0) __PYX_ERR(0, 395, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43697,7 +43711,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Print the octree.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_31print_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_print_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__126)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 499, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_31print_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_print_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__125)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_print_octree, __pyx_t_2) < 0) __PYX_ERR(0, 499, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43710,9 +43724,9 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Print details of a node and its children recursively.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_33print_node_details, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_print_node_details, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__128)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 511, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_33print_node_details, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_print_node_details, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__127)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 511, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__129);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__128);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_print_node_details, __pyx_t_2) < 0) __PYX_ERR(0, 511, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6octree_DynamicOctree);
@@ -43724,7 +43738,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Traverse the octree and print the contents of each node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_35traverse_and_print, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_traverse_and_print, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__131)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 536, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_35traverse_and_print, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_traverse_and_print, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__130)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 536, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_traverse_and_print, __pyx_t_2) < 0) __PYX_ERR(0, 536, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43737,9 +43751,9 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the bounding box for a non-root node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_37compute_non_root_bounding_box, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_compute_non_root_b, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__133)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 567, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_37compute_non_root_bounding_box, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_compute_non_root_b, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__132)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 567, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__134);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__133);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_compute_non_root_bounding_box, __pyx_t_2) < 0) __PYX_ERR(0, 567, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6octree_DynamicOctree);
@@ -43751,7 +43765,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the attributes for a non-leaf node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_39compute_non_leaf_attributes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_compute_non_leaf_a, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__135)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 621, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_39compute_non_leaf_attributes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_compute_non_leaf_a, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__134)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 621, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_compute_non_leaf_attributes, __pyx_t_2) < 0) __PYX_ERR(0, 621, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43764,7 +43778,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Compute the attributes for a leaf node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_41compute_leaf_attributes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_compute_leaf_attri, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__137)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 647, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_41compute_leaf_attributes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_compute_leaf_attri, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__136)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 647, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_compute_leaf_attributes, __pyx_t_2) < 0) __PYX_ERR(0, 647, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43777,7 +43791,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Get the child ID of a node based on the position of an object.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_43get_child_id, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_child_id, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__139)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 674, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_43get_child_id, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_child_id, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__138)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 674, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_get_child_id, __pyx_t_2) < 0) __PYX_ERR(0, 674, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43790,7 +43804,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Recursively collects atoms from leaf nodes.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_45collect_atoms_from_leaves, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_collect_atoms_from, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__141)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 696, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_45collect_atoms_from_leaves, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_collect_atoms_from, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__140)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 696, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_collect_atoms_from_leaves, __pyx_t_2) < 0) __PYX_ERR(0, 696, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43803,7 +43817,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Contracts the octree node if necessary.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_47contract_octree_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_contract_octree_no, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__142)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 718, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_47contract_octree_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_contract_octree_no, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__141)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 718, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_contract_octree_node, __pyx_t_2) < 0) __PYX_ERR(0, 718, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43816,7 +43830,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Traverses the octree recursively and prints information about each node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_49traverse_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_traverse_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__143)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 761, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_49traverse_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_traverse_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__142)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 761, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_traverse_octree, __pyx_t_2) < 0) __PYX_ERR(0, 761, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43829,7 +43843,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Calculates the size of the subtree rooted at the given node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_51get_subtree_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_subtree_size, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__144)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 787, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_51get_subtree_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_subtree_size, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__143)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 787, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_get_subtree_size, __pyx_t_2) < 0) __PYX_ERR(0, 787, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43842,7 +43856,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Calculates the size of the entire octree.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_53get_octree_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_octree_size, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__145)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 813, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_53get_octree_size, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_get_octree_size, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__144)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 813, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_get_octree_size, __pyx_t_2) < 0) __PYX_ERR(0, 813, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43855,7 +43869,7 @@ if (!__Pyx_RefNanny) {
  *         """ Removes an atom from a leaf node.
  *         Args:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_55remove_atom_from_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_remove_atom_from_l, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__147)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 825, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_55remove_atom_from_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_remove_atom_from_l, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__146)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 825, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_remove_atom_from_leaf, __pyx_t_2) < 0) __PYX_ERR(0, 825, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43868,7 +43882,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Removes an atom from a non-leaf node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_57remove_atom_from_non_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_remove_atom_from_n, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__148)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 877, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_57remove_atom_from_non_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_remove_atom_from_n, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__147)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 877, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_remove_atom_from_non_leaf, __pyx_t_2) < 0) __PYX_ERR(0, 877, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43881,7 +43895,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Adds an atom to a non-leaf node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_59add_atom_to_non_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_add_atom_to_non_le, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__149)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 914, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_59add_atom_to_non_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_add_atom_to_non_le, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__148)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 914, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_add_atom_to_non_leaf, __pyx_t_2) < 0) __PYX_ERR(0, 914, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43894,7 +43908,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Adds an atom to a leaf node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_61add_atom_to_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_add_atom_to_leaf, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__150)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 951, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_61add_atom_to_leaf, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_add_atom_to_leaf, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__149)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 951, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_add_atom_to_leaf, __pyx_t_2) < 0) __PYX_ERR(0, 951, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43907,7 +43921,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Pulls up an atom in the octree.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_63pull_up, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_pull_up, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__151)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1040, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_63pull_up, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_pull_up, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__150)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1040, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_pull_up, __pyx_t_2) < 0) __PYX_ERR(0, 1040, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43920,7 +43934,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Pushes down an atom in the octree.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_65push_down, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_push_down, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__152)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1071, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_65push_down, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_push_down, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__151)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1071, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_push_down, __pyx_t_2) < 0) __PYX_ERR(0, 1071, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43933,7 +43947,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Destroys the octree, freeing memory.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_67destroy_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_destroy_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__153)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1130, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_67destroy_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_destroy_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__152)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_destroy_octree, __pyx_t_2) < 0) __PYX_ERR(0, 1130, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43946,7 +43960,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Frees the memory occupied by the subtree rooted at the given node.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_69free_subtree_nodes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_free_subtree_nodes, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__154)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1142, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_69free_subtree_nodes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_free_subtree_nodes, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__153)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_free_subtree_nodes, __pyx_t_2) < 0) __PYX_ERR(0, 1142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43959,7 +43973,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Reorganizes the octree by updating its structure.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_71reorganize_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_reorganize_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__156)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1165, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_71reorganize_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_reorganize_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__155)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1165, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_reorganize_octree, __pyx_t_2) < 0) __PYX_ERR(0, 1165, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43972,7 +43986,7 @@ if (!__Pyx_RefNanny) {
  *         """
  *         Updates the octree structure with the given object.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_73update_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_update_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__157)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1194, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_73update_octree, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_update_octree, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__156)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1194, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_update_octree, __pyx_t_2) < 0) __PYX_ERR(0, 1194, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43985,7 +43999,7 @@ if (!__Pyx_RefNanny) {
  *         return (
  *             (atom.x - node.lx >= 0) and
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_75inside_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_inside_node, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__158)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1210, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_75inside_node, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_inside_node, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__157)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1210, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_inside_node, __pyx_t_2) < 0) __PYX_ERR(0, 1210, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -43994,12 +44008,13 @@ if (!__Pyx_RefNanny) {
   /* "octree.pyx":1220
  *         )
  * 
- *     cpdef print_test(self):             # <<<<<<<<<<<<<<
- *         print("Testing")
+ *     cpdef void only_find_neighbors(self, int n, ):             # <<<<<<<<<<<<<<
+ *         """
+ *         * n: total dimensions of atom positions (3 * num atoms)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_77print_test, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_print_test, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__159)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1220, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6octree_13DynamicOctree_77only_find_neighbors, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_DynamicOctree_only_find_neighbor, NULL, __pyx_n_s_octree, __pyx_d, ((PyObject *)__pyx_codeobj__159)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_print_test, __pyx_t_2) < 0) __PYX_ERR(0, 1220, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_6octree_DynamicOctree, __pyx_n_s_only_find_neighbors, __pyx_t_2) < 0) __PYX_ERR(0, 1220, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6octree_DynamicOctree);
 
@@ -46655,70 +46670,6 @@ static PyObject* __Pyx_PyInt_SubtractObjC(PyObject *op1, PyObject *op2, long int
 }
 #endif
 
-/* UnicodeConcatInPlace */
-# if CYTHON_COMPILING_IN_CPYTHON && PY_MAJOR_VERSION >= 3
-static int
-__Pyx_unicode_modifiable(PyObject *unicode)
-{
-    if (Py_REFCNT(unicode) != 1)
-        return 0;
-    if (!PyUnicode_CheckExact(unicode))
-        return 0;
-    if (PyUnicode_CHECK_INTERNED(unicode))
-        return 0;
-    return 1;
-}
-static CYTHON_INLINE PyObject *__Pyx_PyUnicode_ConcatInPlaceImpl(PyObject **p_left, PyObject *right
-        #if CYTHON_REFNANNY
-        , void* __pyx_refnanny
-        #endif
-    ) {
-    PyObject *left = *p_left;
-    Py_ssize_t left_len, right_len, new_len;
-    if (unlikely(__Pyx_PyUnicode_READY(left) == -1))
-        return NULL;
-    if (unlikely(__Pyx_PyUnicode_READY(right) == -1))
-        return NULL;
-    left_len = PyUnicode_GET_LENGTH(left);
-    if (left_len == 0) {
-        Py_INCREF(right);
-        return right;
-    }
-    right_len = PyUnicode_GET_LENGTH(right);
-    if (right_len == 0) {
-        Py_INCREF(left);
-        return left;
-    }
-    if (unlikely(left_len > PY_SSIZE_T_MAX - right_len)) {
-        PyErr_SetString(PyExc_OverflowError,
-                        "strings are too large to concat");
-        return NULL;
-    }
-    new_len = left_len + right_len;
-    if (__Pyx_unicode_modifiable(left)
-            && PyUnicode_CheckExact(right)
-            && PyUnicode_KIND(right) <= PyUnicode_KIND(left)
-            && !(PyUnicode_IS_ASCII(left) && !PyUnicode_IS_ASCII(right))) {
-        int ret;
-        __Pyx_GIVEREF(*p_left);
-        ret = PyUnicode_Resize(p_left, new_len);
-        __Pyx_GOTREF(*p_left);
-        if (unlikely(ret != 0))
-            return NULL;
-        #if PY_VERSION_HEX >= 0x030d0000
-        if (unlikely(PyUnicode_CopyCharacters(*p_left, left_len, right, 0, right_len) < 0)) return NULL;
-        #else
-        _PyUnicode_FastCopyCharacters(*p_left, left_len, right, 0, right_len);
-        #endif
-        __Pyx_INCREF(*p_left);
-        __Pyx_GIVEREF(*p_left);
-        return *p_left;
-    } else {
-        return __Pyx_PyUnicode_Concat(left, right);
-    }
-  }
-#endif
-
 /* PySequenceMultiply */
 static PyObject* __Pyx_PySequence_Multiply_Generic(PyObject *seq, Py_ssize_t mul) {
     PyObject *result, *pymul = PyInt_FromSsize_t(mul);
@@ -47643,7 +47594,7 @@ static PyObject *__Pyx_ImportDottedModule_WalkParts(PyObject *module, PyObject *
 #endif
 static PyObject *__Pyx__ImportDottedModule(PyObject *name, PyObject *parts_tuple) {
 #if PY_MAJOR_VERSION < 3
-    PyObject *module, *from_list, *star = __pyx_n_s__46;
+    PyObject *module, *from_list, *star = __pyx_n_s__45;
     CYTHON_UNUSED_VAR(parts_tuple);
     from_list = PyList_New(1);
     if (unlikely(!from_list))
