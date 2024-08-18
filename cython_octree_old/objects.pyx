@@ -1,96 +1,94 @@
-import random
 import numpy as np
+cimport numpy as np
 
-class Object:
+cdef class Object:
     """
     Represents an object in the octree.
-
-    Each object is assumed to be a sphere for simplicity,
-    but this representation can be extended to other shapes
-    using techniques like the union of spheres.
-
-    Attributes:
-        x (float): X-coordinate of the object's position.
-        y (float): Y-coordinate of the object's position.
-        z (float): Z-coordinate of the object's position.
-        fixed (bool): Indicates whether the object is fixed in place.
-        id (int or None): Unique identifier for the object.
-        object_to_node_map (dictionary): Mapping between Object and node_id
     """
-    def __init__(self, position, id=None):
+    
+    def __init__(self, tuple position, int id=-1):
         """
         Initialize an object with a given position.
-
+        
         Args:
             position (tuple): Tuple containing the x, y, and z coordinates of the object.
+            id (int): Unique identifier for the object (default is -1).
         """
         self.x, self.y, self.z = position
-        self.fixed = False  # Initialize fixed attribute to False
-        self.id = id  # Initialize the id attribute
-        self.node_id = None  # Initialize the node_id attribute
-        # self.object_to_node_map = {}  # Initialize the object to node mapping
-        
-    def getX(self):
+        self.node_id = -1        
+        self.fixed = False
+        self.id = id
+    
+    cpdef double getX(self):
         """
         Get the x-coordinate of the object's position.
-
+        
         Returns:
             float: X-coordinate of the object.
         """
         return self.x
 
-    def getY(self):
+    cpdef double getY(self):
         """
         Get the y-coordinate of the object's position.
-
+        
         Returns:
             float: Y-coordinate of the object.
         """
         return self.y
 
-    def getZ(self):
+    cpdef double getZ(self):
         """
         Get the z-coordinate of the object's position.
-
+        
         Returns:
             float: Z-coordinate of the object.
         """
         return self.z
-    
-    def is_fixed(self):
+
+    cpdef bint is_fixed(self):
         """
         Check if the object is fixed.
-
+        
         Returns:
             bool: True if the object is fixed, False otherwise.
         """
         return self.fixed
     
-    def set_fixed(self, value):
+    cpdef void set_fixed(self, bint value):
         """
         Set the fixed attribute of the object.
-
+        
         Args:
             value (bool): New value for the fixed attribute.
         """
         self.fixed = value
         
-    def set_id(self, id_value):
+    cpdef void set_id(self, int id_value):
         """
         Set the id of the object.
-
+        
         Args:
-            id_value (int or None): New identifier for the object.
+            id_value (int): New identifier for the object.
         """
         self.id = id_value
         
-    def distance(self, other):
+    cpdef double distance(self, Object other):
+        """
+        Calculate the distance between this object and another object.
+        
+        Args:
+            other (Object): The other object to calculate the distance to.
+            
+        Returns:
+            double: The distance between the two objects.
+        """
         return np.sqrt((self.x - other.x) ** 2 + (self.y - other.y) ** 2 + (self.z - other.z) ** 2)
     
-    def set_position(self, position):
+    cpdef void set_position(self, tuple position):
         """
         Set the position of the object.
-
+        
         Args:
             position (tuple): Tuple containing the new x, y, and z coordinates of the object.
         """
