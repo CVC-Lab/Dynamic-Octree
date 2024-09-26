@@ -1,0 +1,7025 @@
+Minimum coordinates: [ 10. 234.   0.]
+Maximum coordinates: [631. 308.   0.]
+
+
+================
+At Timestamp: 0
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 5]
+Atom 1: [0, 4, 5]
+Atom 2: [0, 4, 5]
+Atom 4: [0, 1, 2, 5]
+Atom 5: [0, 1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 5]
+Atom 1: [0, 4, 5]
+Atom 2: [0, 4, 5]
+Atom 4: [0, 1, 2, 5]
+Atom 5: [0, 1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 5]
+Atom 1: [0, 4, 5]
+Atom 2: [0, 4, 5]
+Atom 4: [0, 1, 2, 5]
+Atom 5: [0, 1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 5]
+Atom 1: [0, 4, 5]
+Atom 2: [0, 4, 5]
+Atom 4: [0, 1, 2, 5]
+Atom 5: [0, 1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 5]
+Atom 1: [0, 4, 5]
+Atom 2: [0, 4, 5]
+Atom 4: [0, 1, 2, 5]
+Atom 5: [0, 1, 2, 4]
+
+================
+At Timestamp: 1
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 5]
+Atom 1: [0, 4, 5]
+Atom 2: [0, 4, 5]
+Atom 4: [0, 1, 2, 5]
+Atom 5: [0, 1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 5]
+Atom 1: [4, 5]
+Atom 2: [0, 4, 5]
+Atom 4: [0, 1, 2, 5]
+Atom 5: [0, 1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 5]
+Atom 1: [4, 5]
+Atom 2: [0, 4, 5]
+Atom 4: [0, 1, 2, 5]
+Atom 5: [1, 2, 4]
+
+================
+At Timestamp: 2
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [4, 5, 0]
+Atom 2: [0, 4, 5]
+Atom 4: [0, 1, 2, 5]
+Atom 5: [1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [4, 5, 0]
+Atom 2: [0, 4, 5]
+Atom 4: [0, 1, 2, 5]
+Atom 5: [1, 2, 4]
+
+================
+At Timestamp: 3
+================
+
+inserting an atom
+
+================
+At Timestamp: 4
+================
+
+================
+At Timestamp: 5
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [4, 5, 0, 6]
+Atom 2: [0, 4, 5, 6]
+Atom 4: [0, 1, 2, 5, 6]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [4, 5, 0, 6]
+Atom 2: [0, 4, 5, 6]
+Atom 4: [0, 1, 2, 5, 6]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+
+================
+At Timestamp: 6
+================
+
+================
+At Timestamp: 7
+================
+
+================
+At Timestamp: 8
+================
+
+================
+At Timestamp: 9
+================
+
+inserting an atom
+
+================
+At Timestamp: 10
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [4, 5, 0, 6, 7]
+Atom 2: [0, 4, 5, 6, 7]
+Atom 4: [0, 1, 2, 5, 6, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [1, 2, 4]
+
+================
+At Timestamp: 11
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [4, 5, 0, 6, 7]
+Atom 2: [0, 4, 5, 6, 7]
+Atom 4: [0, 1, 2, 5, 6, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [1, 2, 4]
+
+================
+At Timestamp: 12
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [4, 5, 0, 6, 7]
+Atom 2: [0, 4, 5, 6, 7]
+Atom 4: [0, 1, 2, 5, 6, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [4, 5, 0, 6, 7]
+Atom 2: [0, 4, 5, 6, 7]
+Atom 4: [2]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [1, 2, 4]
+
+================
+At Timestamp: 13
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 2: [0, 4, 5, 6, 7]
+Atom 4: [2]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 2: [0, 4, 5, 6, 7]
+Atom 4: [2]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [1, 2, 4]
+
+================
+At Timestamp: 14
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 2: [0, 4, 5, 6, 7]
+Atom 4: [2]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [1, 2, 4]
+
+================
+At Timestamp: 15
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7]
+Atom 2: [0, 4, 5, 6, 7]
+Atom 4: [2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [1, 2, 4]
+
+================
+At Timestamp: 16
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7]
+Atom 2: [4]
+Atom 4: [2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [1, 2, 4]
+
+================
+At Timestamp: 17
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7]
+Atom 2: [4]
+Atom 4: [2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [1, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7]
+Atom 2: [4, 7]
+Atom 4: [2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+================
+At Timestamp: 18
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0]
+Atom 2: [4, 7, 0]
+Atom 4: [2, 7, 0]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0]
+Atom 2: [0, 4]
+Atom 4: [2, 7, 0]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+================
+At Timestamp: 19
+================
+
+================
+At Timestamp: 20
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 7]
+Atom 1: [7, 0]
+Atom 2: [0, 4, 7]
+Atom 4: [2, 7, 0]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [0, 2, 4]
+
+================
+At Timestamp: 21
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 7]
+Atom 1: [7, 0]
+Atom 2: [0, 4, 7]
+Atom 4: [0, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [0, 2, 4]
+
+================
+At Timestamp: 22
+================
+
+inserting an atom
+
+================
+At Timestamp: 23
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 7]
+Atom 1: [7, 0]
+Atom 2: [0, 4, 7]
+Atom 4: [0, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [0, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 7]
+Atom 1: [7, 0, 4]
+Atom 2: [0, 4, 7]
+Atom 4: [0, 1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [0, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 7]
+Atom 1: [7, 0, 4]
+Atom 2: [0, 4, 7]
+Atom 4: [0, 1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [0, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 7]
+Atom 1: [7, 0, 4]
+Atom 2: [0, 4, 7]
+Atom 4: [0, 1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [0, 2, 4]
+
+================
+At Timestamp: 24
+================
+
+================
+At Timestamp: 25
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 7]
+Atom 1: [7, 0, 4]
+Atom 2: [0, 4]
+Atom 4: [0, 1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [0, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 7]
+Atom 1: [7, 0, 4]
+Atom 2: [0, 4]
+Atom 4: [0, 1, 2]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [0, 2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 7]
+Atom 1: [7, 0, 4]
+Atom 2: [0, 4, 7]
+Atom 4: [0, 1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+================
+At Timestamp: 26
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4, 7]
+Atom 1: [7, 0, 4]
+Atom 2: [0, 4, 7]
+Atom 4: [0, 1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+================
+At Timestamp: 27
+================
+
+================
+At Timestamp: 28
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4]
+Atom 2: [0, 4, 7]
+Atom 4: [0, 1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4]
+Atom 2: [4, 7]
+Atom 4: [0, 1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4]
+Atom 2: [4, 7]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+================
+At Timestamp: 29
+================
+
+================
+At Timestamp: 30
+================
+
+================
+At Timestamp: 31
+================
+
+================
+At Timestamp: 32
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4]
+Atom 2: [4, 7]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+================
+At Timestamp: 33
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4]
+Atom 2: [4, 7]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+================
+At Timestamp: 34
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4]
+Atom 2: [4, 7]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2, 4]
+
+================
+At Timestamp: 35
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4]
+Atom 2: [4, 7]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2]
+
+================
+At Timestamp: 36
+================
+
+================
+At Timestamp: 37
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2]
+
+================
+At Timestamp: 38
+================
+
+================
+At Timestamp: 39
+================
+
+================
+At Timestamp: 40
+================
+
+================
+At Timestamp: 41
+================
+
+================
+At Timestamp: 42
+================
+
+================
+At Timestamp: 43
+================
+
+================
+At Timestamp: 44
+================
+
+inserting an atom
+
+================
+At Timestamp: 45
+================
+
+================
+At Timestamp: 46
+================
+
+================
+At Timestamp: 47
+================
+
+================
+At Timestamp: 48
+================
+
+================
+At Timestamp: 49
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [2]
+
+================
+At Timestamp: 50
+================
+
+inserting an atom
+
+inserting an atom
+
+inserting an atom
+
+inserting an atom
+
+inserting an atom
+
+================
+At Timestamp: 51
+================
+
+================
+At Timestamp: 52
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 11, 12]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [11, 12]
+Atom 11: [2, 12, 13, 14, 7]
+Atom 12: [2, 11, 13, 14, 7]
+Atom 13: [11, 12]
+Atom 14: [11, 12]
+
+================
+At Timestamp: 53
+================
+
+================
+At Timestamp: 54
+================
+
+================
+At Timestamp: 55
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 11, 12]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [11, 12]
+Atom 11: [12]
+Atom 12: [2, 11, 13, 14, 7]
+Atom 13: [11, 12]
+Atom 14: [11, 12]
+
+================
+At Timestamp: 56
+================
+
+================
+At Timestamp: 57
+================
+
+================
+At Timestamp: 58
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4, 12]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [11, 12]
+Atom 11: [12]
+Atom 12: [2, 11, 13, 14, 7]
+Atom 13: [11, 12]
+Atom 14: [11, 12]
+
+================
+At Timestamp: 59
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4, 12]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 7: [11, 12]
+Atom 11: [12]
+Atom 12: [2]
+Atom 13: [11, 12]
+Atom 14: [11, 12]
+
+================
+At Timestamp: 60
+================
+
+================
+At Timestamp: 61
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4, 12]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 11: [12]
+Atom 12: [2]
+Atom 13: [11, 12]
+Atom 14: [11, 12]
+
+================
+At Timestamp: 62
+================
+
+================
+At Timestamp: 63
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 11: [12]
+Atom 12: [2]
+Atom 13: [11, 12]
+Atom 14: [11, 12]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 11: [12]
+Atom 12: [2]
+Atom 13: [11, 12]
+
+================
+At Timestamp: 64
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 11: [12]
+Atom 12: [2]
+Atom 13: [11, 12]
+
+================
+At Timestamp: 65
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 11: [12]
+Atom 12: [2]
+Atom 13: [11, 12]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+Atom 13: [11, 12]
+
+================
+At Timestamp: 66
+================
+
+================
+At Timestamp: 67
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+Atom 13: [11, 12]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+Atom 13: [11, 12]
+
+================
+At Timestamp: 68
+================
+
+================
+At Timestamp: 69
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+Atom 13: [11, 12]
+
+================
+At Timestamp: 70
+================
+
+================
+At Timestamp: 71
+================
+
+================
+At Timestamp: 72
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+
+================
+At Timestamp: 73
+================
+
+================
+At Timestamp: 74
+================
+
+================
+At Timestamp: 75
+================
+
+================
+At Timestamp: 76
+================
+
+================
+At Timestamp: 77
+================
+
+================
+At Timestamp: 78
+================
+
+================
+At Timestamp: 79
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+
+inserting an atom
+
+================
+At Timestamp: 80
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+
+================
+At Timestamp: 81
+================
+
+inserting an atom
+
+================
+At Timestamp: 82
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+
+================
+At Timestamp: 83
+================
+
+================
+At Timestamp: 84
+================
+
+================
+At Timestamp: 85
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+
+================
+At Timestamp: 86
+================
+
+================
+At Timestamp: 87
+================
+
+================
+At Timestamp: 88
+================
+
+================
+At Timestamp: 89
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+
+================
+At Timestamp: 90
+================
+
+================
+At Timestamp: 91
+================
+
+================
+At Timestamp: 92
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 12: [2]
+
+================
+At Timestamp: 93
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+
+================
+At Timestamp: 94
+================
+
+inserting an atom
+
+================
+At Timestamp: 95
+================
+
+inserting an atom
+
+inserting an atom
+
+inserting an atom
+
+================
+At Timestamp: 96
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 18, 19, 20]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [2, 19, 20]
+Atom 19: [2, 18, 20]
+Atom 20: [19, 2, 18]
+
+================
+At Timestamp: 97
+================
+
+================
+At Timestamp: 98
+================
+
+================
+At Timestamp: 99
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 19, 4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [2, 19, 20]
+Atom 19: [2, 18, 20]
+Atom 20: [19, 2, 18]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 19, 4]
+Atom 4: [1, 2, 7]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [2, 19, 20]
+Atom 19: [2, 18]
+Atom 20: [19, 2, 18]
+
+================
+At Timestamp: 100
+================
+
+================
+At Timestamp: 101
+================
+
+================
+At Timestamp: 102
+================
+
+================
+At Timestamp: 103
+================
+
+================
+At Timestamp: 104
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 19, 4, 20]
+Atom 4: [1, 2, 7, 20]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [2, 19, 20]
+Atom 19: [2, 18]
+Atom 20: [2, 18, 4]
+
+================
+At Timestamp: 105
+================
+
+================
+At Timestamp: 106
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 19, 4, 20]
+Atom 4: [1, 2, 7, 20]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 19: [2, 18]
+Atom 20: [2, 18, 4]
+
+================
+At Timestamp: 107
+================
+
+================
+At Timestamp: 108
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 19, 4, 20]
+Atom 4: [1, 2, 7, 20]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 19: [2, 18]
+Atom 20: [2, 18, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 19, 4, 20]
+Atom 4: [1, 2, 7, 20, 19]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 19: [2, 4]
+Atom 20: [2, 18, 4]
+
+================
+At Timestamp: 109
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4]
+Atom 4: [1, 2, 7, 20, 19]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 19: [2, 4]
+Atom 20: [2, 18, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 20]
+Atom 4: [1, 2, 7, 20, 19]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 19: [2, 4]
+Atom 20: [2, 4]
+
+================
+At Timestamp: 110
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 20]
+Atom 4: [1, 2, 7, 20, 19]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 19: [2, 4]
+Atom 20: [2, 4]
+
+================
+At Timestamp: 111
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 20, 19]
+Atom 4: [1, 2, 7, 20, 19]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 19: [2, 4]
+Atom 20: [2, 4]
+
+================
+At Timestamp: 112
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 20, 19]
+Atom 4: [1, 2, 7, 20, 19, 18]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [2, 4]
+Atom 20: [2, 4]
+
+================
+At Timestamp: 113
+================
+
+================
+At Timestamp: 114
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 20, 19]
+Atom 4: [1, 2, 7, 20, 19, 18]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [2, 4]
+Atom 20: [2, 4]
+
+================
+At Timestamp: 115
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 20, 19]
+Atom 4: [1, 2, 7, 20, 19, 18]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [2, 4]
+Atom 20: [2, 4]
+
+================
+At Timestamp: 116
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 20, 19]
+Atom 4: [1, 2, 7, 20, 19, 18]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [2, 4]
+Atom 20: [2, 4]
+
+================
+At Timestamp: 117
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 20, 19]
+Atom 4: [1, 2, 7, 20, 19, 18]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [2, 4]
+Atom 20: [2, 4]
+
+================
+At Timestamp: 118
+================
+
+inserting an atom
+
+================
+At Timestamp: 119
+================
+
+================
+At Timestamp: 120
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2]
+Atom 2: [1, 4, 20, 19]
+Atom 4: [1, 2, 7, 20, 19, 18]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [2, 4]
+Atom 20: [2, 4]
+
+================
+At Timestamp: 121
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19]
+Atom 2: [1, 4, 20, 19]
+Atom 4: [1, 2, 7, 20, 19, 18]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+
+================
+At Timestamp: 122
+================
+
+================
+At Timestamp: 123
+================
+
+inserting an atom
+
+================
+At Timestamp: 124
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22]
+Atom 2: [1, 4, 20, 19, 22]
+Atom 4: [1, 2, 7, 20, 19, 18, 22]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 4]
+
+inserting an atom
+
+================
+At Timestamp: 125
+================
+
+inserting an atom
+
+inserting an atom
+
+================
+At Timestamp: 126
+================
+
+================
+At Timestamp: 127
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24]
+Atom 2: [1, 4, 20, 19, 22, 23, 24]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4, 22]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 4, 23, 24, 19]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+
+================
+At Timestamp: 128
+================
+
+================
+At Timestamp: 129
+================
+
+================
+At Timestamp: 130
+================
+
+================
+At Timestamp: 131
+================
+
+================
+At Timestamp: 132
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24]
+Atom 2: [1, 4, 20, 19, 22, 23, 24]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4, 22]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+
+================
+At Timestamp: 133
+================
+
+================
+At Timestamp: 134
+================
+
+================
+At Timestamp: 135
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24]
+Atom 2: [1, 4, 20, 19, 22, 23, 24]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+
+================
+At Timestamp: 136
+================
+
+inserting an atom
+
+inserting an atom
+
+================
+At Timestamp: 137
+================
+
+inserting an atom
+
+================
+At Timestamp: 138
+================
+
+================
+At Timestamp: 139
+================
+
+================
+At Timestamp: 140
+================
+
+================
+At Timestamp: 141
+================
+
+================
+At Timestamp: 142
+================
+
+================
+At Timestamp: 143
+================
+
+inserting an atom
+
+================
+At Timestamp: 144
+================
+
+================
+At Timestamp: 145
+================
+
+inserting an atom
+
+================
+At Timestamp: 146
+================
+
+================
+At Timestamp: 147
+================
+
+================
+At Timestamp: 148
+================
+
+================
+At Timestamp: 149
+================
+
+================
+At Timestamp: 150
+================
+
+inserting an atom
+
+================
+At Timestamp: 151
+================
+
+================
+At Timestamp: 152
+================
+
+================
+At Timestamp: 153
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+
+================
+At Timestamp: 154
+================
+
+inserting an atom
+
+================
+At Timestamp: 155
+================
+
+================
+At Timestamp: 156
+================
+
+================
+At Timestamp: 157
+================
+
+================
+At Timestamp: 158
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [32]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [27]
+
+================
+At Timestamp: 159
+================
+
+================
+At Timestamp: 160
+================
+
+================
+At Timestamp: 161
+================
+
+================
+At Timestamp: 162
+================
+
+================
+At Timestamp: 163
+================
+
+================
+At Timestamp: 164
+================
+
+================
+At Timestamp: 165
+================
+
+================
+At Timestamp: 166
+================
+
+================
+At Timestamp: 167
+================
+
+================
+At Timestamp: 168
+================
+
+inserting an atom
+
+================
+At Timestamp: 169
+================
+
+================
+At Timestamp: 170
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [32, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [27, 33]
+Atom 33: [32, 27, 4]
+
+================
+At Timestamp: 171
+================
+
+================
+At Timestamp: 172
+================
+
+================
+At Timestamp: 173
+================
+
+================
+At Timestamp: 174
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [32, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33]
+Atom 33: [32, 27, 4]
+
+inserting an atom
+
+================
+At Timestamp: 175
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [33, 4]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33]
+Atom 33: [32, 27, 4, 34]
+Atom 34: [33]
+
+================
+At Timestamp: 176
+================
+
+================
+At Timestamp: 177
+================
+
+================
+At Timestamp: 178
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [33, 4]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33]
+Atom 33: [32, 27, 4, 34]
+Atom 34: [33]
+
+================
+At Timestamp: 179
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [33, 4]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33, 4]
+Atom 33: [32, 27, 4, 34]
+Atom 34: [33]
+
+================
+At Timestamp: 180
+================
+
+inserting an atom
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [33, 4]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33, 4]
+Atom 33: [32, 27, 4, 34, 35]
+Atom 34: [33]
+Atom 35: [33, 4]
+
+================
+At Timestamp: 181
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [33, 4]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33, 4]
+Atom 33: [32, 27, 4, 34, 35]
+Atom 34: [33]
+Atom 35: [33, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [33, 4]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33, 4]
+Atom 33: [32, 27, 4, 34, 35]
+Atom 34: [33]
+Atom 35: [33, 4]
+
+================
+At Timestamp: 182
+================
+
+inserting an atom
+
+================
+At Timestamp: 183
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [33, 4]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33, 4]
+Atom 33: [32, 27, 4, 34, 35, 36]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [33, 4]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33, 4]
+Atom 33: [32, 27, 4, 34, 35, 36]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+
+================
+At Timestamp: 184
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [33, 4]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33, 4]
+Atom 33: [32, 27, 4, 34, 35, 36]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 35, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33, 4]
+Atom 33: [32, 27, 4, 34, 35, 36]
+Atom 34: [33]
+Atom 35: [33, 4, 27]
+Atom 36: [33, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 35, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33, 4]
+Atom 33: [32, 27, 4, 34, 35, 36]
+Atom 34: [33]
+Atom 35: [33, 4, 27]
+Atom 36: [33, 4]
+
+================
+At Timestamp: 185
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 35, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [33, 4]
+Atom 33: [32, 27, 4, 34, 35, 36]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+
+================
+At Timestamp: 186
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 35, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 4, 33]
+Atom 33: [32, 27, 4, 34, 35, 36]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 35, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 4, 33]
+Atom 33: [32, 27, 4, 34, 35, 36]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+
+inserting an atom
+
+================
+At Timestamp: 187
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 35, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 4, 33]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 35, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 4, 33]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+================
+At Timestamp: 188
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 35, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 4, 33]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 4, 33]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+================
+At Timestamp: 189
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33, 32]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33, 32]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33]
+Atom 35: [33, 4]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+================
+At Timestamp: 190
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33, 32, 35]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27, 35]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33, 35]
+Atom 35: [32, 33, 34, 4, 27]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+================
+At Timestamp: 191
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33, 32, 35]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27, 35]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33, 35, 31]
+Atom 35: [32, 33, 34, 4, 27]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33, 32, 35]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27, 35]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33, 35, 31]
+Atom 35: [32, 33, 34, 4, 27]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+================
+At Timestamp: 192
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33, 32, 35]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33, 35, 31]
+Atom 35: [32, 33, 34, 4, 27]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+================
+At Timestamp: 193
+================
+
+================
+At Timestamp: 194
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33, 35, 31]
+Atom 35: [32, 33, 34, 4, 27]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+================
+At Timestamp: 195
+================
+
+inserting an atom
+
+================
+At Timestamp: 196
+================
+
+================
+At Timestamp: 197
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33, 35, 31]
+Atom 35: [33, 34, 4]
+Atom 36: [33, 4]
+Atom 37: [33]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33, 35, 31, 37]
+Atom 35: [33, 34, 4]
+Atom 36: [33, 4]
+Atom 37: [33, 34]
+
+================
+At Timestamp: 198
+================
+
+================
+At Timestamp: 199
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33, 35, 31, 37]
+Atom 35: [33, 2, 34, 4, 37]
+Atom 36: [33, 4]
+Atom 37: [33, 34, 35]
+
+================
+At Timestamp: 200
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33, 37]
+Atom 35: [33, 2, 34, 4, 37]
+Atom 36: [33, 4]
+Atom 37: [33, 34, 35]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37]
+Atom 34: [33, 37]
+Atom 35: [33, 2, 34, 4, 37]
+Atom 36: [1, 2, 4, 33]
+Atom 37: [33, 34, 35]
+
+================
+At Timestamp: 201
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 26: [33, 37]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 37]
+Atom 35: [33, 2, 34, 4, 37]
+Atom 36: [1, 2, 4, 33]
+Atom 37: [33, 34, 35, 26]
+
+================
+At Timestamp: 202
+================
+
+================
+At Timestamp: 203
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 26: [33, 37, 35]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 37]
+Atom 35: [1, 2, 33, 4, 36, 26]
+Atom 36: [1, 2, 4, 33, 35]
+Atom 37: [33, 34, 35, 26]
+
+================
+At Timestamp: 204
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 26: [33, 37, 35, 34]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 35, 4, 37, 36, 26]
+Atom 35: [1, 2, 33, 4, 36, 26, 34]
+Atom 36: [1, 2, 4, 33, 35, 34]
+Atom 37: [33, 34, 35, 26]
+
+================
+At Timestamp: 205
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 26: [33, 37, 35, 34]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 35, 4, 37, 36, 26]
+Atom 35: [1, 2, 33, 4, 36, 26, 34]
+Atom 36: [1, 2, 4, 33, 35, 34]
+Atom 37: [33, 34, 35, 26]
+
+inserting an atom
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 37, 35, 34]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 35, 4, 37, 36, 26]
+Atom 35: [1, 2, 33, 4, 36, 26, 34]
+Atom 36: [1, 2, 4, 33, 35, 34]
+Atom 37: [33, 34, 35, 26, 39, 25]
+Atom 39: [37]
+
+================
+At Timestamp: 206
+================
+
+================
+At Timestamp: 207
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 36, 37]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 35, 4, 37, 36, 26]
+Atom 35: [1, 2, 33, 4, 36, 26, 34]
+Atom 36: [1, 2, 4, 33, 35, 34, 26]
+Atom 37: [33, 34, 35, 26, 39, 25]
+Atom 39: [37]
+
+================
+At Timestamp: 208
+================
+
+================
+At Timestamp: 209
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 35, 4, 37, 36, 26]
+Atom 35: [1, 2, 33, 4, 36, 26, 34]
+Atom 36: [1, 2, 4, 33, 35, 34, 26]
+Atom 37: [33, 34, 35, 26, 39, 25]
+Atom 39: [37]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34]
+Atom 36: [1, 2, 4, 33, 35, 34, 26]
+Atom 37: [33, 34, 35, 26, 39, 25]
+Atom 39: [37]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34]
+Atom 36: [1, 2, 4, 33, 35, 34, 26]
+Atom 37: [33, 34, 35, 26, 39, 25]
+Atom 39: [37]
+
+inserting an atom
+
+================
+At Timestamp: 210
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34]
+Atom 36: [1, 2, 4, 33, 35, 34, 26]
+Atom 37: [33, 34, 35, 26, 39, 25, 40]
+Atom 39: [37]
+Atom 40: [37]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34]
+Atom 36: [1, 2, 4, 33, 35, 34, 26]
+Atom 37: [33, 34, 35, 26, 39, 25, 40]
+Atom 39: [37]
+Atom 40: [37]
+
+inserting an atom
+
+================
+At Timestamp: 211
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36, 41]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41]
+Atom 36: [1, 2, 4, 33, 35, 34, 26]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26]
+
+inserting an atom
+
+================
+At Timestamp: 212
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36, 41]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42]
+Atom 36: [1, 2, 4, 33, 35, 34, 26, 42]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26]
+Atom 42: [1, 2, 35, 4, 36]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36, 41]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42]
+Atom 36: [1, 2, 35, 4, 33]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26]
+Atom 42: [1, 2, 35, 4, 36]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36, 41]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42]
+Atom 36: [1, 2, 35, 4, 33]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26]
+Atom 42: [1, 2, 35, 4, 36]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36, 41]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42]
+Atom 36: [1, 2, 35, 4, 33]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37]
+Atom 42: [1, 2, 35, 4, 36]
+
+================
+At Timestamp: 213
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36, 41]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42]
+Atom 36: [1, 2, 35, 4, 33]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37]
+Atom 42: [1, 2, 35, 4, 36]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [33, 35, 4, 37, 36, 41]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42]
+Atom 36: [1, 2, 35, 4, 33]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37]
+Atom 42: [1, 2, 35, 4, 36]
+
+================
+At Timestamp: 214
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 33, 35, 4, 36, 2, 37, 41]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42]
+Atom 36: [1, 2, 35, 4, 33, 26]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26]
+Atom 42: [1, 2, 35, 4, 36]
+
+================
+At Timestamp: 215
+================
+
+================
+At Timestamp: 216
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 33, 35, 4, 36, 2, 41]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [34]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42]
+Atom 36: [1, 2, 35, 4, 33, 26]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26]
+Atom 42: [1, 2, 35, 4, 36]
+
+================
+At Timestamp: 217
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 33, 35, 4, 36, 2, 41]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 37, 41]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42]
+Atom 36: [1, 2, 35, 4, 33, 26]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31]
+Atom 42: [1, 2, 35, 4, 36]
+
+inserting an atom
+
+================
+At Timestamp: 218
+================
+
+================
+At Timestamp: 219
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 37, 41, 43]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43]
+Atom 36: [1, 2, 35, 4, 33, 26, 43]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43]
+Atom 39: [37]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [33, 35, 4, 36, 37, 41, 26, 31]
+
+================
+At Timestamp: 220
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 37, 41, 43, 39]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43]
+Atom 36: [1, 2, 35, 4, 33, 26, 43]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [33, 35, 4, 36, 37, 41, 26, 31]
+
+================
+At Timestamp: 221
+================
+
+================
+At Timestamp: 222
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 37, 41, 43, 39]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43]
+Atom 36: [1, 2, 35, 4, 33, 26, 43]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [33, 35, 4, 36, 37, 41, 26, 31]
+
+inserting an atom
+
+================
+At Timestamp: 223
+================
+
+================
+At Timestamp: 224
+================
+
+================
+At Timestamp: 225
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 37, 41, 43, 39]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31]
+Atom 44: [1, 2, 35, 4, 36]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 37, 41, 43, 39]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44]
+Atom 44: [1, 33, 35, 4, 36, 2, 43]
+
+================
+At Timestamp: 226
+================
+
+================
+At Timestamp: 227
+================
+
+================
+At Timestamp: 228
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 37, 41, 43, 44]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31]
+
+================
+At Timestamp: 229
+================
+
+================
+At Timestamp: 230
+================
+
+================
+At Timestamp: 231
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 4, 36, 37, 41, 43, 44]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31]
+
+================
+At Timestamp: 232
+================
+
+================
+At Timestamp: 233
+================
+
+================
+At Timestamp: 234
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 4, 36, 37, 41, 43, 44]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31]
+
+inserting an atom
+
+================
+At Timestamp: 235
+================
+
+================
+At Timestamp: 236
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45]
+Atom 45: [33, 35, 37, 41, 43, 44, 31]
+
+================
+At Timestamp: 237
+================
+
+================
+At Timestamp: 238
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45]
+Atom 45: [33, 35, 37, 41, 43, 44]
+
+================
+At Timestamp: 239
+================
+
+================
+At Timestamp: 240
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45]
+Atom 45: [33, 35, 37, 41, 43, 44]
+
+inserting an atom
+
+================
+At Timestamp: 241
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [37]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 2, 35, 4, 36, 43, 44]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46]
+Atom 45: [33, 35, 37, 41, 43, 44]
+Atom 46: [1, 33, 35, 4, 36, 2, 41, 43, 44, 31]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 2, 35, 4, 36, 43, 44]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46]
+Atom 45: [33, 35, 37, 41, 43, 44]
+Atom 46: [1, 33, 35, 4, 36, 2, 41, 43, 44, 31]
+
+================
+At Timestamp: 242
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 41, 45]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 2, 35, 4, 36, 43, 44]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46]
+Atom 45: [33, 35, 37, 41, 43, 44, 25]
+Atom 46: [1, 33, 35, 4, 36, 2, 41, 43, 44, 31]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 2, 35, 4, 36, 43, 44]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46]
+Atom 45: [33, 35, 37, 41, 43, 44, 25]
+Atom 46: [1, 33, 35, 4, 36, 2, 41, 43, 44, 31]
+
+================
+At Timestamp: 243
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46]
+Atom 45: [33, 35, 37, 41, 43, 44, 25, 31]
+Atom 46: [1, 33, 35, 4, 36, 2, 41, 43, 44, 31]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46]
+Atom 45: [33, 35, 37, 41, 43, 44]
+Atom 46: [1, 33, 35, 4, 36, 2, 41, 43, 44, 31]
+
+================
+At Timestamp: 244
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46]
+Atom 45: [33, 35, 37, 41, 43, 44, 31]
+Atom 46: [1, 33, 35, 4, 36, 2, 41, 43, 44, 31]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45, 46]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46]
+Atom 46: [33, 35, 4, 36, 37, 41, 43, 44, 45, 31]
+
+inserting an atom
+
+================
+At Timestamp: 245
+================
+
+inserting an atom
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45, 46, 47, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46]
+Atom 46: [33, 35, 4, 36, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 2, 35, 4, 36, 43, 44, 31]
+
+================
+At Timestamp: 246
+================
+
+inserting an atom
+
+inserting an atom
+
+================
+At Timestamp: 247
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45, 46, 47, 48, 49, 50]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46]
+Atom 46: [33, 35, 4, 36, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+
+================
+At Timestamp: 248
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45, 46, 47, 48, 49, 50]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46]
+Atom 46: [33, 35, 4, 36, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+
+================
+At Timestamp: 249
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45, 46, 47, 48, 49, 50]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46]
+Atom 46: [33, 35, 4, 36, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+
+================
+At Timestamp: 250
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45, 46, 47, 48, 49, 50]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46]
+Atom 46: [33, 35, 4, 36, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45, 46, 47, 48, 49, 50]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46]
+Atom 46: [33, 35, 4, 36, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+
+================
+At Timestamp: 251
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 37, 41, 43, 44, 45, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46]
+Atom 39: [37, 31]
+Atom 40: [37]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46]
+Atom 46: [33, 35, 4, 36, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 37, 41, 43, 44, 45, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46]
+Atom 39: [37, 31]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46]
+Atom 46: [33, 35, 4, 36, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+
+================
+At Timestamp: 252
+================
+
+================
+At Timestamp: 253
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [1, 33, 35, 4, 36, 2, 37, 41, 43, 44, 45, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46]
+Atom 39: [37, 31]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46]
+Atom 46: [33, 35, 37, 41, 43, 44, 45]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+
+inserting an atom
+
+inserting an atom
+
+inserting an atom
+
+================
+At Timestamp: 254
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 4, 36, 37, 41, 43, 44, 45, 46, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53]
+Atom 39: [37, 31]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53]
+Atom 46: [33, 35, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37]
+
+================
+At Timestamp: 255
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 4, 36, 37, 41, 43, 44, 45, 46, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53]
+Atom 39: [37, 31]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53]
+Atom 46: [33, 35, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 4, 36, 37, 41, 43, 44, 45, 46, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53]
+Atom 46: [33, 35, 37, 41, 43, 44, 45, 31]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 4, 36, 37, 41, 43, 44, 45, 46, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53]
+Atom 46: [33, 35, 37, 41, 43, 44, 45, 31, 53]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+
+================
+At Timestamp: 256
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 4, 36, 37, 41, 43, 44, 45, 46, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53]
+Atom 46: [33, 35, 37, 41, 43, 44, 45, 31, 53]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+
+================
+At Timestamp: 257
+================
+
+================
+At Timestamp: 258
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 4, 36, 37, 41, 43, 44, 45, 46, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53]
+Atom 46: [33, 35, 37, 41, 43, 44, 45, 31, 53]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+
+================
+At Timestamp: 259
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 4, 36, 37, 41, 43, 44, 45, 46, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53]
+Atom 46: [33, 45, 37, 41]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31]
+Atom 49: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 35, 4, 36, 37, 41, 43, 44, 45, 46, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53]
+Atom 46: [33, 45, 37, 41]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31, 49]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+
+================
+At Timestamp: 260
+================
+
+================
+At Timestamp: 261
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 37, 41, 43, 44, 45, 48]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53]
+Atom 46: [33, 45, 37, 41]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31, 49]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+
+================
+At Timestamp: 262
+================
+
+================
+At Timestamp: 263
+================
+
+================
+At Timestamp: 264
+================
+
+================
+At Timestamp: 265
+================
+
+inserting an atom
+
+================
+At Timestamp: 266
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 37, 41, 43, 44, 45, 48, 54]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54]
+Atom 46: [33, 45, 37, 41]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31, 49]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+
+inserting an atom
+
+================
+At Timestamp: 267
+================
+
+================
+At Timestamp: 268
+================
+
+================
+At Timestamp: 269
+================
+
+================
+At Timestamp: 270
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 45, 37, 41]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54]
+Atom 46: [33, 45, 37, 41]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31, 49]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+
+================
+At Timestamp: 271
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 45, 37, 41]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54]
+Atom 46: [45, 37]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44, 31, 49]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+
+================
+At Timestamp: 272
+================
+
+================
+At Timestamp: 273
+================
+
+================
+At Timestamp: 274
+================
+
+================
+At Timestamp: 275
+================
+
+================
+At Timestamp: 276
+================
+
+================
+At Timestamp: 277
+================
+
+inserting an atom
+
+================
+At Timestamp: 278
+================
+
+================
+At Timestamp: 279
+================
+
+================
+At Timestamp: 280
+================
+
+================
+At Timestamp: 281
+================
+
+inserting an atom
+
+================
+At Timestamp: 282
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [33, 45, 37, 41]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 46: [45, 37]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 45, 37, 41]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 283
+================
+
+================
+At Timestamp: 284
+================
+
+================
+At Timestamp: 285
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [45, 37]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 46: [45, 37]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 45, 37, 41]
+Atom 57: [33, 45, 37, 41]
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [45, 37]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 45, 37, 41]
+Atom 57: [33, 45, 37, 41]
+
+inserting an atom
+
+================
+At Timestamp: 286
+================
+
+================
+At Timestamp: 287
+================
+
+================
+At Timestamp: 288
+================
+
+================
+At Timestamp: 289
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 31: [45, 37]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 45, 37, 41]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 290
+================
+
+================
+At Timestamp: 291
+================
+
+================
+At Timestamp: 292
+================
+
+inserting an atom
+
+================
+At Timestamp: 293
+================
+
+================
+At Timestamp: 294
+================
+
+================
+At Timestamp: 295
+================
+
+================
+At Timestamp: 296
+================
+
+================
+At Timestamp: 297
+================
+
+================
+At Timestamp: 298
+================
+
+================
+At Timestamp: 299
+================
+
+================
+At Timestamp: 300
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 45, 37, 41]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 301
+================
+
+================
+At Timestamp: 302
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 45, 37, 41]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 303
+================
+
+================
+At Timestamp: 304
+================
+
+================
+At Timestamp: 305
+================
+
+================
+At Timestamp: 306
+================
+
+================
+At Timestamp: 307
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 35, 37, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 308
+================
+
+================
+At Timestamp: 309
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 35, 37, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+inserting an atom
+
+inserting an atom
+
+================
+At Timestamp: 310
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 35, 37, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 311
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 35, 37, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 312
+================
+
+================
+At Timestamp: 313
+================
+
+================
+At Timestamp: 314
+================
+
+================
+At Timestamp: 315
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 35, 4, 36, 37, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 316
+================
+
+================
+At Timestamp: 317
+================
+
+inserting an atom
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 35, 4, 36, 37, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 318
+================
+
+================
+At Timestamp: 319
+================
+
+inserting an atom
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 35, 4, 36, 37, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 320
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [33, 35, 4, 36, 37, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 321
+================
+
+inserting an atom
+
+================
+At Timestamp: 322
+================
+
+================
+At Timestamp: 323
+================
+
+================
+At Timestamp: 324
+================
+
+================
+At Timestamp: 325
+================
+
+================
+At Timestamp: 326
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 37, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 327
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 37, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 328
+================
+
+================
+At Timestamp: 329
+================
+
+================
+At Timestamp: 330
+================
+
+================
+At Timestamp: 331
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 332
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 333
+================
+
+================
+At Timestamp: 334
+================
+
+================
+At Timestamp: 335
+================
+
+================
+At Timestamp: 336
+================
+
+================
+At Timestamp: 337
+================
+
+================
+At Timestamp: 338
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 339
+================
+
+================
+At Timestamp: 340
+================
+
+================
+At Timestamp: 341
+================
+
+================
+At Timestamp: 342
+================
+
+================
+At Timestamp: 343
+================
+
+================
+At Timestamp: 344
+================
+
+================
+At Timestamp: 345
+================
+
+================
+At Timestamp: 346
+================
+
+================
+At Timestamp: 347
+================
+
+inserting an atom
+
+================
+At Timestamp: 348
+================
+
+================
+At Timestamp: 349
+================
+
+================
+At Timestamp: 350
+================
+
+================
+At Timestamp: 351
+================
+
+================
+At Timestamp: 352
+================
+
+================
+At Timestamp: 353
+================
+
+================
+At Timestamp: 354
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [33, 45, 37, 41]
+
+================
+At Timestamp: 355
+================
+
+================
+At Timestamp: 356
+================
+
+================
+At Timestamp: 357
+================
+
+================
+At Timestamp: 358
+================
+
+================
+At Timestamp: 359
+================
+
+================
+At Timestamp: 360
+================
+
+================
+At Timestamp: 361
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [33, 35, 37, 41, 43, 44, 45]
+
+================
+At Timestamp: 362
+================
+
+================
+At Timestamp: 363
+================
+
+================
+At Timestamp: 364
+================
+
+================
+At Timestamp: 365
+================
+
+================
+At Timestamp: 366
+================
+
+================
+At Timestamp: 367
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [33, 35, 4, 36, 37, 41, 43, 44, 45]
+
+================
+At Timestamp: 368
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [33, 35, 4, 36, 37, 41, 43, 44, 45]
+
+================
+At Timestamp: 369
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [33, 35, 4, 36, 37, 41, 43, 44, 45]
+
+================
+At Timestamp: 370
+================
+
+================
+At Timestamp: 371
+================
+
+================
+At Timestamp: 372
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [33, 35, 4, 36, 37, 41, 43, 44, 45]
+
+================
+At Timestamp: 373
+================
+
+================
+At Timestamp: 374
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [33, 35, 4, 36, 37, 41, 43, 44, 45]
+
+================
+At Timestamp: 375
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [33, 35, 4, 36, 37, 41, 43, 44, 45]
+
+inserting an atom
+
+================
+At Timestamp: 376
+================
+
+================
+At Timestamp: 377
+================
+
+================
+At Timestamp: 378
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45]
+
+================
+At Timestamp: 379
+================
+
+inserting an atom
+
+================
+At Timestamp: 380
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [1, 33, 35, 4, 36, 2, 41, 43, 44, 45]
+
+================
+At Timestamp: 381
+================
+
+================
+At Timestamp: 382
+================
+
+inserting an atom
+
+================
+At Timestamp: 383
+================
+
+================
+At Timestamp: 384
+================
+
+================
+At Timestamp: 385
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [1, 33, 35, 4, 36, 2, 43, 44]
+
+================
+At Timestamp: 386
+================
+
+================
+At Timestamp: 387
+================
+
+================
+At Timestamp: 388
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [1, 33, 35, 4, 36, 2, 43, 44]
+
+================
+At Timestamp: 389
+================
+
+================
+At Timestamp: 390
+================
+
+================
+At Timestamp: 391
+================
+
+================
+At Timestamp: 392
+================
+
+================
+At Timestamp: 393
+================
+
+================
+At Timestamp: 394
+================
+
+================
+At Timestamp: 395
+================
+
+================
+At Timestamp: 396
+================
+
+================
+At Timestamp: 397
+================
+
+inserting an atom
+
+================
+At Timestamp: 398
+================
+
+================
+At Timestamp: 399
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [1, 33, 35, 4, 36, 2, 43, 44]
+
+inserting an atom
+
+inserting an atom
+
+================
+At Timestamp: 400
+================
+
+================
+At Timestamp: 401
+================
+
+================
+At Timestamp: 402
+================
+
+================
+At Timestamp: 403
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [1, 33, 35, 4, 36, 2, 43, 44]
+
+================
+At Timestamp: 404
+================
+
+================
+At Timestamp: 405
+================
+
+================
+At Timestamp: 406
+================
+
+================
+At Timestamp: 407
+================
+
+================
+At Timestamp: 408
+================
+
+================
+At Timestamp: 409
+================
+
+================
+At Timestamp: 410
+================
+
+================
+At Timestamp: 411
+================
+
+================
+At Timestamp: 412
+================
+
+================
+At Timestamp: 413
+================
+
+================
+At Timestamp: 414
+================
+
+================
+At Timestamp: 415
+================
+
+================
+At Timestamp: 416
+================
+
+================
+At Timestamp: 417
+================
+
+================
+At Timestamp: 418
+================
+
+================
+At Timestamp: 419
+================
+
+================
+At Timestamp: 420
+================
+
+================
+At Timestamp: 421
+================
+
+================
+At Timestamp: 422
+================
+
+================
+At Timestamp: 423
+================
+
+================
+At Timestamp: 424
+================
+
+inserting an atom
+
+inserting an atom
+
+================
+At Timestamp: 425
+================
+
+================
+At Timestamp: 426
+================
+
+================
+At Timestamp: 427
+================
+
+================
+At Timestamp: 428
+================
+
+================
+At Timestamp: 429
+================
+
+================
+At Timestamp: 430
+================
+
+After Updating position of an atom
+Atom 0: [1, 2, 4]
+Atom 1: [7, 0, 4, 2, 19, 22, 23, 24, 28, 29, 30, 27, 32, 36, 35, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 2: [1, 4, 20, 19, 22, 23, 24, 28, 29, 30, 27, 32, 35, 36, 42, 26, 44, 43, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 4: [1, 2, 7, 20, 19, 18, 22, 23, 24, 28, 29, 30, 33, 27, 32, 35, 36, 34, 26, 42, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 5: [1, 2, 4]
+Atom 6: [1, 2, 4]
+Atom 18: [4]
+Atom 19: [1, 2, 4]
+Atom 20: [2, 4]
+Atom 22: [1, 2, 19, 4]
+Atom 23: [1, 2, 4, 22]
+Atom 24: [1, 2, 4, 22]
+Atom 25: [33, 37, 45, 41]
+Atom 26: [1, 2, 35, 4, 36]
+Atom 27: [1, 2, 4, 33]
+Atom 28: [1, 2, 4]
+Atom 29: [1, 2, 4]
+Atom 30: [1, 2, 4]
+Atom 32: [1, 2, 33, 4, 27]
+Atom 33: [32, 27, 4, 34, 35, 36, 37, 26, 41, 31, 43, 44, 45, 46, 25, 48, 49, 54, 56, 57]
+Atom 34: [33, 35, 4, 37, 36]
+Atom 35: [1, 2, 33, 4, 36, 26, 34, 41, 42, 43, 44, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 36: [1, 2, 35, 4, 33, 26, 43, 44, 31, 46, 47, 48, 49, 50, 56, 57]
+Atom 37: [33, 34, 35, 26, 39, 25, 40, 41, 31, 43, 45, 46, 52, 53, 54, 55, 56, 57]
+Atom 41: [33, 35, 37, 26, 31, 43, 45, 46, 25, 54, 56, 57]
+Atom 42: [1, 2, 35, 4, 36]
+Atom 43: [1, 33, 35, 4, 36, 2, 41, 31, 44, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 44: [1, 33, 35, 4, 36, 2, 43, 31, 45, 46, 47, 48, 49, 50, 56, 57]
+Atom 45: [33, 35, 37, 41, 43, 44, 31, 46, 53, 54, 56, 57]
+Atom 47: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 48: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 49: [1, 33, 35, 4, 36, 2, 43, 44, 48]
+Atom 50: [1, 2, 35, 4, 36, 43, 44, 31]
+Atom 52: [37]
+Atom 53: [45, 37, 46]
+Atom 54: [33, 37, 41, 45, 31]
+Atom 55: [37, 31]
+Atom 56: [1, 33, 35, 4, 36, 2, 43, 44]
+Atom 57: [1, 33, 35, 4, 36, 2, 43, 44]
+
+================
+At Timestamp: 431
+================
+
+================
+At Timestamp: 432
+================
+
+================
+At Timestamp: 433
+================
+
+================
+At Timestamp: 434
+================
+
+================
+At Timestamp: 435
+================
+
+================
+At Timestamp: 436
+================
+
+================
+At Timestamp: 437
+================
+
+================
+At Timestamp: 438
+================
+
+================
+At Timestamp: 439
+================
+
+================
+At Timestamp: 440
+================
+
+================
+At Timestamp: 441
+================
+
+================
+At Timestamp: 442
+================
+
+================
+At Timestamp: 443
+================
+
+================
+At Timestamp: 444
+================
+
+================
+At Timestamp: 445
+================
+
+========= Final Results =========
+After 2582 operations, there were 74 new atoms inserted, 2514 atoms updated in their positions, and 216 atoms deleted. In total, there are now 74 atoms.
+
+Total time taken to build the octree: 0.000509 seconds
+Average time to update the octree: 0.000221 seconds
+Average time to update the nblists: 0.000051 seconds
+Total time taken to complete all the trajectories: 0.098661 seconds
