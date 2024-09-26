@@ -1,0 +1,8 @@
+Initial Bounding Box: [0 0 0] to [100 100   0]
+
+
+========= Final Results =========
+Total objects inserted: 0, atoms updated: 0, atoms deleted: 0.
+
+Total time to build octree: 3.664455 seconds
+Total time to process trajectories: 0.000000 seconds

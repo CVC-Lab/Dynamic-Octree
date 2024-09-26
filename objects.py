@@ -1,4 +1,5 @@
 import random
+import numpy as np
 
 class Object:
     """
@@ -16,7 +17,7 @@ class Object:
         id (int or None): Unique identifier for the object.
         object_to_node_map (dictionary): Mapping between Object and node_id
     """
-    def __init__(self, position):
+    def __init__(self, position, id=None):
         """
         Initialize an object with a given position.
 
@@ -25,7 +26,7 @@ class Object:
         """
         self.x, self.y, self.z = position
         self.fixed = False  # Initialize fixed attribute to False
-        self.id = None  # Initialize the id attribute
+        self.id = id  # Initialize the id attribute
         self.node_id = None  # Initialize the node_id attribute
         # self.object_to_node_map = {}  # Initialize the object to node mapping
         
@@ -83,20 +84,17 @@ class Object:
         """
         self.id = id_value
         
-    # def set_node_id(self, node_id):
-    #     """
-    #     Set the node ID for the object.
+    def distance(self, other):
+        return np.sqrt((self.x - other.x) ** 2 + (self.y - other.y) ** 2 + (self.z - other.z) ** 2)
+    
+    def set_position(self, position):
+        """
+        Set the position of the object.
 
-    #     Args:
-    #         node_id (int): Node ID to associate with the object.
-    #     """
-    #     self.object_to_node_map[self.id] = node_id
-        
-    # def get_node_id(self):
-    #     """
-    #     Get the node ID associated with the object.
-
-    #     Returns:
-    #         int or None: Node ID associated with the object, or None if not mapped.
-    #     """
-    #     return self.object_to_node_map.get(self.id)
+        Args:
+            position (tuple): Tuple containing the new x, y, and z coordinates of the object.
+        """
+        self.x, self.y, self.z = position
+    
+    def get_position(self):
+        return (self.x, self.y, self.z)
