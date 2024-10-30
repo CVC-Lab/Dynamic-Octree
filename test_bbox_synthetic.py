@@ -6,6 +6,7 @@ import time
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 from mpl_toolkits.mplot3d import Axes3D
+import pdb
 
 def generate_movement_function(initial_position, time_step):
     """
@@ -47,7 +48,7 @@ def generate_time_series_data(num_objects, num_time_steps):
 
 #========================================================================================================
 
-def test_dynamic_octree(time_series_data, output_file, initial_bbox_coords, bbox_update_interval, buffer_box):
+def test_dynamic_octree(time_series_data, output_file, initial_bbox_coords, bbox_update_interval, initial_boundingbox_coords, buffer_box):
     total_time_to_update = 0.0
     total_time_to_update_nb_lists = 0.0
     total_time_for_trajectory = 0.0
@@ -59,7 +60,7 @@ def test_dynamic_octree(time_series_data, output_file, initial_bbox_coords, bbox
     objects = {}
     
     with open(output_file, 'w') as file:
-        file.write(f"Initial Buffer Box: {min_coords} to {max_coords}\n\n")
+        # file.write(f"Initial Buffer Box: {min_coords} to {max_coords}\n\n")
 
         # Initialize the octree with objects inside the initial buffer box
         initial_positions = time_series_data[0]
@@ -68,12 +69,23 @@ def test_dynamic_octree(time_series_data, output_file, initial_bbox_coords, bbox
                 obj = Object(position=pos, id=i)
                 objects[i] = obj
         
-        construction_params = OctreeConstructionParams(max_leaf_size=10, max_leaf_dim=100, slack_factor=1.0)
-        octree = DynamicOctree(list(objects.values()), len(objects), construction_params, verbose=False, max_nodes=200)
+        construction_params = OctreeConstructionParams(max_leaf_size=5, max_leaf_dim=100, slack_factor=1.0)
+        octree = DynamicOctree(list(objects.values()), len(objects), construction_params, verbose=True, max_nodes=200)
         start_time = time.time()
         octree.build_octree(min_coords, max_coords)
         total_time_to_build = time.time() - start_time
         
+        # visualize_objects_and_boxes(time_series_data[0], buffer_box, initial_boundingbox_coords)
+        # octree.print_all_atoms_in_nodes()
+
+        file.write(f"\n=========================Statistics for TIMESTAMP: 0=========================\n")
+        file.write(f"\nThere are {octree.num_atoms} atoms in the buffer box:\n")
+        for i in range(len(octree.atoms)):
+            file.write(f"Atom {i}: {octree.atoms[i].id} with coordinates: {octree.atoms[i].x, octree.atoms[i].y, octree.atoms[i].z}\n")
+        for i, nb in enumerate(octree.nb_lists):
+            if nb:  # Check if the list is not empty
+                file.write(f"Atom {i}: {nb}\n")
+
         n_objects = len(objects)
         n_upds, n_dels = 0, 0
         n_objects_total = 0
@@ -82,24 +94,34 @@ def test_dynamic_octree(time_series_data, output_file, initial_bbox_coords, bbox
 
         for timestamp, positions in time_series_data.items():
             # Flag to check if bbox was updated in this iteration
+            octree.reset_nb_lists()
             bbox_updated = False
 
             if timestamp == 0:
                 continue
+            
+            file.write(f"\n=========================Statistics for TIMESTAMP: {timestamp}=========================\n")
+            print(f"\n=========================Statistics for TIMESTAMP: {timestamp}=========================\n")
+
+            # print(len(time_series_data))
+            # print(timestamp)
+            # pdb.set_trace()
             # Update the buffer box every `bbox_update_interval`
             if timestamp % bbox_update_interval == 0:
+                # print(timestamp)                
+                # visualize_objects_and_boxes(time_series_data[timestamp], buffer_box, initial_boundingbox_coords)
                 # Log the bbox update
-                file.write(f"\nUpdated Buffer Box at timestamp {timestamp}: {buffer_box.min_coords} to {buffer_box.max_coords}\n")
-                file.write(f"Updated Root Bounding Box of DO: {octree.nodes[octree.root_node_id].get_lx()}, {octree.nodes[octree.root_node_id].get_ly()}, {octree.nodes[octree.root_node_id].get_lz()} and dimensions: {octree.nodes[octree.root_node_id].get_dim()}\n")
+                # file.write(f"\nUpdated Buffer Box at timestamp {timestamp}: {buffer_box.min_coords} to {buffer_box.max_coords}\n")
+                # file.write(f"Updated Root Bounding Box of DO: {octree.nodes[octree.root_node_id].get_lx()}, {octree.nodes[octree.root_node_id].get_ly()}, {octree.nodes[octree.root_node_id].get_lz()} and dimensions: {octree.nodes[octree.root_node_id].get_dim()}\n")
                 start_time = time.time()
 
                 # Update buffer box coordinates (example logic)
-                # new_min_coords = buffer_box.min_coords + np.random.randint(0, 100, size=3)
-                # new_max_coords = buffer_box.max_coords + np.random.randint(0, 100, size=3)
+                new_min_coords = buffer_box.min_coords + [20, 20, 0]
+                new_max_coords = buffer_box.max_coords + [20, 20, 0]
 
                 # Update only the x and y coordinates while leaving the z coordinate unchanged
-                new_min_coords = buffer_box.min_coords.copy()
-                new_max_coords = buffer_box.max_coords.copy()
+                # new_min_coords = buffer_box.min_coords.copy()
+                # new_max_coords = buffer_box.max_coords.copy()
 
                 # Randomly update x and y coordinates (indices 0 and 1) but leave z (index 2) unchanged
                 # new_min_coords[:2] += np.random.randint(0, 10, size=2)  # Update x, y for min_coords
@@ -110,14 +132,15 @@ def test_dynamic_octree(time_series_data, output_file, initial_bbox_coords, bbox
                 
                 # Remove objects outside the buffer box
                 objects_to_remove = [id for id, obj in objects.items() if not buffer_box.contains(obj.get_position())]
-                file.write(f"\n{objects_to_remove}\n")
+                file.write(f"\nPositions from previous timestamp that is now outside the buffer box: {objects_to_remove}\n")
                 for obj_id in objects_to_remove:
                     if objects[obj_id] in octree.atoms:
                         # pdb.set_trace()
-                        file.write(f"Deleting Object {obj_id}\n")
+                        # file.write(f"Deleting Object {obj_id}\n")
                         octree.delete_object(objects[obj_id])
                         del objects[obj_id]
                 # pdb.set_trace()
+
                 # Calculate time for this bbox update
                 total_time_to_update += time.time() - start_time
 
@@ -125,7 +148,7 @@ def test_dynamic_octree(time_series_data, output_file, initial_bbox_coords, bbox
             local_n_upds, local_n_dels, local_n_objects = 0, 0, 0
             # Update positions of objects within the buffer box (even when bbox is still)
             for id, new_pos in positions:
-                file.write(f"New position of object {id}: {new_pos}\n")
+                # file.write(f"New position of object {id}: {new_pos}\n")
                 updates += 1
                 
                 if id in objects:  # Update existing object
@@ -136,7 +159,7 @@ def test_dynamic_octree(time_series_data, output_file, initial_bbox_coords, bbox
                         target_atom, target_node = octree.update_octree(obj, new_pos)
                         if prev_node != target_node:
                             local_n_dels += 1
-                            nb_list = octree.update_nb_lists_local(target_atom, target_node)
+                            # nb_list = octree.update_nb_lists_local(target_atom, target_node)
                     else:
                         file.write(f'Object {id} went outside the buffer box\n')
                         octree.delete_object(obj)
@@ -153,8 +176,16 @@ def test_dynamic_octree(time_series_data, output_file, initial_bbox_coords, bbox
             n_dels_total += local_n_dels
             total_time_for_trajectory += time.time() - start_time
 
-            nb_list = octree.nb_lists_with_dist
-            file.write("\nAfter Updating position of all the atoms:\n")
+            # visualize_objects_and_boxes(time_series_data[timestamp], buffer_box, initial_boundingbox_coords)
+
+            # nb_list = octree.nb_lists_with_dist
+            file.write(f"\nThere are {octree.num_atoms} atoms in the buffer box:\n")
+            octree.print_all_atoms_in_nodes()
+            for i in range(len(octree.atoms)):
+                if octree.atoms[i] is not None:
+                    file.write(f"Atom {i}: {octree.atoms[i].id} with coordinates: {octree.atoms[i].x, octree.atoms[i].y, octree.atoms[i].z}\n")
+            nb_list = octree.nb_lists
+            file.write("\nNeighbourhood lists of the above atoms:\n")
             for i, nb in enumerate(nb_list):
                 if nb:  # Check if the list is not empty
                     file.write(f"Atom {i}: {nb}\n")
@@ -170,17 +201,25 @@ def test_dynamic_octree(time_series_data, output_file, initial_bbox_coords, bbox
             file.write(f"Total objects now inside the buffer box: {len(objects)}\n")
             file.write(f"Total time to update octree: {total_time_to_update:.6f} seconds\n")
             file.write("\n")
-            break
+
+        # nb_list = octree.nb_lists_with_dist
+        # file.write(f"\nThere are {octree.num_atoms} atoms in the buffer box:\n")
+        # for i in range(len(octree.atoms)):
+        #     file.write(f"Atom {i}: {octree.atoms[i].id}\n")
+        # file.write("\nAfter Updating position of all the atoms:\n")
+        # for i, nb in enumerate(nb_list):
+        #     if nb:  # Check if the list is not empty
+        #         file.write(f"Atom {i}: {nb}\n")
 
         # Compute averages over all bbox updates
         average_time_to_update = total_time_to_update / (updates if updates > 0 else 1)
 
         # Write the final results after processing all timestamps
-        file.write("\n========= Final Results =========\n")
-        file.write(f"After {updates} operations, there were {n_objects_total} new atoms inserted, {n_upds_total} atoms updated in their positions, and {n_dels_total} atoms deleted.\n\n")
-        file.write(f"Total time taken to build the octree: {total_time_to_build:.6f} seconds\n")
-        file.write(f"Average time to update the octree: {average_time_to_update:.6f} seconds\n")
-        file.write(f"Total time taken to complete all the trajectories: {total_time_for_trajectory:.6f} seconds\n")
+        # file.write("\n========= Final Results =========\n")
+        # file.write(f"After {updates} operations, there were {n_objects_total} new atoms inserted, {n_upds_total} atoms updated in their positions, and {n_dels_total} atoms deleted.\n\n")
+        # file.write(f"Total time taken to build the octree: {total_time_to_build:.6f} seconds\n")
+        # file.write(f"Average time to update the octree: {average_time_to_update:.6f} seconds\n")
+        # file.write(f"Total time taken to complete all the trajectories: {total_time_for_trajectory:.6f} seconds\n")
 
         # visualize_objects_in_buffer_box(octree.atoms, octree, buffer_box)
         return octree
@@ -243,6 +282,7 @@ def visualize_objects_in_buffer_box(objects, octree, buffer_box):
     
     # Draw the buffer box
     buffer_min, buffer_max = buffer_box.min_coords, buffer_box.max_coords
+
     fig.add_trace(go.Scatter(
         x=[buffer_min[0], buffer_max[0], buffer_max[0], buffer_min[0], buffer_min[0]],
         y=[buffer_min[1], buffer_min[1], buffer_max[1], buffer_max[1], buffer_min[1]],
@@ -282,13 +322,12 @@ def visualize_objects_in_buffer_box(objects, octree, buffer_box):
     fig.show()
 
 #========================================================================================================
-
 initial_boundingbox_coords = (np.array([0, 0, 0]), np.array([50, 50, 0]))
-initial_bbox_coords = (np.array([0, 0, 0]), np.array([50, 50, 0]))
-bbox_update_interval = 10
-buffer_box = BufferBox(np.array([0, 0, 0]), np.array([50, 50, 0]))
-time_series_data = generate_time_series_data(num_objects=1000, num_time_steps=1)
-visualize_objects_and_boxes(time_series_data[0], buffer_box, initial_boundingbox_coords)
-octree = test_dynamic_octree(time_series_data, 'results_synthetic.txt', initial_bbox_coords, bbox_update_interval, buffer_box)
+initial_bbox_coords = (np.array([0, 0, 0]), np.array([20, 20, 0]))
+bbox_update_interval = 1
+buffer_box = BufferBox(np.array([0, 0, 0]), np.array([20, 20, 0]))
+time_series_data = generate_time_series_data(num_objects=100, num_time_steps=2)
+# visualize_objects_and_boxes(time_series_data[0], buffer_box, initial_boundingbox_coords)
+octree = test_dynamic_octree(time_series_data, 'results_synthetic.txt', initial_bbox_coords, bbox_update_interval, initial_boundingbox_coords, buffer_box)
 
 # visualize_objects_in_buffer_box(objects, octree, buffer_box)
