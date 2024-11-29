@@ -1,0 +1,206 @@
+Initial Buffer Box: [0 0 0] to [500 500   0]
+
+New position of object 1: (434, 260, 0)
+New position of object 2: (517, 265, 0)
+New position of object 3: (357, 241, 0)
+New position of object 4: (150, 237, 0)
+New position of object 5: (404, 241, 0)
+New position of object 6: (474, 257, 0)
+
+After Updating position of all the atoms:
+Atom 0: [(3, 32.64965543462902), (1, 80.4114419718985), (4, 43.104524124504614)]
+Atom 1: [(3, 48.16637831516918), (0, 79.30952023559341)]
+Atom 3: [(0, 35.510561809129406), (1, 47.0), (4, 74.73285756613352)]
+Atom 4: [(0, 40.11234224026316), (3, 71.80529228406496)]
+
+========= Results for BBox Without Update =========
+At timestamp 1, bbox update: False
+0 new atoms inserted, 5 atoms updated, 5 atoms deleted.
+Total objects now inside the buffer box: 5
+Total time to update octree: 0.000000 seconds
+
+New position of object 1: (436, 256, 0)
+New position of object 2: (520, 263, 0)
+New position of object 3: (359, 244, 0)
+New position of object 4: (146, 238, 0)
+New position of object 5: (404, 244, 0)
+New position of object 6: (469, 258, 0)
+
+After Updating position of all the atoms:
+Atom 0: [(4, 38.01315561749642), (1, 80.4114419718985), (3, 35.34119409414458)]
+Atom 1: [(0, 77.92945527847606), (3, 45.09988913511872)]
+Atom 3: [(1, 45.0), (4, 71.19691004531025), (0, 34.17601498127012)]
+Atom 4: [(0, 33.06055050963308), (3, 66.49060083951716)]
+
+========= Results for BBox Without Update =========
+At timestamp 2, bbox update: False
+0 new atoms inserted, 5 atoms updated, 5 atoms deleted.
+Total objects now inside the buffer box: 5
+Total time to update octree: 0.000000 seconds
+
+New position of object 1: (438, 254, 0)
+New position of object 2: (521, 259, 0)
+New position of object 3: (360, 244, 0)
+New position of object 4: (144, 240, 0)
+New position of object 5: (405, 244, 0)
+New position of object 6: (471, 250, 0)
+New position of object 7: (429, 308, 0)
+
+After Updating position of all the atoms:
+Atom 0: [(3, 35.4400902933387), (4, 31.25699921617557), (1, 79.63039620647382), (5, 54.74486277268398)]
+Atom 1: [(0, 78.63841300535), (3, 44.0), (5, 94.11163583744573)]
+Atom 3: [(1, 45.0), (4, 65.5133574166368), (0, 34.48187929913333), (5, 68.35202996254024)]
+Atom 4: [(3, 66.27216610312357), (0, 33.24154027718932), (5, 71.61005515987263)]
+Atom 5: [(1, 94.11163583744573), (3, 68.35202996254024), (4, 71.61005515987263), (0, 54.74486277268398)]
+
+========= Results for BBox Without Update =========
+At timestamp 3, bbox update: False
+1 new atoms inserted, 5 atoms updated, 5 atoms deleted.
+Total objects now inside the buffer box: 6
+Total time to update octree: 0.000000 seconds
+
+New position of object 1: (444, 256, 0)
+New position of object 2: (528, 259, 0)
+New position of object 3: (362, 245, 0)
+New position of object 4: (141, 237, 0)
+New position of object 5: (403, 242, 0)
+New position of object 6: (466, 254, 0)
+
+After Updating position of all the atoms:
+Atom 0: [(3, 40.80441152620633), (5, 54.120236510939236), (4, 27.65863337187866), (1, 84.8528137423857)]
+Atom 1: [(3, 43.01162633521314), (5, 91.96738552334735), (0, 82.73451516749222)]
+Atom 3: [(0, 43.32435804486894), (5, 70.9365914038728), (4, 68.46897107449476), (1, 41.10960958218893)]
+Atom 4: [(5, 65.45991139621256), (3, 64.13267497929586), (0, 22.090722034374522)]
+Atom 5: [(1, 94.11163583744573), (3, 68.35202996254024), (4, 71.61005515987263), (0, 54.74486277268398)]
+
+========= Results for BBox Without Update =========
+At timestamp 4, bbox update: False
+0 new atoms inserted, 5 atoms updated, 5 atoms deleted.
+Total objects now inside the buffer box: 6
+Total time to update octree: 0.000000 seconds
+
+New position of object 1: (448, 257, 0)
+New position of object 2: (533, 262, 0)
+New position of object 3: (363, 244, 0)
+New position of object 4: (137, 237, 0)
+New position of object 5: (403, 245, 0)
+New position of object 6: (462, 248, 0)
+
+After Updating position of all the atoms:
+Atom 0: [(1, 86.83317338436964), (3, 47.43416490252569), (5, 54.42425929675111), (4, 18.24828759089466)]
+Atom 1: [(0, 85.98837130682264), (5, 91.93475947648963), (3, 40.049968789001575), (4, 99.08077512817509)]
+Atom 3: [(4, 63.63961030678928), (5, 68.15423684555495), (1, 40.01249804748511), (0, 46.57252408878007)]
+Atom 4: [(5, 68.47627326307996), (1, 99.08077512817509), (3, 59.07622195096772), (0, 16.64331697709324)]
+Atom 5: [(1, 94.11163583744573), (3, 68.35202996254024), (4, 71.61005515987263), (0, 54.74486277268398)]
+
+========= Results for BBox Without Update =========
+At timestamp 5, bbox update: False
+0 new atoms inserted, 5 atoms updated, 5 atoms deleted.
+Total objects now inside the buffer box: 6
+Total time to update octree: 0.000000 seconds
+
+New position of object 1: (452, 258, 0)
+New position of object 2: (538, 263, 0)
+New position of object 3: (365, 245, 0)
+New position of object 4: (137, 236, 0)
+New position of object 5: (405, 246, 0)
+
+After Updating position of all the atoms:
+Atom 0: [(4, 14.142135623730951), (1, 90.09439494219383), (3, 50.695167422546305), (5, 55.036351623268054)]
+Atom 1: [(4, 97.04638066409278), (3, 38.0), (0, 87.96590248499699), (5, 89.80534505250787)]
+Atom 3: [(4, 57.0350769263968), (1, 40.01249804748511), (0, 48.507731342539614), (5, 66.48308055437865)]
+Atom 4: [(5, 68.47627326307996), (1, 99.08077512817509), (3, 59.07622195096772), (0, 16.64331697709324)]
+Atom 5: [(1, 94.11163583744573), (3, 68.35202996254024), (4, 71.61005515987263), (0, 54.74486277268398)]
+
+========= Results for BBox Without Update =========
+At timestamp 6, bbox update: False
+0 new atoms inserted, 4 atoms updated, 4 atoms deleted.
+Total objects now inside the buffer box: 6
+Total time to update octree: 0.000000 seconds
+
+New position of object 1: (457, 262, 0)
+New position of object 2: (541, 267, 0)
+New position of object 3: (366, 245, 0)
+New position of object 4: (132, 236, 0)
+New position of object 5: (404, 246, 0)
+
+After Updating position of all the atoms:
+Atom 0: [(4, 14.866068747318506), (5, 53.85164807134504), (3, 54.405882034941776), (1, 93.55746896961247)]
+Atom 1: [(0, 92.57429448826494), (3, 39.01281840626232), (4, 96.04686356149273), (5, 89.09545442950498)]
+Atom 3: [(4, 58.034472514187634), (5, 66.85057965343307), (0, 55.362442142665635), (1, 38.01315561749642)]
+Atom 4: [(5, 68.47627326307996), (1, 99.08077512817509), (3, 59.07622195096772), (0, 16.64331697709324)]
+Atom 5: [(1, 94.11163583744573), (3, 68.35202996254024), (4, 71.61005515987263), (0, 54.74486277268398)]
+
+========= Results for BBox Without Update =========
+At timestamp 7, bbox update: False
+0 new atoms inserted, 4 atoms updated, 4 atoms deleted.
+Total objects now inside the buffer box: 6
+Total time to update octree: 0.000000 seconds
+
+New position of object 1: (459, 260, 0)
+New position of object 2: (545, 266, 0)
+New position of object 3: (370, 249, 0)
+New position of object 4: (130, 237, 0)
+New position of object 5: (407, 249, 0)
+
+After Updating position of all the atoms:
+Atom 0: [(1, 94.2019108086455), (5, 56.60388679233962), (3, 56.753854494650845), (4, 12.36931687685298)]
+Atom 1: [(0, 89.67719888578144), (3, 34.132096331752024), (5, 83.43860018001261), (4, 92.00543462209176)]
+Atom 3: [(4, 55.00909015790027), (5, 62.96824596572466), (0, 53.150729063673246), (1, 37.0)]
+Atom 4: [(5, 68.47627326307996), (1, 99.08077512817509), (3, 59.07622195096772), (0, 16.64331697709324)]
+Atom 5: [(1, 94.11163583744573), (3, 68.35202996254024), (4, 71.61005515987263), (0, 54.74486277268398)]
+
+========= Results for BBox Without Update =========
+At timestamp 8, bbox update: False
+0 new atoms inserted, 4 atoms updated, 4 atoms deleted.
+Total objects now inside the buffer box: 6
+Total time to update octree: 0.000000 seconds
+
+New position of object 1: (464, 260, 0)
+New position of object 2: (546, 268, 0)
+New position of object 3: (371, 245, 0)
+New position of object 4: (127, 240, 0)
+New position of object 5: (407, 246, 0)
+New position of object 8: (446, 247, 0)
+
+After Updating position of all the atoms:
+Atom 0: [(4, 12.165525060596439), (3, 58.05170109479997), (5, 59.405386961116584), (1, 94.64142856064674), (6, 22.20360331117452)]
+Atom 1: [(4, 91.0494371207203), (5, 85.63293758829018), (0, 94.2019108086455), (3, 36.22154055254967), (6, 75.02666192761077)]
+Atom 3: [(1, 36.013886210738214), (0, 58.69412236331676), (4, 55.036351623268054), (5, 65.7875368135941), (6, 39.01281840626232)]
+Atom 4: [(5, 68.47627326307996), (1, 99.08077512817509), (3, 59.07622195096772), (0, 16.64331697709324), (6, 16.0312195418814)]
+Atom 5: [(1, 94.11163583744573), (3, 68.35202996254024), (4, 71.61005515987263), (0, 54.74486277268398), (6, 63.324560795950255)]
+Atom 6: [(4, 16.0312195418814), (1, 75.02666192761077), (3, 39.01281840626232), (5, 63.324560795950255), (0, 22.20360331117452)]
+
+========= Results for BBox Without Update =========
+At timestamp 9, bbox update: False
+1 new atoms inserted, 4 atoms updated, 4 atoms deleted.
+Total objects now inside the buffer box: 7
+Total time to update octree: 0.000000 seconds
+
+
+Updated Buffer Box at timestamp 10: [0 0 0] to [500 500   0]
+Updated Root Bounding Box of DO: 0.0, 0.0, -250.0 and dimensions: 500.0
+
+[]
+New position of object 1: (469, 259, 0)
+New position of object 2: (549, 264, 0)
+New position of object 3: (373, 248, 0)
+New position of object 4: (126, 241, 0)
+New position of object 5: (406, 246, 0)
+New position of object 8: (448, 255, 0)
+
+After Updating position of all the atoms:
+Atom 0: [(5, 63.25345840347388), (6, 25.942243542145693), (1, 98.99494936611666), (4, 13.038404810405298), (3, 63.34824385884742)]
+Atom 1: [(0, 96.62815324738438), (3, 34.058772731852805), (5, 82.07313811473277), (4, 89.0), (6, 73.00684899377592)]
+Atom 3: [(6, 40.01249804748511), (4, 56.0357029044876), (0, 64.32728814430156), (5, 66.12866246946176), (1, 33.06055050963308)]
+Atom 4: [(5, 68.47627326307996), (1, 99.08077512817509), (3, 59.07622195096772), (0, 16.64331697709324), (6, 16.0312195418814)]
+Atom 5: [(1, 94.11163583744573), (3, 68.35202996254024), (4, 71.61005515987263), (0, 54.74486277268398), (6, 63.324560795950255)]
+Atom 6: [(1, 75.32595834106593), (4, 15.652475842498529), (0, 21.37755832643195), (5, 56.302753041036986), (3, 42.95346318982906)]
+
+========= Results for BBox Update =========
+At timestamp 10, bbox update: True
+0 new atoms inserted, 5 atoms updated, 5 atoms deleted.
+Total objects now inside the buffer box: 7
+Total time to update octree: 0.000699 seconds
+
+New position of object 1: (474, 258, 0)

@@ -1,4 +1,5 @@
 import random
+import numpy as np
 
 class Object:
     """
@@ -16,19 +17,33 @@ class Object:
         id (int or None): Unique identifier for the object.
         object_to_node_map (dictionary): Mapping between Object and node_id
     """
-    def __init__(self, position):
+    def __init__(self, position, timestamp, id=None):
         """
-        Initialize an object with a given position.
+        Initialize an object with a given position, timestamp, and optional ID.
 
         Args:
             position (tuple): Tuple containing the x, y, and z coordinates of the object.
+            timestamp (int or str): The timestamp at which the object is created or last updated.
+            id (str, optional): An optional unique identifier for the object.
         """
         self.x, self.y, self.z = position
         self.fixed = False  # Initialize fixed attribute to False
-        self.id = None  # Initialize the id attribute
-        self.node_id = None  # Initialize the node_id attribute
+        self.id = id  # Optional ID attribute
+        self.node_id = None  # Initialize node_id attribute to None
+        self.timestamp = timestamp  # Store timestamp
+        self.state = []  # Initialize state to track position changes
+        # self.state.append((self.timestamp, (self.x, self.y, self.z)))  # Record initial position with timestamp
         # self.object_to_node_map = {}  # Initialize the object to node mapping
+    
+    def get_trajectory(self):
+        """
+        Returns the trajectory of the object, which is a list of (timestamp, (x, y, z)) tuples.
         
+        Returns:
+            List[tuple]: A list of (timestamp, position) tuples where position is (x, y, z).
+        """
+        return self.state
+
     def getX(self):
         """
         Get the x-coordinate of the object's position.
@@ -83,20 +98,19 @@ class Object:
         """
         self.id = id_value
         
-    # def set_node_id(self, node_id):
-    #     """
-    #     Set the node ID for the object.
+    def distance(self, other):
+        return np.sqrt((self.x - other.x) ** 2 + (self.y - other.y) ** 2 + (self.z - other.z) ** 2)
+    
+    def set_position(self, position, timestamp):
+        """
+        Set the position of the object.
 
-    #     Args:
-    #         node_id (int): Node ID to associate with the object.
-    #     """
-    #     self.object_to_node_map[self.id] = node_id
-        
-    # def get_node_id(self):
-    #     """
-    #     Get the node ID associated with the object.
-
-    #     Returns:
-    #         int or None: Node ID associated with the object, or None if not mapped.
-    #     """
-    #     return self.object_to_node_map.get(self.id)
+        Args:
+            position (tuple): Tuple containing the new x, y, and z coordinates of the object.
+        """
+        self.x, self.y, self.z = position
+        self.state.append((timestamp, (self.x, self.y, self.z)))  # Record initial position with timestamp
+    
+    def get_position(self):
+        return (self.x, self.y, self.z)
+    
